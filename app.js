@@ -1,0 +1,1 @@
+const menu=document.querySelector('.menu');document.querySelector('.menu-toggle')?.addEventListener('click',()=>menu.classList.toggle('open'));document.querySelectorAll('[data-form]').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();const b=f.querySelector('button');b.textContent='Thank you - we will be in touch.';b.disabled=true}));
