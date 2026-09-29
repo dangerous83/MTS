@@ -1,3 +1,56 @@
-const menu=document.querySelector('.menu');document.querySelector('.menu-toggle')?.addEventListener('click',()=>menu.classList.toggle('open'));document.querySelectorAll('[data-form]').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();const b=f.querySelector('button');b.textContent='Thank you - we will be in touch.';b.disabled=true}));
-document.head.insertAdjacentHTML('beforeend','<style>.quote,.button,.contact-strip{background:#08718a!important}.quote:hover,.button:hover{background:#064f64!important}.hero{transition:background-image .8s ease}.slider-ui{position:absolute;right:5%;bottom:42px;display:flex;gap:18px;align-items:center}.slider-buttons button,.slider-dots button{background:transparent;color:#fff;border:1px solid #fff;width:38px;height:38px}.slider-dots{display:flex;gap:7px}.slider-dots button{width:8px;height:8px;padding:0;border-radius:50%}.slider-dots button.active{background:#79d2d7;border-color:#79d2d7}.quick-quote{position:absolute;right:5%;top:26px;background:#fff;color:#10212d;padding:12px 15px;font-size:12px;display:flex;gap:16px}.quick-quote a{color:#08718a;font-weight:800}.ai-orb{position:fixed;bottom:22px;right:22px;z-index:20;width:54px;height:54px;border-radius:50%;border:0;background:#79d2d7;color:#062330;font-size:24px}.ai-panel{display:none;position:fixed;bottom:88px;right:22px;z-index:20;width:250px;background:#fff;padding:20px;box-shadow:0 15px 45px #07172233;border-top:3px solid #79d2d7}.ai-panel.open{display:block}.ai-panel p{font-size:13px;line-height:1.5}.ai-panel a{font-size:12px;font-weight:800;color:#08718a}</style>');
-const hero=document.querySelector('.hero');if(hero&&!hero.classList.contains('vehicle')){const slides=[['assets/port-hero.png','Hamburg terminal','Your customs, container and vehicle hub in the Port of Hamburg.'],['assets/vehicle-hero.png','Vehicle logistics','Careful, high-capacity loading for vehicles travelling worldwide.'],['assets/port-hero.png','International freight','From Hamburg to the markets that matter to your business.']];const h1=hero.querySelector('h1'),eyebrow=hero.querySelector('.eyebrow');let current=0;hero.insertAdjacentHTML('beforeend','<div class="slider-ui"><div class="slide-label"></div><div class="slider-buttons"><button aria-label="Previous slide">←</button><button aria-label="Next slide">→</button></div><div class="slider-dots"></div></div><div class="quick-quote"><span>Talk to logistics</span><a href="https://wa.me/494081978530" target="_blank">WhatsApp us ↗</a></div><button class="ai-orb" aria-label="Open MTS assistant">✦</button><div class="ai-panel"><b>MTS Assistant</b><p>Need help choosing the right service?</p><a href="contact.html">Start a conversation →</a></div>');const label=hero.querySelector('.slide-label'),dots=hero.querySelector('.slider-dots');dots.innerHTML=slides.map((_,i)=>`<button data-slide="${i}" aria-label="Slide ${i+1}"></button>`).join('');function show(i){current=(i+slides.length)%slides.length;hero.style.backgroundImage=`linear-gradient(90deg,rgba(3,19,29,.9),rgba(3,19,29,.35)),url('${slides[current][0]}')`;eyebrow.textContent=slides[current][1];h1.textContent=slides[current][2];label.textContent=`0${current+1} / 0${slides.length}`;dots.querySelectorAll('button').forEach((d,n)=>d.classList.toggle('active',n===current));}hero.querySelectorAll('.slider-buttons button')[0].onclick=()=>show(current-1);hero.querySelectorAll('.slider-buttons button')[1].onclick=()=>show(current+1);dots.onclick=e=>e.target.dataset.slide&&show(+e.target.dataset.slide);hero.querySelector('.ai-orb').onclick=()=>hero.querySelector('.ai-panel').classList.toggle('open');show(0);setInterval(()=>show(current+1),6500);}
+const menuButton = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+
+menuButton?.setAttribute('aria-label', 'Open navigation');
+menuButton?.setAttribute('aria-expanded', 'false');
+menuButton?.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+});
+
+document.querySelectorAll('[data-form]').forEach(form => {
+  const name = form.querySelector('input[placeholder="Your name"]');
+  const email = form.querySelector('input[type="email"]');
+  name?.setAttribute('required', '');
+  email?.setAttribute('required', '');
+
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const details = [...form.querySelectorAll('input, select, textarea')]
+      .filter(field => field.value && !(field.tagName === 'SELECT' && field.selectedIndex === 0))
+      .map(field => `${field.placeholder || 'Service'}: ${field.value}`)
+      .join('\n');
+    const subject = document.title.includes('Classic')
+      ? 'MTS classic car shipping enquiry'
+      : 'MTS shipping enquiry';
+    window.location.href = `mailto:info@mtsonline.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(details)}`;
+  });
+});
+
+document.body.insertAdjacentHTML('beforeend', `
+  <aside class="mts-floating" aria-label="Quick contact options">
+    <a class="mts-whatsapp" href="https://wa.me/494081978530?text=Hello%20MTS%2C%20I%20would%20like%20a%20shipping%20quote." target="_blank" rel="noopener noreferrer" aria-label="Chat with MTS on WhatsApp" title="WhatsApp"><img src="assets/icons/whatsapp.svg" alt=""><span>WhatsApp</span></a>
+    <button class="mts-guide-toggle" type="button" aria-label="Open MTS shipment guide" aria-expanded="false" aria-controls="mts-guide-panel" title="Shipment guide"><img src="assets/icons/bot-message-square.svg" alt=""><span>Ask MTS</span></button>
+    <div class="mts-guide-panel" id="mts-guide-panel" hidden>
+      <div class="mts-guide-head"><strong>MTS shipment guide</strong><button type="button" class="mts-guide-close" aria-label="Close guide"><img src="assets/icons/x.svg" alt=""></button></div>
+      <p>What can we help you move?</p>
+      <div class="mts-guide-options"><a href="customs-warehousing.html">Customs cargo</a><a href="vehicle-logistics.html">A vehicle</a><a href="container-terminal.html">A container</a><a href="international-freight.html">Other freight</a></div>
+      <a class="mts-guide-quote" href="contact.html">Request a quote &rarr;</a>
+    </div>
+  </aside>
+`);
+
+const guideToggle = document.querySelector('.mts-guide-toggle');
+const guidePanel = document.querySelector('.mts-guide-panel');
+function setGuideOpen(open) {
+  guidePanel.hidden = !open;
+  guideToggle.setAttribute('aria-expanded', String(open));
+  guideToggle.setAttribute('aria-label', open ? 'Close MTS shipment guide' : 'Open MTS shipment guide');
+}
+guideToggle.addEventListener('click', () => setGuideOpen(guidePanel.hidden));
+document.querySelector('.mts-guide-close').addEventListener('click', () => setGuideOpen(false));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') setGuideOpen(false);
+});

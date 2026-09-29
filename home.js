@@ -18,14 +18,24 @@ const slides = [
   { kicker: '03 / INTERNATIONAL FREIGHT', title: 'Hamburg connections to the world.', copy: 'Sea, air, road and rail options planned around your cargo and destination.' },
 ];
 const hero = document.querySelector('.hm-hero');
+const heroContent = document.querySelector('.hm-hero-content');
 const slideElements = [...document.querySelectorAll('.hm-slide')];
 const slideButtons = [...document.querySelectorAll('[data-go]')];
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 let activeSlide = 0;
 let timer;
+let transitionTimer;
 
 function setSlide(index) {
-  activeSlide = (index + slides.length) % slides.length;
+  const nextSlide = (index + slides.length) % slides.length;
+  if (nextSlide === activeSlide) return;
+  clearTimeout(transitionTimer);
+  const previous = slideElements[activeSlide];
+  const incoming = slideElements[nextSlide];
+  slideElements.forEach(slide => slide.classList.remove('is-entering', 'is-exiting'));
+  previous.classList.add('is-exiting');
+  incoming.classList.add('is-entering');
+  activeSlide = nextSlide;
   slideElements.forEach((slide, n) => {
     const active = n === activeSlide;
     slide.classList.toggle('is-active', active);
@@ -39,12 +49,26 @@ function setSlide(index) {
   document.querySelector('#hero-title').textContent = slides[activeSlide].title;
   document.querySelector('#hero-copy').textContent = slides[activeSlide].copy;
   document.querySelector('#slide-count').innerHTML = `0${activeSlide + 1} <span>/ 03</span>`;
+  heroContent.classList.remove('is-animating');
+  void heroContent.offsetWidth;
+  heroContent.classList.add('is-animating');
+  transitionTimer = setTimeout(() => {
+    previous.classList.remove('is-exiting');
+    incoming.classList.remove('is-entering');
+    heroContent.classList.remove('is-animating');
+  }, 1300);
 }
 
 function startSlider() {
   if (reduceMotion.matches || document.hidden) return;
+  hero.classList.remove('is-paused');
   clearInterval(timer);
   timer = setInterval(() => setSlide(activeSlide + 1), 7000);
+}
+
+function pauseSlider() {
+  clearInterval(timer);
+  hero.classList.add('is-paused');
 }
 
 function moveSlide(index) {
@@ -55,12 +79,12 @@ function moveSlide(index) {
 slideButtons.forEach((button, n) => button.addEventListener('click', () => moveSlide(n)));
 document.querySelector('#slide-prev').addEventListener('click', () => moveSlide(activeSlide - 1));
 document.querySelector('#slide-next').addEventListener('click', () => moveSlide(activeSlide + 1));
-hero.addEventListener('mouseenter', () => clearInterval(timer));
+hero.addEventListener('mouseenter', pauseSlider);
 hero.addEventListener('mouseleave', startSlider);
-hero.addEventListener('focusin', () => clearInterval(timer));
+hero.addEventListener('focusin', pauseSlider);
 hero.addEventListener('focusout', startSlider);
-document.addEventListener('visibilitychange', () => document.hidden ? clearInterval(timer) : startSlider());
-reduceMotion.addEventListener('change', () => reduceMotion.matches ? clearInterval(timer) : startSlider());
+document.addEventListener('visibilitychange', () => document.hidden ? pauseSlider() : startSlider());
+reduceMotion.addEventListener('change', () => reduceMotion.matches ? pauseSlider() : startSlider());
 startSlider();
 
 const revealElements = [...document.querySelectorAll('.hm-reveal')];
@@ -99,19 +123,20 @@ document.querySelector('#lead-form').addEventListener('submit', event => {
 });
 
 const guide = document.querySelector('.hm-guide');
+const floatStack = document.querySelector('.hm-float-stack');
 const guidePanel = guide.querySelector('.hm-guide-panel');
 const guideToggle = guide.querySelector('.hm-guide-toggle');
 if ('IntersectionObserver' in window) {
   new IntersectionObserver(entries => {
-    guide.classList.toggle('is-ready', !entries[0].isIntersecting);
+    floatStack.classList.toggle('is-ready', !entries[0].isIntersecting);
   }, { threshold: 0 }).observe(hero);
 } else {
-  guide.classList.add('is-ready');
+  floatStack.classList.add('is-ready');
 }
 function setGuideOpen(open) {
   guidePanel.hidden = !open;
   guideToggle.setAttribute('aria-expanded', String(open));
-  guideToggle.setAttribute('aria-label', open ? 'Close shipment guide' : 'Open shipment guide');
+  guideToggle.setAttribute('aria-label', open ? 'Close MTS shipment guide' : 'Open MTS shipment guide');
 }
 guideToggle.addEventListener('click', () => setGuideOpen(guidePanel.hidden));
 guide.querySelector('.hm-guide-close').addEventListener('click', () => setGuideOpen(false));
