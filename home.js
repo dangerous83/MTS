@@ -31,6 +31,81 @@ const heroContent = document.querySelector('.hm-hero-content');
 const slideElements = [...document.querySelectorAll('.hm-slide')];
 const slideButtons = [...document.querySelectorAll('[data-go]')];
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+function startHeroParticles() {
+  const canvas = hero.querySelector('.hm-hero-particles');
+  const context = canvas?.getContext('2d');
+  if (!context) return;
+  let width = 0;
+  let height = 0;
+  let particles = [];
+  let frame = 0;
+  let visible = true;
+
+  function resize() {
+    width = hero.clientWidth;
+    height = hero.clientHeight;
+    const ratio = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(width * ratio);
+    canvas.height = Math.round(height * ratio);
+    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+    let seed = 73453;
+    const random = () => ((seed = (seed * 16807) % 2147483647) - 1) / 2147483646;
+    particles = Array.from({ length: Math.min(100, Math.max(25, Math.round(width / 18))) }, () => ({
+      x: random(),
+      y: random(),
+      phase: random() * Math.PI * 2,
+      speed: 10 + random() * 19,
+      sway: 8 + random() * 24,
+      radius: .7 + random() * 1.6,
+      alpha: .18 + random() * .38,
+    }));
+  }
+
+  function draw(seconds) {
+    context.clearRect(0, 0, width, height);
+    particles.forEach(particle => {
+      const x = ((particle.x * (width + 80) + seconds * particle.speed) % (width + 80)) - 40;
+      const y = height * (.18 + particle.y * .67) + Math.sin(seconds * .55 + particle.phase + x * .008) * particle.sway;
+      const alpha = particle.alpha * (x < width * .43 ? .46 : 1);
+      context.strokeStyle = `rgba(171,226,244,${alpha * .42})`;
+      context.lineWidth = .8;
+      context.beginPath();
+      context.moveTo(x - 9, y + 2);
+      context.lineTo(x, y);
+      context.stroke();
+      context.fillStyle = `rgba(223,248,255,${alpha})`;
+      context.beginPath();
+      context.arc(x, y, particle.radius, 0, Math.PI * 2);
+      context.fill();
+    });
+  }
+
+  function animate(time) {
+    draw(time / 1000);
+    frame = requestAnimationFrame(animate);
+  }
+
+  function sync() {
+    cancelAnimationFrame(frame);
+    draw(0);
+    if (visible && !document.hidden && !reduceMotion.matches) frame = requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('resize', () => { resize(); sync(); }, { passive: true });
+  document.addEventListener('visibilitychange', sync);
+  reduceMotion.addEventListener('change', sync);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      visible = entries[0].isIntersecting;
+      sync();
+    }, { threshold: 0 }).observe(hero);
+  }
+  resize();
+  sync();
+}
+startHeroParticles();
+
 let activeSlide = 0;
 let timer;
 let transitionTimer;
@@ -137,13 +212,8 @@ const guidePanel = guide.querySelector('.hm-guide-panel');
 const guideToggle = guide.querySelector('.hm-guide-toggle');
 if ('IntersectionObserver' in window) {
   new IntersectionObserver(entries => {
-    floatStack.classList.toggle('is-ready', !entries[0].isIntersecting);
-  }, { threshold: 0 }).observe(hero);
-  new IntersectionObserver(entries => {
     floatStack.classList.toggle('is-suppressed', entries[0].isIntersecting);
   }, { threshold: 0 }).observe(document.querySelector('#lead-form'));
-} else {
-  floatStack.classList.add('is-ready');
 }
 function setGuideOpen(open) {
   guidePanel.hidden = !open;
