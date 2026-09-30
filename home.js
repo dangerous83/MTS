@@ -161,8 +161,6 @@ function moveSlide(index) {
 }
 
 slideButtons.forEach((button, n) => button.addEventListener('click', () => moveSlide(n)));
-document.querySelector('#slide-prev').addEventListener('click', () => moveSlide(activeSlide - 1));
-document.querySelector('#slide-next').addEventListener('click', () => moveSlide(activeSlide + 1));
 hero.addEventListener('mouseenter', pauseSlider);
 hero.addEventListener('mouseleave', startSlider);
 hero.addEventListener('focusin', pauseSlider);
