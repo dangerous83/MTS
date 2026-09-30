@@ -6,10 +6,29 @@
   const T = {
     en: {
       // ==== Global chrome ====
-      'top.phone': '+49 (0)40 819 78 530',
+      'top.hours': 'Mo–Fr: 9:00 – 18:00',
+      'top.phone': '+49 (0)40 / 819 78 530',
       'top.email': 'info@mtsonline.de',
       'top.downloads': 'Downloads',
       'top.follow': 'Follow us',
+      // Footer address
+      'ft.head': 'HEAD OFFICE',
+      'ft.address_full': 'Billstrasse 158<br>20539 Hamburg / Germany',
+      'ft.tel_label': 'Tel.:',
+      'ft.fax_label': 'Fax:',
+      'ft.email_label': 'E-Mail:',
+      'ft.fax': '+49 (0)40 / 819 78 355',
+      // Support widget
+      'sw.title': 'MTS Customer Service',
+      'sw.subtitle': 'How can our Hamburg team help?',
+      'sw.opt1': 'Request a shipping quote',
+      'sw.opt2': 'A vehicle shipment',
+      'sw.opt3': 'Customs & warehousing',
+      'sw.opt4': 'Container terminal',
+      'sw.opt5': 'International freight',
+      'sw.cta': 'Continue to quote',
+      'sw.contact': 'Or reach us directly',
+      'sw.aria': 'Contact MTS customer service',
       'nav.home': 'Home',
       'nav.services': 'Services',
       'nav.classic': 'Classic & Premium Cars',
@@ -499,10 +518,27 @@
     },
     de: {
       // ==== Global chrome ====
-      'top.phone': '+49 (0)40 819 78 530',
+      'top.hours': 'Mo–Fr: 9:00 – 18:00 Uhr',
+      'top.phone': '+49 (0)40 / 819 78 530',
       'top.email': 'info@mtsonline.de',
       'top.downloads': 'Downloads',
       'top.follow': 'Folgen Sie uns',
+      'ft.head': 'HAUPTSITZ',
+      'ft.address_full': 'Billstraße 158<br>20539 Hamburg / Deutschland',
+      'ft.tel_label': 'Tel.:',
+      'ft.fax_label': 'Fax:',
+      'ft.email_label': 'E-Mail:',
+      'ft.fax': '+49 (0)40 / 819 78 355',
+      'sw.title': 'MTS Kundenservice',
+      'sw.subtitle': 'Wie kann unser Hamburger Team helfen?',
+      'sw.opt1': 'Transportangebot anfordern',
+      'sw.opt2': 'Fahrzeugversand',
+      'sw.opt3': 'Zoll & Lager',
+      'sw.opt4': 'Container-Terminal',
+      'sw.opt5': 'Internationale Spedition',
+      'sw.cta': 'Weiter zum Angebot',
+      'sw.contact': 'Oder erreichen Sie uns direkt',
+      'sw.aria': 'MTS Kundenservice kontaktieren',
       'nav.home': 'Startseite',
       'nav.services': 'Leistungen',
       'nav.classic': 'Oldtimer & Premiumfahrzeuge',
@@ -1035,6 +1071,7 @@
     renderTopbar();
     renderFooter();
     renderDownloadsModal(true);
+    renderSupport();
   }
 
   function renderTopbar() {
@@ -1047,8 +1084,9 @@
     bar.innerHTML = `
       <div class="mts-topbar-inner">
         <div class="mts-topbar-contact">
-          <a href="tel:+494081978530"><img src="assets/icons/phone-call.svg" alt=""><span>${tr('top.phone')}</span></a>
+          <span class="mts-topbar-hours"><img src="assets/icons/clock.svg" alt=""><span>${tr('top.hours')}</span></span>
           <a href="mailto:info@mtsonline.de"><img src="assets/icons/mail.svg" alt=""><span>${tr('top.email')}</span></a>
+          <a href="tel:+494081978530"><img src="assets/icons/phone-call.svg" alt=""><span>${tr('top.phone')}</span></a>
         </div>
         <div class="mts-topbar-actions">
           <div class="mts-topbar-social" aria-label="${tr('top.follow')}">
@@ -1126,7 +1164,7 @@
           <div class="site-footer-brand"><a href="index.html" aria-label="MTS home"><img src="assets/mts-logo.png" alt="MTS"></a></div>
           <div class="site-footer-column"><strong>${tr('ft.services')}</strong><a href="customs-warehousing.html">${tr('ft.customs')}</a><a href="vehicle-logistics.html">${tr('ft.vehicle')}</a><a href="container-terminal.html">${tr('ft.container')}</a><a href="international-freight.html">${tr('ft.freight')}</a></div>
           <div class="site-footer-column"><strong>${tr('ft.company')}</strong><a href="about.html">${tr('nav.about')}</a><a href="classic-cars.html">${tr('ft.classic')}</a><a href="destinations.html">${tr('nav.destinations')}</a><a href="news.html">${tr('nav.news')}</a><a href="contact.html">${tr('nav.contact')}</a></div>
-          <div class="site-footer-column site-footer-contact"><strong>${tr('ft.contact')}</strong><a href="tel:+494081978530">+49 (0)40 819 78 530</a><a href="mailto:info@mtsonline.de">info@mtsonline.de</a><address>${tr('ft.address')}</address><div class="site-social" aria-label="Social media"><a href="https://www.instagram.com/mts_gmbh?igshid=8u4w9e23s97k" target="_blank" rel="noopener noreferrer" aria-label="MTS on Instagram" title="Instagram"><img src="assets/icons/instagram.svg" alt=""></a><a href="https://www.facebook.com/mtshamburg/" target="_blank" rel="noopener noreferrer" aria-label="MTS on Facebook" title="Facebook"><img src="assets/icons/facebook.svg" alt=""></a><a href="https://www.youtube.com/channel/UCoRZqOU6EyD5YDcyQ8VnFCQ?view_as=subscriber" target="_blank" rel="noopener noreferrer" aria-label="MTS on YouTube" title="YouTube"><img src="assets/icons/youtube.svg" alt=""></a></div></div>
+          <div class="site-footer-column site-footer-contact"><strong>${tr('ft.head')}</strong><address>${tr('ft.address_full')}</address><p class="site-footer-line"><span>${tr('ft.tel_label')}</span> <a href="tel:+494081978530">+49 (0)40 / 819 78 530</a></p><p class="site-footer-line"><span>${tr('ft.fax_label')}</span> +49 (0)40 / 819 78 355</p><p class="site-footer-line"><span>${tr('ft.email_label')}</span> <a href="mailto:info@mtsonline.de">info[at]mtsonline.de</a></p><div class="site-social" aria-label="Social media"><a href="https://www.instagram.com/mts_gmbh?igshid=8u4w9e23s97k" target="_blank" rel="noopener noreferrer" aria-label="MTS on Instagram" title="Instagram"><img src="assets/icons/instagram.svg" alt=""></a><a href="https://www.facebook.com/mtshamburg/" target="_blank" rel="noopener noreferrer" aria-label="MTS on Facebook" title="Facebook"><img src="assets/icons/facebook.svg" alt=""></a><a href="https://www.youtube.com/channel/UCoRZqOU6EyD5YDcyQ8VnFCQ?view_as=subscriber" target="_blank" rel="noopener noreferrer" aria-label="MTS on YouTube" title="YouTube"><img src="assets/icons/youtube.svg" alt=""></a></div></div>
         </div>
         <div class="site-footer-bottom"><span>${tr('ft.rights').replace('{year}', new Date().getFullYear())}</span><span>${tr('ft.city')}</span></div>
       </div>`;
@@ -1157,11 +1195,77 @@
     quote.before(button);
   }
 
+  function renderSupport() {
+    // Remove any legacy WhatsApp / floating widgets injected by the old app.js
+    document.querySelectorAll('.mts-floating, .hm-float-stack .hm-whatsapp-toggle, .mts-whatsapp').forEach(el => el.remove());
+
+    let dock = document.querySelector('.mts-support');
+    if (!dock) {
+      dock = document.createElement('div');
+      dock.className = 'mts-support';
+      document.body.appendChild(dock);
+    }
+    dock.innerHTML = `
+      <button type="button" class="mts-support-toggle" aria-label="${tr('sw.aria')}" aria-expanded="false" aria-controls="mts-support-panel">
+        <span class="mts-support-pulse" aria-hidden="true"></span>
+        <span class="mts-support-pulse mts-support-pulse-2" aria-hidden="true"></span>
+        <img src="assets/icons/headset.svg" alt="">
+        <span class="mts-support-dot" aria-hidden="true"></span>
+      </button>
+      <div class="mts-support-panel" id="mts-support-panel" hidden>
+        <header class="mts-support-head">
+          <span class="mts-support-avatar"><img src="assets/icons/headset.svg" alt=""></span>
+          <div><strong>${tr('sw.title')}</strong><small>${tr('top.hours')}</small></div>
+          <button type="button" class="mts-support-close" aria-label="${tr('dl.close')}">✕</button>
+        </header>
+        <div class="mts-support-body">
+          <p>${tr('sw.subtitle')}</p>
+          <div class="mts-support-options">
+            <button type="button" data-service="Quote">${tr('sw.opt1')}</button>
+            <button type="button" data-service="Vehicle logistics">${tr('sw.opt2')}</button>
+            <button type="button" data-service="Customs warehousing">${tr('sw.opt3')}</button>
+            <button type="button" data-service="Container terminal">${tr('sw.opt4')}</button>
+            <button type="button" data-service="International freight">${tr('sw.opt5')}</button>
+          </div>
+          <a class="mts-support-cta" href="contact.html">${tr('sw.cta')} <span aria-hidden="true">→</span></a>
+          <div class="mts-support-contact">
+            <span>${tr('sw.contact')}</span>
+            <a href="tel:+494081978530"><img src="assets/icons/phone-call.svg" alt="">+49 (0)40 / 819 78 530</a>
+            <a href="mailto:info@mtsonline.de"><img src="assets/icons/mail.svg" alt="">info@mtsonline.de</a>
+          </div>
+        </div>
+      </div>`;
+    const toggle = dock.querySelector('.mts-support-toggle');
+    const panel = dock.querySelector('.mts-support-panel');
+    const setOpen = (open) => {
+      panel.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+      dock.classList.toggle('is-open', open);
+    };
+    toggle.addEventListener('click', () => setOpen(panel.hidden));
+    dock.querySelector('.mts-support-close').addEventListener('click', () => setOpen(false));
+    dock.querySelectorAll('.mts-support-options button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const service = btn.dataset.service;
+        const select = document.querySelector('select[name="service"]');
+        if (select) {
+          const opt = [...select.options].find(o => o.value === service || o.textContent === service);
+          if (opt) select.value = opt.value;
+        }
+        const target = document.getElementById('quote') || document.querySelector('#contact-paths');
+        if (target) { setOpen(false); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+        else { window.location.href = 'contact.html'; }
+      });
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+  }
+
   function render() {
     renderTopbar();
     renderFooter();
     renderThemeToggle();
     renderDownloadsModal();
+    renderSupport();
     applyTranslations();
   }
 

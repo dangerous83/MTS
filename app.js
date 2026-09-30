@@ -34,7 +34,6 @@ document.querySelectorAll('[data-form]').forEach(form => {
 
 document.body.insertAdjacentHTML('beforeend', `
   <aside class="mts-floating" aria-label="Quick contact options">
-    <a class="mts-whatsapp" href="https://wa.me/494081978530?text=Hello%20MTS%2C%20I%20would%20like%20a%20shipping%20quote." target="_blank" rel="noopener noreferrer" aria-label="Chat with MTS on WhatsApp" title="WhatsApp"><img src="assets/icons/whatsapp.svg" alt=""><span>WhatsApp</span></a>
     <button class="mts-guide-toggle" type="button" aria-label="Open MTS shipment guide" aria-expanded="false" aria-controls="mts-guide-panel" title="Shipment guide"><img src="assets/icons/bot-message-square.svg" alt=""><span>Ask MTS</span></button>
     <div class="mts-guide-panel" id="mts-guide-panel" hidden>
       <div class="mts-guide-head"><strong>MTS shipment guide</strong><button type="button" class="mts-guide-close" aria-label="Close guide"><img src="assets/icons/x.svg" alt=""></button></div>

@@ -204,33 +204,3 @@ document.querySelector('#lead-form').addEventListener('submit', event => {
   window.location.href = `mailto:info@mtsonline.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
 });
 
-const guide = document.querySelector('.hm-guide');
-const floatStack = document.querySelector('.hm-float-stack');
-const guidePanel = guide.querySelector('.hm-guide-panel');
-const guideToggle = guide.querySelector('.hm-guide-toggle');
-if ('IntersectionObserver' in window) {
-  new IntersectionObserver(entries => {
-    floatStack.classList.toggle('is-suppressed', entries[0].isIntersecting);
-  }, { threshold: 0 }).observe(document.querySelector('#lead-form'));
-}
-function setGuideOpen(open) {
-  guidePanel.hidden = !open;
-  guideToggle.setAttribute('aria-expanded', String(open));
-  guideToggle.setAttribute('aria-label', open ? 'Close MTS shipment guide' : 'Open MTS shipment guide');
-}
-guideToggle.addEventListener('click', () => setGuideOpen(guidePanel.hidden));
-guide.querySelector('.hm-guide-close').addEventListener('click', () => setGuideOpen(false));
-guide.querySelectorAll('[data-service]').forEach(button => button.addEventListener('click', () => {
-  guide.querySelectorAll('[data-service]').forEach(option => option.classList.remove('is-selected'));
-  button.classList.add('is-selected');
-  const service = button.dataset.service;
-  const form = document.querySelector('#lead-form');
-  form.elements.service.value = service;
-  guide.querySelector('.hm-guide-result').innerHTML = `We can help with ${service.toLowerCase()}. <a href="#quote">Continue to the quote form →</a>`;
-}));
-guide.querySelector('.hm-guide-result').addEventListener('click', event => {
-  if (event.target.closest('a')) setGuideOpen(false);
-});
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') setGuideOpen(false);
-});
