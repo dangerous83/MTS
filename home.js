@@ -12,6 +12,15 @@ menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => 
   menuButton.setAttribute('aria-expanded', 'false');
 }));
 
+const memberSet = document.querySelector('.hm-members-set');
+if (memberSet) {
+  const duplicate = memberSet.cloneNode(true);
+  duplicate.setAttribute('aria-hidden', 'true');
+  duplicate.querySelectorAll('img').forEach(img => img.alt = '');
+  memberSet.parentElement.append(duplicate);
+  memberSet.parentElement.classList.add('is-looping');
+}
+
 const slides = [
   { kicker: '01 / HAMBURG LOGISTICS HUB', title: 'Your customs, container and vehicle hub in the Port of Hamburg.', copy: 'One Hamburg team for the careful handling and worldwide movement of your cargo.' },
   { kicker: '02 / VEHICLE LOGISTICS', title: 'Careful handling for vehicles with places to go.', copy: 'Secure container loading and export coordination for everyday, classic and premium vehicles.' },
