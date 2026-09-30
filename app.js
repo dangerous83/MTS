@@ -19,8 +19,11 @@ document.querySelectorAll('[data-form]').forEach(form => {
     event.preventDefault();
     if (!form.reportValidity()) return;
     const details = [...form.querySelectorAll('input, select, textarea')]
-      .filter(field => field.value && !(field.tagName === 'SELECT' && field.selectedIndex === 0))
-      .map(field => `${field.placeholder || 'Service'}: ${field.value}`)
+      .filter(field => field.value && field.type !== 'checkbox' && (field.type !== 'radio' || field.checked) && !(field.tagName === 'SELECT' && field.selectedIndex === 0))
+      .map(field => {
+        const label = field.name === 'service' || field.tagName === 'SELECT' ? 'Service' : field.closest('label')?.textContent.trim() || field.placeholder || 'Details';
+        return `${label}: ${field.value}`;
+      })
       .join('\n');
     const subject = document.title.includes('Classic')
       ? 'MTS classic car shipping enquiry'
@@ -54,3 +57,45 @@ document.querySelector('.mts-guide-close').addEventListener('click', () => setGu
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape') setGuideOpen(false);
 });
+
+const pageHero = document.querySelector('.page-hero');
+if (pageHero && !pageHero.querySelector('.contact-hero-next')) {
+  const nextSection = pageHero.nextElementSibling;
+  if (nextSection) {
+    if (!nextSection.id) nextSection.id = 'page-content';
+    const nextTitle = nextSection.querySelector('h2')?.textContent.trim() || 'Explore more';
+    const cue = document.createElement('a');
+    cue.className = 'page-hero-next';
+    cue.href = `#${nextSection.id}`;
+    const label = document.createElement('span');
+    label.textContent = nextTitle;
+    const arrow = document.createElement('span');
+    arrow.setAttribute('aria-hidden', 'true');
+    arrow.textContent = '↓';
+    cue.append(label, arrow);
+    pageHero.append(cue);
+  }
+}
+
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const quoteForm = document.querySelector('[data-form]');
+if (quoteForm && 'IntersectionObserver' in window) {
+  new IntersectionObserver(entries => {
+    document.querySelector('.mts-floating').classList.toggle('is-suppressed', entries[0].isIntersecting);
+  }, { threshold: 0 }).observe(quoteForm);
+}
+if (!reducedMotion.matches && 'IntersectionObserver' in window) {
+  const targets = [...document.querySelectorAll('main > section:not(.page-hero), .contact-path, .contact-form, .contact-location img, .service-card, .region, .news-item, .process > div')];
+  document.documentElement.classList.add('has-scroll-motion');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -35px 0px' });
+  targets.forEach(target => {
+    target.classList.add('scroll-reveal');
+    observer.observe(target);
+  });
+}

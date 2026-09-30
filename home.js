@@ -130,6 +130,9 @@ if ('IntersectionObserver' in window) {
   new IntersectionObserver(entries => {
     floatStack.classList.toggle('is-ready', !entries[0].isIntersecting);
   }, { threshold: 0 }).observe(hero);
+  new IntersectionObserver(entries => {
+    floatStack.classList.toggle('is-suppressed', entries[0].isIntersecting);
+  }, { threshold: 0 }).observe(document.querySelector('#lead-form'));
 } else {
   floatStack.classList.add('is-ready');
 }

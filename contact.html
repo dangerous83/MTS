@@ -1,1 +1,97 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact MTS</title><link rel="stylesheet" href="styles.css"></head><body><div class="nav-wrap"><nav class="nav wrap"><a class="brand" href="index.html"><img src="assets/mts-logo.png" alt="MTS"></a><button class="menu-toggle">☰</button><div class="menu"><a href="index.html">Home</a><a href="services.html">Services</a><a href="classic-cars.html">Classic & Premium Cars</a><a href="destinations.html">Destinations</a><a href="about.html">About Us</a><a href="news.html">News</a><a class="active" href="contact.html">Contact</a></div><a class="quote" href="contact.html">Request a Quote</a></nav></div><main><section class="page-hero"><div class="wrap"><span class="eyebrow" style="color:#a2dce0">Contact</span><h1>Tell us what needs to move.</h1></div></section><section class="section wrap form-layout"><div><span class="eyebrow">Request a quote</span><h2>Start with the shipment.</h2><p>Our team will respond with the right contact person and the next clear step.</p><p><b>Phone</b><br>+49 (0)40 / 819 78 530</p><p><b>Email</b><br>info@mtsonline.de</p><p><b>Office</b><br>Billstrasse 158<br>20539 Hamburg / Germany</p><p><b>Opening hours</b><br>Monday-Friday, 08:00-17:00</p></div><form class="form-grid" data-form><input placeholder="Your name"><input type="email" placeholder="Email address"><input placeholder="Company"><input placeholder="Phone number"><select><option>Select a service</option><option>Customs Warehousing</option><option>Vehicle Logistics</option><option>Container Terminal</option><option>International Freight</option></select><input placeholder="Destination"><textarea placeholder="What can we help move?"></textarea><button class="button">Send Enquiry</button></form></section><section class="band"><div class="wrap"><span class="eyebrow">Hamburg</span><h2>Find us at Billstrasse 158.</h2><p class="muted">MTS GmbH · International Forwarders · Billstrasse 158 · 20539 Hamburg / Germany</p></div></section></main><footer class="footer"><div class="wrap"><img src="assets/mts-logo.png" alt="MTS"></div></footer><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact MTS in Hamburg for customs handling, container logistics, vehicle shipping and international freight.">
+  <title>Contact MTS | Talk to our Hamburg team</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="contact.css">
+  <script defer src="app.js"></script>
+</head>
+<body class="contact-page">
+  <div class="nav-wrap">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="MTS home"><img src="assets/mts-logo.png" alt="MTS"></a>
+      <button class="menu-toggle" type="button" aria-controls="site-menu" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <div class="menu" id="site-menu">
+        <a href="index.html">Home</a><a href="services.html">Services</a><a href="classic-cars.html">Classic & Premium Cars</a><a href="destinations.html">Destinations</a><a href="about.html">About Us</a><a href="news.html">News</a><a class="active" href="contact.html" aria-current="page">Contact</a>
+      </div>
+      <a class="quote" href="#quote">Request a Quote</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="page-hero contact-hero" aria-labelledby="contact-title">
+      <div class="wrap contact-hero-inner">
+        <p class="eyebrow">YOUR HAMBURG CONNECTION</p>
+        <h1 id="contact-title">Let's move your shipment forward.</h1>
+        <p>Questions about customs, vehicles or freight? Speak with a team that works where the cargo moves.</p>
+        <div class="contact-hero-actions">
+          <a class="button" href="#quote">Start an enquiry <span aria-hidden="true">↗</span></a>
+          <a class="button secondary" href="tel:+494081978530">Call Hamburg <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <a class="contact-hero-next" href="#contact-paths">QUOTE, PHONE OR EMAIL <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section class="contact-paths section" id="contact-paths">
+      <div class="wrap">
+        <div class="contact-section-heading"><p class="eyebrow">START HERE</p><h2>Reach us your way.</h2><p>Choose the easiest first step. The details can follow.</p></div>
+        <div class="contact-path-grid">
+          <a class="contact-path" href="#quote"><span class="contact-path-icon"><img src="assets/icons/file-text.svg" alt=""></span><small>01 / QUOTE</small><h3>Tell us about the shipment.</h3><p>Give us the route, cargo and timing to start a useful conversation.</p><b aria-hidden="true">↗</b></a>
+          <a class="contact-path" href="tel:+494081978530"><span class="contact-path-icon"><img src="assets/icons/phone-call.svg" alt=""></span><small>02 / PHONE</small><h3>Speak to Hamburg.</h3><p>Call our team directly when a question needs a human answer.</p><b aria-hidden="true">↗</b></a>
+          <a class="contact-path" href="mailto:info@mtsonline.de"><span class="contact-path-icon"><img src="assets/icons/mail.svg" alt=""></span><small>03 / EMAIL</small><h3>Send the documents.</h3><p>Share the particulars you already have, and we can take it from there.</p><b aria-hidden="true">↗</b></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-quote-section section" id="quote" aria-labelledby="quote-title">
+      <div class="wrap contact-quote-grid">
+        <div class="contact-quote-copy">
+          <p class="eyebrow">REQUEST A QUOTE</p>
+          <h2 id="quote-title">A clear starting point for the next move.</h2>
+          <p>Tell us what you need to move and where it needs to go. Our Hamburg team can help shape the right route and handling plan.</p>
+          <div class="contact-direct">
+            <span>DIRECT CONTACT</span>
+            <a href="tel:+494081978530">+49 (0)40 819 78 530</a>
+            <a href="mailto:info@mtsonline.de">info@mtsonline.de</a>
+          </div>
+        </div>
+        <form class="contact-form" data-form>
+          <fieldset class="contact-services">
+            <legend>What can we help with?</legend>
+            <div class="contact-service-options">
+              <label><input type="radio" name="service" value="Customs warehousing" required><span>Customs</span></label>
+              <label><input type="radio" name="service" value="Vehicle logistics"><span>Vehicles</span></label>
+              <label><input type="radio" name="service" value="Container terminal"><span>Containers</span></label>
+              <label><input type="radio" name="service" value="International freight"><span>Freight</span></label>
+              <label><input type="radio" name="service" value="Classic and premium cars"><span>Classic cars</span></label>
+            </div>
+          </fieldset>
+          <div class="contact-form-grid">
+            <label>Your name <input name="name" autocomplete="name" placeholder="Your name" required></label>
+            <label>Email address <input name="email" type="email" autocomplete="email" placeholder="Email address" required></label>
+            <label>Phone (optional) <input name="phone" type="tel" autocomplete="tel" placeholder="Phone number"></label>
+            <label>Company (optional) <input name="company" autocomplete="organization" placeholder="Company"></label>
+            <label>From <input name="origin" placeholder="Origin city / port"></label>
+            <label>To <input name="destination" placeholder="Destination city / port"></label>
+            <label class="contact-wide">Shipment details <textarea name="details" rows="4" placeholder="Cargo, vehicle, date or special handling"></textarea></label>
+          </div>
+          <label class="contact-consent"><input type="checkbox" required><span>I agree that MTS may use these details to reply to my enquiry.</span></label>
+          <div class="contact-submit"><button class="button" type="submit">Prepare enquiry <span aria-hidden="true">↗</span></button><span>Opens your email app</span></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="contact-location" aria-labelledby="location-title">
+      <div class="wrap contact-location-grid">
+        <div><p class="eyebrow">COME FIND US</p><h2 id="location-title">At home in Hamburg.</h2><address>Mangal Transport & Shipping GmbH<br>Billstrasse 158<br>20539 Hamburg, Germany</address><a href="https://www.google.com/maps/search/?api=1&amp;query=Billstrasse+158+20539+Hamburg" target="_blank" rel="noopener noreferrer">Open directions <span aria-hidden="true">↗</span></a></div>
+        <img src="assets/container-yard.png" alt="Container handling in a Hamburg yard" loading="lazy">
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap"><a href="index.html" aria-label="MTS home"><img src="assets/mts-logo.png" alt="MTS"></a></div></footer>
+</body>
+</html>
