@@ -105,3 +105,12 @@
 [data-theme="dark"] .mts-dl-icon{background:#0f2135}
 [data-theme="dark"] .mts-dl-close{background:#1b2c3f;border-color:#345065;color:#eaf2f5}
 [data-theme="dark"] .mts-topbar{background:#050f18}
+
+/* Flag pills in language switcher */
+.mts-topbar-lang{gap:2px}
+.mts-lang-btn{display:inline-flex;align-items:center;gap:6px;padding:5px 8px;border-radius:3px;transition:background .15s,color .2s}
+.mts-lang-btn img{width:18px;height:12px;object-fit:cover;border-radius:2px;display:block;box-shadow:0 0 0 1px rgba(255,255,255,.15)}
+.mts-lang-btn:hover{background:rgba(255,255,255,.06);color:#cde1e5}
+.mts-lang-btn.is-active{background:rgba(255,255,255,.14);color:#fff}
+.mts-lang-btn.is-active:after{display:none}
+@media(max-width:520px){.mts-lang-btn span{display:none}.mts-lang-btn{padding:4px 5px}}
