@@ -27,8 +27,7 @@
 [data-theme="dark"] .site-theme-toggle{background:#20394e;border-color:#55718a}
 [data-theme="dark"] .site-theme-toggle:hover{background:#2a4a62}
 [data-theme="dark"] .site-theme-toggle img{filter:brightness(0) invert(1)}
-[data-theme="dark"] .hm-members,[data-theme="dark"] .hm-services,[data-theme="dark"] .hm-lead,[data-theme="dark"] .band,[data-theme="dark"] .contact-quote-section{background:#172839}
-[data-theme="dark"] .hm-members-label{color:#b7d5e5}
+[data-theme="dark"] .hm-services,[data-theme="dark"] .hm-lead,[data-theme="dark"] .band,[data-theme="dark"] .contact-quote-section{background:#172839}
 [data-theme="dark"] .hm-intro,[data-theme="dark"] .hm-feature,[data-theme="dark"] .intro,[data-theme="dark"] .section,[data-theme="dark"] .contact-paths{background:#101c2a;color:#e5eef2}
 [data-theme="dark"] .hm-service,[data-theme="dark"] .hm-lead-form,[data-theme="dark"] .service-card,[data-theme="dark"] .region,[data-theme="dark"] .contact-path,[data-theme="dark"] .contact-form,[data-theme="dark"] .team-card,[data-theme="dark"] .freight div{background:#203448;color:#eaf2f5;border-color:#3e5768}
 [data-theme="dark"] .hm-intro p:not(.hm-label),[data-theme="dark"] .hm-feature-content>p:not(.hm-label),[data-theme="dark"] .hm-lead-copy>p:not(.hm-label),[data-theme="dark"] .hm-service-bottom p,[data-theme="dark"] .intro p,[data-theme="dark"] .section p,[data-theme="dark"] .muted,[data-theme="dark"] .contact-section-heading>p:last-child,[data-theme="dark"] .contact-quote-copy>p:not(.eyebrow),[data-theme="dark"] .contact-path p{color:#b7cbd5}
