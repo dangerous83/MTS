@@ -163,3 +163,9 @@ body{background:#fff;color:var(--hm-ink)}
 @media(max-width:640px){.hm-hero-content{padding-bottom:160px}.hm-hero-controls{bottom:78px}}
 @media(max-width:360px){.hm-hero-content{padding-bottom:125px}.hm-hero-controls{bottom:62px}}
 @media(max-height:580px){.hm-hero-content{padding-bottom:120px}.hm-hero-controls{bottom:58px}}
+.hm-hero-controls{padding-right:170px;bottom:180px}
+.hm-hero-content{padding-bottom:280px}
+@media(max-width:900px){.hm-hero-controls{padding-right:110px;bottom:150px}.hm-hero-content{padding-bottom:230px}}
+@media(max-width:640px){.hm-hero-controls{padding-right:80px;bottom:120px}.hm-hero-content{padding-bottom:200px}}
+@media(max-width:360px){.hm-hero-controls{padding-right:70px;bottom:100px}.hm-hero-content{padding-bottom:170px}}
+@media(max-height:580px){.hm-hero-controls{bottom:90px}.hm-hero-content{padding-bottom:150px}}
