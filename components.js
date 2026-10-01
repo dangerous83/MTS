@@ -37,6 +37,14 @@
       'nav.news': 'News',
       'nav.contact': 'Contact',
       'nav.quote': 'Request a quote',
+      'nav.premium': 'Premium Cars',
+      'nav.services.all': 'All services',
+      'nav.sub.cw': 'Customs warehousing',
+      'nav.sub.vl': 'Vehicle logistics',
+      'nav.sub.ct': 'Container terminal',
+      'nav.sub.if': 'International freight',
+      'nav.sub.cc': 'Classic cars',
+      'nav.sub.pc': 'Premium cars',
       // Downloads modal
       'dl.title': 'Downloads',
       'dl.subtitle': 'Documents you may need when working with MTS. Click any card to download the PDF.',
@@ -549,6 +557,72 @@
       'cc.form.dest': 'Destination',
       'cc.form.msg': 'Tell us about your shipment',
       'cc.form.submit': 'Request a Quote',
+
+      // ==== PREMIUM CARS (premium-cars.html) ====
+      'pc.hero.k': 'Premium Cars',
+      'pc.hero.t': 'For the car that deserves more than a sea freight booking.',
+      'pc.hero.sub': 'Enclosed single-vehicle containers, soft lashing, climate-aware handling and documented photo records from pickup to delivery — tailored for dealerships, HNW owners and auction houses.',
+      'pc.hero.cta1': 'Request a premium quote',
+      'pc.hero.cta2': 'What makes it premium',
+      'pc.intro.k': 'The MTS premium standard',
+      'pc.intro.h': 'A dedicated workflow for high-value vehicles.',
+      'pc.intro.p1': 'Premium cars are not just more expensive — they are harder to replace, and every small handling mistake shows. MTS runs a separate workflow for premium shipments: single-vehicle containers, white-glove loading, dedicated storage and a point of contact who knows your car by name, not booking number.',
+      'pc.intro.p2': 'We work regularly with dealerships, specialist importers, auction houses and private owners moving a flagship between homes. Every shipment ends with the full file in your inbox — not just a bill of lading.',
+      'pc.inc.k': 'Included as standard',
+      'pc.inc.h': 'What a premium booking covers.',
+      'pc.l1': 'Single-vehicle 20&#39; or 40&#39; container (no shared loads)',
+      'pc.l2': 'White-glove collection with enclosed trailer where appropriate',
+      'pc.l3': 'Pre-loading condition report with high-resolution photos',
+      'pc.l4': 'Soft wheel-strap lashing only — no chassis contact',
+      'pc.l5': 'Protective covers on bumpers, mirrors and door handles',
+      'pc.l6': 'Climate-aware storage at our Hamburg warehouse',
+      'pc.l7': 'Customs documentation and export declaration',
+      'pc.l8': 'Marine insurance quote on request',
+      'pc.l9': 'Named point of contact from quote to delivery',
+      'pc.l10': 'Door-to-door delivery coordination at destination',
+      'pc.proc.k': 'How it runs',
+      'pc.proc.h': 'A simple, documented process.',
+      'pc.proc.sub': 'Six steps from first enquiry to delivery, each one logged and shared with you.',
+      'pc.proc.1.l': '01 · ENQUIRY',
+      'pc.proc.1.h': 'Send us the details',
+      'pc.proc.1.p': 'VIN, pickup address and destination — plus photos if you have them. We come back with a fixed quote.',
+      'pc.proc.2.l': '02 · COLLECTION',
+      'pc.proc.2.h': 'White-glove pickup',
+      'pc.proc.2.p': 'Enclosed transport to our Hamburg yard, condition report signed on arrival.',
+      'pc.proc.3.l': '03 · LOADING',
+      'pc.proc.3.h': 'Single-vehicle container',
+      'pc.proc.3.p': 'Soft lashing, protective covers, full photo set shared the day the container is sealed.',
+      'pc.proc.4.l': '04 · CUSTOMS',
+      'pc.proc.4.h': 'Export documentation',
+      'pc.proc.4.p': 'EU export declaration, bill of lading and country-specific certificates handled in-house.',
+      'pc.proc.5.l': '05 · SAILING',
+      'pc.proc.5.h': 'Tracked passage',
+      'pc.proc.5.p': 'Carrier and sailing details shared on departure, status updates on key milestones.',
+      'pc.proc.6.l': '06 · DELIVERY',
+      'pc.proc.6.h': 'Door-to-door handover',
+      'pc.proc.6.p': 'Clearance at destination, final delivery via partner carrier, condition report countersigned.',
+      'pc.who.k': 'Who this is for',
+      'pc.who.h': 'Trusted by owners who care about the details.',
+      'pc.who.c1.t': 'Collectors &amp; HNW owners',
+      'pc.who.c1.p': 'Moving a flagship, a weekend car or part of a collection between residences or to a specialist overseas.',
+      'pc.who.c2.t': 'Dealerships &amp; brokers',
+      'pc.who.c2.p': 'Export shipments of new or used premium cars where handling photos and clean paperwork are part of the sale.',
+      'pc.who.c3.t': 'Auction houses &amp; specialists',
+      'pc.who.c3.p': 'Pre- and post-sale transport with coordinated handovers to the receiving auctioneer, restorer or dealership.',
+      'pc.faq.k': 'Questions we hear often',
+      'pc.faq.h': 'Premium shipping FAQs.',
+      'pc.faq.q1': 'Why a single-vehicle container?',
+      'pc.faq.a1': 'So the loading plan is built around your car, not around what else fits. No shared bulkheads, no shared schedule, no risk of another car&#39;s mirror brushing yours during securing.',
+      'pc.faq.q2': 'What about marine insurance?',
+      'pc.faq.a2': 'We can quote a dedicated marine policy on request, based on the declared value. We&#39;ll walk you through excess, cover limits and documentation before you decide.',
+      'pc.faq.q3': 'Can I visit the car in your warehouse before loading?',
+      'pc.faq.a3': 'Yes. Our warehouse at Billstrasse 158 is a short drive from the Port of Hamburg. Call ahead and we&#39;ll arrange a time.',
+      'pc.faq.q4': 'How do I know what&#39;s happening during the passage?',
+      'pc.faq.a4': 'On the day the container sails you receive the vessel name, voyage number and ETA. We proactively flag any schedule changes.',
+      'pc.cta.k': 'Ready to ship?',
+      'pc.cta.h': 'Let&#39;s treat your car the way you do.',
+      'pc.cta.p': 'Send us the VIN, pickup and destination and our specialist desk will come back with a fixed quote.',
+      'pc.cta.b': 'Request a premium quote →',
     },
     de: {
       // ==== Global chrome ====
@@ -581,6 +655,14 @@
       'nav.news': 'Aktuelles',
       'nav.contact': 'Kontakt',
       'nav.quote': 'Angebot anfordern',
+      'nav.premium': 'Premiumfahrzeuge',
+      'nav.services.all': 'Alle Leistungen',
+      'nav.sub.cw': 'Zolllager',
+      'nav.sub.vl': 'Fahrzeuglogistik',
+      'nav.sub.ct': 'Container-Terminal',
+      'nav.sub.if': 'Internationale Spedition',
+      'nav.sub.cc': 'Oldtimer',
+      'nav.sub.pc': 'Premiumfahrzeuge',
       'dl.title': 'Downloads',
       'dl.subtitle': 'Dokumente, die Sie in der Zusammenarbeit mit MTS benötigen. Klicken Sie auf eine Karte, um das PDF herunterzuladen.',
       'dl.close': 'Schließen',
@@ -1091,6 +1173,72 @@
       'cc.form.dest': 'Zielort',
       'cc.form.msg': 'Erzählen Sie uns von Ihrer Sendung',
       'cc.form.submit': 'Angebot anfordern',
+
+      // ==== PREMIUM CARS (DE) ====
+      'pc.hero.k': 'Premiumfahrzeuge',
+      'pc.hero.t': 'Für das Fahrzeug, das mehr verdient als eine Standard-Seefrachtbuchung.',
+      'pc.hero.sub': 'Geschlossene Einzelfahrzeug-Container, sanfte Ladungssicherung, klimabewusste Abwicklung und dokumentierte Fotoprotokolle von der Abholung bis zur Zustellung — maßgeschneidert für Händler, HNW-Besitzer und Auktionshäuser.',
+      'pc.hero.cta1': 'Premium-Angebot anfordern',
+      'pc.hero.cta2': 'Was Premium ausmacht',
+      'pc.intro.k': 'Der MTS Premium-Standard',
+      'pc.intro.h': 'Ein dedizierter Ablauf für hochwertige Fahrzeuge.',
+      'pc.intro.p1': 'Premiumfahrzeuge sind nicht nur teurer — sie sind schwerer zu ersetzen, und jeder kleine Handhabungsfehler fällt auf. MTS führt einen separaten Ablauf für Premium-Sendungen: Einzelfahrzeug-Container, White-Glove-Verladung, dedizierte Lagerung und einen Ansprechpartner, der Ihr Fahrzeug mit Namen kennt — nicht mit Buchungsnummer.',
+      'pc.intro.p2': 'Wir arbeiten regelmäßig mit Händlern, Spezialimporteuren, Auktionshäusern und Privatbesitzern, die ein Flaggschiff zwischen Residenzen bewegen. Jede Sendung endet mit der vollständigen Akte in Ihrem Posteingang — nicht nur mit einem Konnossement.',
+      'pc.inc.k': 'Standardmäßig enthalten',
+      'pc.inc.h': 'Was eine Premium-Buchung umfasst.',
+      'pc.l1': 'Einzelfahrzeug 20&#39; oder 40&#39; Container (keine geteilten Ladungen)',
+      'pc.l2': 'White-Glove-Abholung mit geschlossenem Trailer, wo angemessen',
+      'pc.l3': 'Zustandsbericht vor der Verladung mit hochauflösenden Fotos',
+      'pc.l4': 'Nur sanfte Radgurt-Sicherung — kein Chassis-Kontakt',
+      'pc.l5': 'Schutzabdeckungen auf Stoßfängern, Spiegeln und Türgriffen',
+      'pc.l6': 'Klimabewusste Lagerung in unserem Hamburger Lager',
+      'pc.l7': 'Zolldokumentation und Ausfuhranmeldung',
+      'pc.l8': 'Marineversicherungsangebot auf Anfrage',
+      'pc.l9': 'Benannter Ansprechpartner vom Angebot bis zur Zustellung',
+      'pc.l10': 'Haus-zu-Haus-Koordination am Zielort',
+      'pc.proc.k': 'So läuft es ab',
+      'pc.proc.h': 'Ein einfacher, dokumentierter Ablauf.',
+      'pc.proc.sub': 'Sechs Schritte von der ersten Anfrage bis zur Zustellung — jeder davon dokumentiert und mit Ihnen geteilt.',
+      'pc.proc.1.l': '01 · ANFRAGE',
+      'pc.proc.1.h': 'Senden Sie uns die Details',
+      'pc.proc.1.p': 'FIN, Abholadresse und Zielort — plus Fotos, falls Sie welche haben. Wir melden uns mit einem festen Angebot.',
+      'pc.proc.2.l': '02 · ABHOLUNG',
+      'pc.proc.2.h': 'White-Glove-Abholung',
+      'pc.proc.2.p': 'Geschlossener Transport zu unserem Hamburger Gelände, Zustandsbericht bei Ankunft unterschrieben.',
+      'pc.proc.3.l': '03 · VERLADUNG',
+      'pc.proc.3.h': 'Einzelfahrzeug-Container',
+      'pc.proc.3.p': 'Sanfte Ladungssicherung, Schutzabdeckungen, vollständiges Fotoset am Tag der Containerplombierung geteilt.',
+      'pc.proc.4.l': '04 · ZOLL',
+      'pc.proc.4.h': 'Exportdokumentation',
+      'pc.proc.4.p': 'EU-Ausfuhranmeldung, Konnossement und länderspezifische Zertifikate hausintern bearbeitet.',
+      'pc.proc.5.l': '05 · SEEREISE',
+      'pc.proc.5.h': 'Verfolgte Passage',
+      'pc.proc.5.p': 'Reederei- und Reisedetails bei Abfahrt geteilt, Statusupdates zu wichtigen Meilensteinen.',
+      'pc.proc.6.l': '06 · ZUSTELLUNG',
+      'pc.proc.6.h': 'Haus-zu-Haus-Übergabe',
+      'pc.proc.6.p': 'Zollabfertigung am Zielort, Endauslieferung über Partnerspediteur, Zustandsbericht gegengezeichnet.',
+      'pc.who.k': 'Für wen ist das',
+      'pc.who.h': 'Vertraut von Besitzern, denen die Details wichtig sind.',
+      'pc.who.c1.t': 'Sammler &amp; HNW-Besitzer',
+      'pc.who.c1.p': 'Bewegen eines Flaggschiffs, Wochenendfahrzeugs oder Teils einer Sammlung zwischen Residenzen oder zu einem Spezialisten im Ausland.',
+      'pc.who.c2.t': 'Händler &amp; Broker',
+      'pc.who.c2.p': 'Exportsendungen neuer oder gebrauchter Premiumfahrzeuge, bei denen Handhabungsfotos und saubere Papiere Teil des Verkaufs sind.',
+      'pc.who.c3.t': 'Auktionshäuser &amp; Spezialisten',
+      'pc.who.c3.p': 'Vor- und Nachverkaufstransport mit koordinierten Übergaben an den empfangenden Auktionator, Restaurator oder Händler.',
+      'pc.faq.k': 'Häufige Fragen',
+      'pc.faq.h': 'Premium-Versand FAQ.',
+      'pc.faq.q1': 'Warum ein Einzelfahrzeug-Container?',
+      'pc.faq.a1': 'Damit der Verladeplan rund um Ihr Fahrzeug gebaut wird — nicht rund um das, was sonst noch passt. Keine geteilten Trennwände, kein geteilter Zeitplan, kein Risiko, dass der Spiegel eines anderen Fahrzeugs Ihren bei der Sicherung streift.',
+      'pc.faq.q2': 'Wie steht es mit der Marineversicherung?',
+      'pc.faq.a2': 'Wir können auf Anfrage eine dedizierte Marinepolice basierend auf dem deklarierten Wert anbieten. Wir erklären Ihnen Selbstbehalt, Deckungssummen und Dokumentation, bevor Sie entscheiden.',
+      'pc.faq.q3': 'Kann ich das Fahrzeug vor der Verladung in Ihrem Lager besuchen?',
+      'pc.faq.a3': 'Ja. Unser Lager in der Billstraße 158 ist wenige Minuten vom Hamburger Hafen entfernt. Rufen Sie vorher an und wir vereinbaren einen Termin.',
+      'pc.faq.q4': 'Wie erfahre ich, was während der Passage passiert?',
+      'pc.faq.a4': 'Am Tag der Containerabfahrt erhalten Sie Schiffsname, Reisenummer und ETA. Wir melden proaktiv jede Zeitplanänderung.',
+      'pc.cta.k': 'Bereit zum Versenden?',
+      'pc.cta.h': 'Behandeln wir Ihr Fahrzeug so, wie Sie es tun.',
+      'pc.cta.p': 'Senden Sie uns FIN, Abholort und Zielort — unsere Spezialisten melden sich mit einem festen Angebot.',
+      'pc.cta.b': 'Premium-Angebot anfordern →',
     },
   };
 
@@ -1334,8 +1482,44 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
   }
 
+  function renderNav() {
+    const menus = document.querySelectorAll('.menu, .hm-menu');
+    if (!menus.length) return;
+    const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    const sub = ['customs-warehousing.html','vehicle-logistics.html','container-terminal.html','international-freight.html','classic-cars.html','premium-cars.html','services.html'];
+    const servicesOpen = sub.includes(path);
+    const activeAttr = p => p === path ? ' class="is-current active" aria-current="page"' : '';
+    menus.forEach(menu => {
+      const isHome = menu.classList.contains('hm-menu');
+      const linkCls = isHome ? '' : '';
+      menu.innerHTML = `
+        <a href="index.html"${activeAttr('index.html')} data-i18n="nav.home">Home</a>
+        <div class="nav-group${servicesOpen ? ' is-current-section' : ''}">
+          <button type="button" class="nav-group-toggle" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav.services">Services</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-dropdown" role="menu">
+            <a href="services.html"${activeAttr('services.html')} data-i18n="nav.services.all">All services</a>
+            <a href="customs-warehousing.html"${activeAttr('customs-warehousing.html')} data-i18n="nav.sub.cw">Customs warehousing</a>
+            <a href="vehicle-logistics.html"${activeAttr('vehicle-logistics.html')} data-i18n="nav.sub.vl">Vehicle logistics</a>
+            <a href="container-terminal.html"${activeAttr('container-terminal.html')} data-i18n="nav.sub.ct">Container terminal</a>
+            <a href="international-freight.html"${activeAttr('international-freight.html')} data-i18n="nav.sub.if">International freight</a>
+            <a href="classic-cars.html"${activeAttr('classic-cars.html')} data-i18n="nav.sub.cc">Classic cars</a>
+            <a href="premium-cars.html"${activeAttr('premium-cars.html')} data-i18n="nav.sub.pc">Premium cars</a>
+          </div>
+        </div>
+        <a href="destinations.html"${activeAttr('destinations.html')} data-i18n="nav.destinations">Destinations</a>
+        <a href="contact.html"${activeAttr('contact.html')} data-i18n="nav.contact">Contact</a>`;
+      const group = menu.querySelector('.nav-group');
+      const toggle = group.querySelector('.nav-group-toggle');
+      const closeAll = () => { group.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false'); };
+      toggle.addEventListener('click', e => { e.stopPropagation(); const open = !group.classList.contains('is-open'); group.classList.toggle('is-open', open); toggle.setAttribute('aria-expanded', String(open)); });
+      document.addEventListener('click', e => { if (!group.contains(e.target)) closeAll(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+    });
+  }
+
   function render() {
     renderTopbar();
+    renderNav();
     renderFooter();
     renderThemeToggle();
     renderDownloadsModal();
