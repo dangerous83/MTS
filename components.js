@@ -47,6 +47,15 @@
       'nav.sub.car': 'Car shipping',
       'nav.sub.ind': 'Individual solutions',
       'nav.sub.cc': 'Classic cars',
+      // Mega menu feature panel details + bottom bar
+      'nav.mega.feat.b1': 'Fixed quote in ~2 business hours',
+      'nav.mega.feat.b2': 'Single Hamburg point of contact',
+      'nav.mega.feat.b3': '100+ partner forwarders worldwide',
+      'nav.mega.bar.hours': 'Mo–Fr 9–18:00',
+      'nav.mega.bar.phone': '+49 (0)40 / 819 78 530',
+      'nav.mega.bar.email': 'info@mtsonline.de',
+      'nav.mega.bar.badge': 'LIVE',
+      'nav.mega.bar.reply': 'Operations desk online now · typical reply under 2h',
       // Mega menu descriptions
       'nav.sub.trucking.d': 'Container drayage &amp; short hauls out of Hamburg',
       'nav.sub.sea.d': 'FCL / LCL ocean freight worldwide',
@@ -711,6 +720,14 @@
       'nav.sub.car': 'Autoverschiffung',
       'nav.sub.ind': 'Individuelle Lösungen',
       'nav.sub.cc': 'Oldtimer',
+      'nav.mega.feat.b1': 'Festangebot in ca. 2 Werkstunden',
+      'nav.mega.feat.b2': 'Ein Hamburger Ansprechpartner',
+      'nav.mega.feat.b3': '100+ Partnerspediteure weltweit',
+      'nav.mega.bar.hours': 'Mo–Fr 9–18:00 Uhr',
+      'nav.mega.bar.phone': '+49 (0)40 / 819 78 530',
+      'nav.mega.bar.email': 'info@mtsonline.de',
+      'nav.mega.bar.badge': 'LIVE',
+      'nav.mega.bar.reply': 'Operations-Team online · Antwort meist unter 2h',
       'nav.sub.trucking.d': 'Container-Nahverkehr &amp; Vor-/Nachlauf ab Hamburg',
       'nav.sub.sea.d': 'FCL / LCL Seefracht weltweit',
       'nav.sub.air.d': 'Zeitkritische Luftfracht über Partner',
@@ -1641,11 +1658,23 @@
                 <span class="nav-mega-feature-badge" data-i18n="nav.mega.feat.k">NEED SOMETHING BESPOKE?</span>
                 <h4 data-i18n="nav.mega.feat.h">Individual solutions</h4>
                 <p data-i18n="nav.mega.feat.p">Non-standard routes, project cargo, out-of-gauge or combined mode shipments — talk to our Hamburg desk.</p>
+                <ul class="nav-mega-feature-list">
+                  <li data-i18n="nav.mega.feat.b1">Fixed quote in ~2 business hours</li>
+                  <li data-i18n="nav.mega.feat.b2">Single Hamburg point of contact</li>
+                  <li data-i18n="nav.mega.feat.b3">100+ partner forwarders worldwide</li>
+                </ul>
                 <div class="nav-mega-feature-actions">
                   <a class="nav-mega-cta" href="${svc.ind}"><span data-i18n="nav.mega.feat.cta">Talk to us</span> <span aria-hidden="true">→</span></a>
                   <a class="nav-mega-all" href="services.html" data-i18n="nav.services.all">All services →</a>
                 </div>
               </div>
+            </div>
+            <div class="nav-mega-bar">
+              <span class="nav-mega-bar-status"><span class="nav-mega-bar-dot" aria-hidden="true"></span><span data-i18n="nav.mega.bar.badge">LIVE</span> · <span data-i18n="nav.mega.bar.reply">Operations desk online now · typical reply under 2h</span></span>
+              <span class="nav-mega-bar-sep" aria-hidden="true"></span>
+              <a class="nav-mega-bar-link" href="tel:+494081978530"><img src="assets/icons/phone-call.svg" alt=""><span data-i18n="nav.mega.bar.phone">+49 (0)40 / 819 78 530</span></a>
+              <a class="nav-mega-bar-link" href="mailto:info@mtsonline.de"><img src="assets/icons/mail.svg" alt=""><span data-i18n="nav.mega.bar.email">info@mtsonline.de</span></a>
+              <span class="nav-mega-bar-hours"><img src="assets/icons/clock.svg" alt=""><span data-i18n="nav.mega.bar.hours">Mo–Fr 9–18:00</span></span>
             </div>
           </div>
         </div>
@@ -1653,10 +1682,19 @@
         <a href="contact.html"${activeAttr('contact.html')} data-i18n="nav.contact">Contact</a>`;
       const group = menu.querySelector('.nav-group');
       const toggle = group.querySelector('.nav-group-toggle');
-      const closeAll = () => { group.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false'); };
-      toggle.addEventListener('click', e => { e.stopPropagation(); const open = !group.classList.contains('is-open'); group.classList.toggle('is-open', open); toggle.setAttribute('aria-expanded', String(open)); });
-      document.addEventListener('click', e => { if (!group.contains(e.target)) closeAll(); });
-      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+      let closeTimer = null;
+      const open = () => { clearTimeout(closeTimer); group.classList.add('is-open'); toggle.setAttribute('aria-expanded','true'); };
+      const close = () => { group.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false'); };
+      const scheduleClose = () => { clearTimeout(closeTimer); closeTimer = setTimeout(close, 220); };
+      // Hover handling: open on enter, close with a small grace period so
+      // crossing the gap between the Services button and the mega panel
+      // never cancels the open state.
+      group.addEventListener('mouseenter', open);
+      group.addEventListener('mouseleave', scheduleClose);
+      toggle.addEventListener('focus', open);
+      toggle.addEventListener('click', e => { e.stopPropagation(); if (group.classList.contains('is-open')) close(); else open(); });
+      document.addEventListener('click', e => { if (!group.contains(e.target)) close(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
     });
   }
 
