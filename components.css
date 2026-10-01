@@ -175,3 +175,8 @@
 
 /* Hide any legacy floating widget from app.js/home.js */
 .mts-floating,.hm-float-stack,.hm-whatsapp-toggle{display:none!important}
+
+/* Stick the top utility bar together with the nav */
+.mts-topbar{position:sticky;top:0;z-index:40}
+.hm-header,.nav-wrap{top:var(--mts-topbar-h,44px)!important}
+@media(max-width:640px){.hm-header,.nav-wrap{top:var(--mts-topbar-h,76px)!important}}

@@ -1173,6 +1173,12 @@
       </div>`;
     bar.querySelectorAll('.mts-lang-btn').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
     bar.querySelector('[data-downloads-open]').addEventListener('click', openDownloads);
+    // Keep CSS variable in sync with the actual rendered height so the nav
+    // underneath stays flush with the sticky topbar on every viewport size.
+    const syncH = () => document.documentElement.style.setProperty('--mts-topbar-h', bar.offsetHeight + 'px');
+    syncH();
+    if (window.ResizeObserver) new ResizeObserver(syncH).observe(bar);
+    window.addEventListener('resize', syncH);
   }
 
   function renderDownloadsModal(force) {
