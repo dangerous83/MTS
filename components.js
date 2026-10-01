@@ -47,6 +47,22 @@
       'nav.sub.car': 'Car shipping',
       'nav.sub.ind': 'Individual solutions',
       'nav.sub.cc': 'Classic cars',
+      // Mega menu descriptions
+      'nav.sub.trucking.d': 'Container drayage &amp; short hauls out of Hamburg',
+      'nav.sub.sea.d': 'FCL / LCL ocean freight worldwide',
+      'nav.sub.air.d': 'Time-critical cargo via partner airlines',
+      'nav.sub.road.d': 'Groupage into Europe by road',
+      'nav.sub.rail.d': 'Combined routes to Central Asia &amp; CIS',
+      'nav.sub.car.d': '4–6 vehicles per 40&#39; HC, worldwide',
+      'nav.sub.cc.d': 'Enclosed single-vehicle container shipping',
+      'nav.sub.ind.d': 'Bespoke multimodal routes shaped around your file',
+      'nav.col.ground': 'GROUND & TERMINAL',
+      'nav.col.freight': 'INTERNATIONAL FREIGHT',
+      'nav.col.vehicles': 'VEHICLES',
+      'nav.mega.feat.k': 'NEED SOMETHING BESPOKE?',
+      'nav.mega.feat.h': 'Individual solutions',
+      'nav.mega.feat.p': 'Non-standard routes, project cargo, out-of-gauge or combined mode shipments — talk to our Hamburg desk.',
+      'nav.mega.feat.cta': 'Talk to us',
       // Downloads modal
       'dl.title': 'Downloads',
       'dl.subtitle': 'Documents you may need when working with MTS. Click any card to download the PDF.',
@@ -695,6 +711,21 @@
       'nav.sub.car': 'Autoverschiffung',
       'nav.sub.ind': 'Individuelle Lösungen',
       'nav.sub.cc': 'Oldtimer',
+      'nav.sub.trucking.d': 'Container-Nahverkehr &amp; Vor-/Nachlauf ab Hamburg',
+      'nav.sub.sea.d': 'FCL / LCL Seefracht weltweit',
+      'nav.sub.air.d': 'Zeitkritische Luftfracht über Partner',
+      'nav.sub.road.d': 'Straßensammelladung innerhalb Europas',
+      'nav.sub.rail.d': 'Kombinierte Routen nach Zentralasien &amp; GUS',
+      'nav.sub.car.d': '4–6 Fahrzeuge pro 40&#39; HC, weltweit',
+      'nav.sub.cc.d': 'Geschlossener Einzelfahrzeug-Containerversand',
+      'nav.sub.ind.d': 'Maßgeschneiderte multimodale Routen für Ihre Akte',
+      'nav.col.ground': 'STRASSE & TERMINAL',
+      'nav.col.freight': 'INTERNATIONALE SPEDITION',
+      'nav.col.vehicles': 'FAHRZEUGE',
+      'nav.mega.feat.k': 'ETWAS SPEZIELLES?',
+      'nav.mega.feat.h': 'Individuelle Lösungen',
+      'nav.mega.feat.p': 'Nicht-Standard-Routen, Projektladung, übergroße Fracht oder kombinierte Verkehrsträger — sprechen Sie mit unserem Hamburger Team.',
+      'nav.mega.feat.cta': 'Jetzt sprechen',
       'dl.title': 'Downloads',
       'dl.subtitle': 'Dokumente, die Sie in der Zusammenarbeit mit MTS benötigen. Klicken Sie auf eine Karte, um das PDF herunterzuladen.',
       'dl.close': 'Schließen',
@@ -1567,16 +1598,53 @@
         <a href="index.html"${activeAttr('index.html')} data-i18n="nav.home">Home</a>
         <div class="nav-group${servicesOpen ? ' is-current-section' : ''}">
           <button type="button" class="nav-group-toggle" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav.services">Services</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown" role="menu">
-            <a href="services.html"${activeAttr('services.html')} data-i18n="nav.services.all">All services</a>
-            <a href="${svc.trucking}"${isActive(svc.trucking)?' class="is-current active" aria-current="page"':''} data-i18n="nav.sub.trucking">Trucking</a>
-            <a href="${svc.sea}"${isActive(svc.sea)?' class="is-current active" aria-current="page"':''} data-i18n="nav.sub.sea">Seafreight</a>
-            <a href="${svc.air}"${isActive(svc.air)?' class="is-current active" aria-current="page"':''} data-i18n="nav.sub.air">Air freight</a>
-            <a href="${svc.road}"${isActive(svc.road)?' class="is-current active" aria-current="page"':''} data-i18n="nav.sub.road">Road transport</a>
-            <a href="${svc.rail}"${isActive(svc.rail)?' class="is-current active" aria-current="page"':''} data-i18n="nav.sub.rail">Rail transport</a>
-            <a href="${svc.car}"${isActive(svc.car)?' class="is-current active" aria-current="page"':''} data-i18n="nav.sub.car">Car shipping</a>
-            <a class="nav-sub" href="classic-cars.html"${activeAttr('classic-cars.html')} data-i18n="nav.classic">Classic &amp; Premium Cars</a>
-            <a href="${svc.ind}" data-i18n="nav.sub.ind">Individual solutions</a>
+          <div class="nav-dropdown nav-mega" role="menu">
+            <div class="nav-mega-grid">
+              <div class="nav-mega-col">
+                <h4 data-i18n="nav.col.ground">GROUND &amp; TERMINAL</h4>
+                <a href="${svc.trucking}" class="nav-mega-item">
+                  <span class="nav-mega-ico"><img src="assets/icons/svc-vehicle.svg" alt=""></span>
+                  <span><strong data-i18n="nav.sub.trucking">Trucking</strong><small data-i18n="nav.sub.trucking.d">Container drayage &amp; short hauls out of Hamburg</small></span>
+                </a>
+                <a href="${svc.road}" class="nav-mega-item">
+                  <span class="nav-mega-ico"><img src="assets/icons/svc-container.svg" alt=""></span>
+                  <span><strong data-i18n="nav.sub.road">Road transport</strong><small data-i18n="nav.sub.road.d">Groupage into Europe by road</small></span>
+                </a>
+              </div>
+              <div class="nav-mega-col">
+                <h4 data-i18n="nav.col.freight">INTERNATIONAL FREIGHT</h4>
+                <a href="${svc.sea}" class="nav-mega-item">
+                  <span class="nav-mega-ico"><img src="assets/icons/svc-freight.svg" alt=""></span>
+                  <span><strong data-i18n="nav.sub.sea">Seafreight</strong><small data-i18n="nav.sub.sea.d">FCL / LCL ocean freight worldwide</small></span>
+                </a>
+                <a href="${svc.air}" class="nav-mega-item">
+                  <span class="nav-mega-ico"><img src="assets/icons/svc-freight.svg" alt=""></span>
+                  <span><strong data-i18n="nav.sub.air">Air freight</strong><small data-i18n="nav.sub.air.d">Time-critical cargo via partner airlines</small></span>
+                </a>
+                <a href="${svc.rail}" class="nav-mega-item">
+                  <span class="nav-mega-ico"><img src="assets/icons/svc-freight.svg" alt=""></span>
+                  <span><strong data-i18n="nav.sub.rail">Rail transport</strong><small data-i18n="nav.sub.rail.d">Combined routes to Central Asia &amp; CIS</small></span>
+                </a>
+              </div>
+              <div class="nav-mega-col">
+                <h4 data-i18n="nav.col.vehicles">VEHICLES</h4>
+                <a href="${svc.car}" class="nav-mega-item">
+                  <span class="nav-mega-ico"><img src="assets/icons/svc-vehicle.svg" alt=""></span>
+                  <span><strong data-i18n="nav.sub.car">Car shipping</strong><small data-i18n="nav.sub.car.d">4–6 vehicles per 40&#39; HC, worldwide</small></span>
+                </a>
+                <a href="classic-cars.html" class="nav-mega-item"${activeAttr('classic-cars.html')}>
+                  <span class="nav-mega-ico"><img src="assets/icons/svc-vehicle.svg" alt=""></span>
+                  <span><strong data-i18n="nav.classic">Classic &amp; Premium Cars</strong><small data-i18n="nav.sub.cc.d">Enclosed single-vehicle container shipping</small></span>
+                </a>
+              </div>
+              <div class="nav-mega-feature">
+                <small data-i18n="nav.mega.feat.k">NEED SOMETHING BESPOKE?</small>
+                <h4 data-i18n="nav.mega.feat.h">Individual solutions</h4>
+                <p data-i18n="nav.mega.feat.p">Non-standard routes, project cargo, out-of-gauge or combined mode shipments — talk to our Hamburg desk.</p>
+                <a class="nav-mega-cta" href="${svc.ind}"><span data-i18n="nav.mega.feat.cta">Talk to us</span> <span aria-hidden="true">→</span></a>
+                <a class="nav-mega-all" href="services.html" data-i18n="nav.services.all">All services →</a>
+              </div>
+            </div>
           </div>
         </div>
         <a href="destinations.html"${activeAttr('destinations.html')} data-i18n="nav.destinations">Destinations</a>

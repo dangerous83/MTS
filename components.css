@@ -217,3 +217,46 @@
 
 /* Kill the hero-nav underline animation on dropdown items */
 .hm-menu .nav-dropdown a::after,.hm-menu .nav-dropdown a:hover::after{display:none;content:none}
+
+/* ==== Services mega menu ==== */
+.nav-group:has(.nav-mega){position:static}
+.nav-mega{left:50%;right:auto;transform:translate(-50%,6px);width:min(1080px,calc(100vw - 48px));padding:0;top:calc(100% + 14px);background:#fff;border:1px solid #e2e8ea;border-radius:10px;box-shadow:0 30px 60px rgba(3,19,29,.18)}
+.nav-group:hover .nav-mega,.nav-group.is-open .nav-mega,.nav-group:focus-within .nav-mega{transform:translate(-50%,0)}
+.nav-mega:before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
+.nav-mega-grid{display:grid;grid-template-columns:1.1fr 1.1fr 1.1fr 1.3fr;gap:0}
+.nav-mega-col{padding:22px 22px 20px;border-right:1px solid #eaeef0}
+.nav-mega-col h4,.nav-mega-feature small{display:block;font:800 10px 'DM Mono',monospace;color:#377c89;letter-spacing:.1em;margin:0 0 14px;text-transform:uppercase}
+.nav-mega-item{display:flex;gap:12px;align-items:flex-start;padding:10px;margin:-2px 0;border-radius:6px;color:var(--ink);text-decoration:none;transition:background .15s,transform .15s}
+.nav-mega-item:hover{background:#eef5f6;transform:translateX(2px)}
+.nav-mega-item strong{display:block;font-size:13px;line-height:1.3;letter-spacing:0;color:var(--ink);font-weight:800}
+.nav-mega-item small{display:block;margin-top:3px;font:500 11px/1.4 Manrope,sans-serif;color:#637077;letter-spacing:0;text-transform:none}
+.nav-mega-item.is-current strong,.nav-mega-item.active strong{color:var(--hm-blue,#0b6281)}
+.nav-mega-ico{display:grid;place-items:center;width:34px;height:34px;background:linear-gradient(135deg,#eaf3f5,#d8ecee);border-radius:8px;flex:none;color:#0b6281}
+.nav-mega-ico img{width:18px;height:18px;filter:brightness(0) saturate(100%) invert(22%) sepia(44%) saturate(820%) hue-rotate(159deg) brightness(94%) contrast(87%)}
+.nav-mega-feature{background:linear-gradient(160deg,#0b6281,#123d79);color:#fff;padding:24px 22px;border-radius:0 10px 10px 0;display:flex;flex-direction:column}
+.nav-mega-feature small{color:#a2dce0}
+.nav-mega-feature h4{margin:0 0 10px;font-size:19px;line-height:1.2;color:#fff;font-weight:800;text-transform:none;letter-spacing:-.01em}
+.nav-mega-feature p{margin:0 0 16px;font:500 12px/1.55 Manrope,sans-serif;color:#cde1e5;letter-spacing:0}
+.nav-mega-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;background:#fff;color:#0b6281;font:800 11px Manrope,sans-serif;text-transform:uppercase;letter-spacing:.06em;border-radius:5px;align-self:flex-start;transition:gap .2s,background .2s}
+.nav-mega-cta:hover{background:#eaf3f5;gap:12px}
+.nav-mega-all{margin-top:14px;font:600 11px 'DM Mono',monospace;color:#a2dce0;letter-spacing:.06em;text-decoration:none}
+.nav-mega-all:hover{color:#fff}
+/* Hide first-child styling override that targeted old simple dropdown */
+.nav-mega a:first-child{border:0;margin:0;padding:10px;font-weight:800;font-size:13px;text-transform:none;letter-spacing:0;color:var(--ink)}
+.nav-mega a.nav-mega-all:first-child{padding:0;color:#a2dce0}
+@media(max-width:980px){
+  .nav-mega{position:static;transform:none;width:auto;max-width:none;box-shadow:none;border:0;border-left:2px solid #e2e8ea;border-radius:0;padding:4px 0 10px;margin:6px 0 10px 2px;background:transparent;display:none}
+  .nav-group.is-open .nav-mega{display:block}
+  .nav-mega-grid{grid-template-columns:1fr;gap:0}
+  .nav-mega-col{padding:6px 12px;border-right:0;border-bottom:1px solid #eaeef0}
+  .nav-mega-feature{padding:16px 12px;border-radius:6px;margin:10px 0 0}
+  .nav-mega-feature h4{font-size:16px}
+}
+[data-theme="dark"] .nav-mega{background:#1b2c3f;border-color:#345065}
+[data-theme="dark"] .nav-mega-col{border-right-color:#2b465c}
+[data-theme="dark"] .nav-mega-item strong{color:#eaf2f5}
+[data-theme="dark"] .nav-mega-item small{color:#9fb4bf}
+[data-theme="dark"] .nav-mega-item:hover{background:#22384f}
+[data-theme="dark"] .nav-mega-ico{background:#0f2135}
+
+/* Hero image uniqueness: swap About + News to final distinct crops */

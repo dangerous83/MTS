@@ -118,3 +118,13 @@ body.page-destinations .page-hero{background-image:linear-gradient(90deg,rgba(5,
 [data-theme="dark"] .svc-card-cta{color:#8fd3e0;border-top-color:#2b465c}
 [data-theme="dark"] .svc-why-stats>div{background:#1b2c3f;border-color:#345065}
 [data-theme="dark"] .svc-why-stats b{color:#8fd3e0}
+
+/* Make shared hero images unmistakably distinct via overlay + crop */
+body.page-services .page-hero{background-image:linear-gradient(90deg,rgba(3,19,29,.9),rgba(11,98,129,.35)),url('assets/port-hero.png');background-position:center 65%}
+body.page-about .page-hero{background-image:linear-gradient(90deg,rgba(20,8,36,.85),rgba(68,30,120,.35)),url('assets/port-hero.png');background-position:center 10%;filter:none}
+body.page-cc .page-hero{background-image:linear-gradient(90deg,rgba(55,20,0,.75),rgba(140,70,20,.3)),url('assets/vehicle-hero.png');background-position:center 35%}
+body.page-ct .page-hero{background-image:linear-gradient(90deg,rgba(3,30,40,.85),rgba(5,120,140,.3)),url('assets/container-yard.png');background-position:center 70%}
+body.page-news .page-hero{background-image:linear-gradient(90deg,rgba(10,6,30,.85),rgba(60,40,120,.3)),url('assets/container-yard.png');background-position:center 15%}
+body.page-destinations .page-hero{background-image:linear-gradient(90deg,rgba(5,33,48,.86),rgba(11,98,129,.35)),url('assets/freight-hero.png');background-position:70% 50%}
+body.page-if .page-hero{background-image:linear-gradient(90deg,rgba(3,19,29,.88),rgba(3,19,29,.3)),url('assets/freight-hero.png');background-position:center 55%}
+body.page-vl .page-hero{background-image:linear-gradient(90deg,rgba(3,19,29,.82),rgba(3,19,29,.35)),url('assets/vehicle-hero.png');background-position:center 60%}
