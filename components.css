@@ -211,3 +211,6 @@
 .nav-dropdown a.nav-sub:hover{color:var(--hm-blue,#0b6281);background:#eef5f6}
 [data-theme="dark"] .nav-dropdown a.nav-sub{background:#162737;color:#9fb4bf}
 [data-theme="dark"] .nav-dropdown a.nav-sub:before{background:#4e687a}
+
+/* Swap nav logo to white variant in dark mode */
+[data-theme="dark"] .brand img,[data-theme="dark"] .hm-brand img,[data-theme="dark"] .site-footer-brand img{content:url('assets/mts-logo-white.png')}
