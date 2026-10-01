@@ -39,12 +39,14 @@
       'nav.quote': 'Request a quote',
       'nav.premium': 'Premium Cars',
       'nav.services.all': 'All services',
-      'nav.sub.cw': 'Customs warehousing',
-      'nav.sub.vl': 'Vehicle logistics',
-      'nav.sub.ct': 'Container terminal',
-      'nav.sub.if': 'International freight',
+      'nav.sub.trucking': 'Trucking',
+      'nav.sub.sea': 'Seafreight',
+      'nav.sub.air': 'Air freight',
+      'nav.sub.road': 'Road transport',
+      'nav.sub.rail': 'Rail transport',
+      'nav.sub.car': 'Car shipping',
+      'nav.sub.ind': 'Individual solutions',
       'nav.sub.cc': 'Classic cars',
-      'nav.sub.pc': 'Premium cars',
       // Downloads modal
       'dl.title': 'Downloads',
       'dl.subtitle': 'Documents you may need when working with MTS. Click any card to download the PDF.',
@@ -685,12 +687,14 @@
       'nav.quote': 'Angebot anfordern',
       'nav.premium': 'Premiumfahrzeuge',
       'nav.services.all': 'Alle Leistungen',
-      'nav.sub.cw': 'Zolllager',
-      'nav.sub.vl': 'Fahrzeuglogistik',
-      'nav.sub.ct': 'Container-Terminal',
-      'nav.sub.if': 'Internationale Spedition',
+      'nav.sub.trucking': 'Trucking',
+      'nav.sub.sea': 'Seefracht',
+      'nav.sub.air': 'Luftfracht',
+      'nav.sub.road': 'Straßentransport',
+      'nav.sub.rail': 'Schienentransport',
+      'nav.sub.car': 'Autoverschiffung',
+      'nav.sub.ind': 'Individuelle Lösungen',
       'nav.sub.cc': 'Oldtimer',
-      'nav.sub.pc': 'Premiumfahrzeuge',
       'dl.title': 'Downloads',
       'dl.subtitle': 'Dokumente, die Sie in der Zusammenarbeit mit MTS benötigen. Klicken Sie auf eine Karte, um das PDF herunterzuladen.',
       'dl.close': 'Schließen',
@@ -1543,6 +1547,17 @@
     if (!menus.length) return;
     const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
     const sub = ['customs-warehousing.html','vehicle-logistics.html','container-terminal.html','international-freight.html','classic-cars.html','services.html'];
+    // Map dropdown items → page/anchor they open
+    const svc = {
+      trucking: 'vehicle-logistics.html',
+      sea:      'international-freight.html#sea',
+      air:      'international-freight.html#air',
+      road:     'container-terminal.html',
+      rail:     'international-freight.html#rail',
+      car:      'vehicle-logistics.html',
+      ind:      'contact.html#quote',
+    };
+    const isActive = url => url.split('#')[0] === path;
     const servicesOpen = sub.includes(path);
     const activeAttr = p => p === path ? ' class="is-current active" aria-current="page"' : '';
     menus.forEach(menu => {
@@ -1554,11 +1569,14 @@
           <button type="button" class="nav-group-toggle" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav.services">Services</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="nav-dropdown" role="menu">
             <a href="services.html"${activeAttr('services.html')} data-i18n="nav.services.all">All services</a>
-            <a href="customs-warehousing.html"${activeAttr('customs-warehousing.html')} data-i18n="nav.sub.cw">Customs warehousing</a>
-            <a href="vehicle-logistics.html"${activeAttr('vehicle-logistics.html')} data-i18n="nav.sub.vl">Vehicle logistics</a>
+            <a href="${svc.trucking}"${isActive(svc.trucking)?' class="is-current active" aria-current="page"':''} data-i18n="nav.sub.trucking">Trucking</a>
+            <a href="${svc.sea}"${isActive(svc.sea)?' class="is-current active" aria-current="page"':''} data-i18n="nav.sub.sea">Seafreight</a>
+            <a href="${svc.air}"${isActive(svc.air)?' class="is-current active" aria-current="page"':''} data-i18n="nav.sub.air">Air freight</a>
+            <a href="${svc.road}"${isActive(svc.road)?' class="is-current active" aria-current="page"':''} data-i18n="nav.sub.road">Road transport</a>
+            <a href="${svc.rail}"${isActive(svc.rail)?' class="is-current active" aria-current="page"':''} data-i18n="nav.sub.rail">Rail transport</a>
+            <a href="${svc.car}"${isActive(svc.car)?' class="is-current active" aria-current="page"':''} data-i18n="nav.sub.car">Car shipping</a>
             <a class="nav-sub" href="classic-cars.html"${activeAttr('classic-cars.html')} data-i18n="nav.classic">Classic &amp; Premium Cars</a>
-            <a href="container-terminal.html"${activeAttr('container-terminal.html')} data-i18n="nav.sub.ct">Container terminal</a>
-            <a href="international-freight.html"${activeAttr('international-freight.html')} data-i18n="nav.sub.if">International freight</a>
+            <a href="${svc.ind}" data-i18n="nav.sub.ind">Individual solutions</a>
           </div>
         </div>
         <a href="destinations.html"${activeAttr('destinations.html')} data-i18n="nav.destinations">Destinations</a>
