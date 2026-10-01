@@ -214,3 +214,6 @@
 
 /* Swap nav logo to white variant in dark mode */
 [data-theme="dark"] .brand img,[data-theme="dark"] .hm-brand img,[data-theme="dark"] .site-footer-brand img{content:url('assets/mts-logo-white.png')}
+
+/* Kill the hero-nav underline animation on dropdown items */
+.hm-menu .nav-dropdown a::after,.hm-menu .nav-dropdown a:hover::after{display:none;content:none}
