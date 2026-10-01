@@ -80,3 +80,41 @@ body.page-ct .page-hero{background-image:linear-gradient(90deg,rgba(3,19,29,.86)
 body.page-if .page-hero{background-image:linear-gradient(90deg,rgba(3,19,29,.86),rgba(3,19,29,.3)),url('assets/freight-hero.png');background-position:center 55%}
 body.page-cc .page-hero{background-image:linear-gradient(90deg,rgba(3,19,29,.88),rgba(3,19,29,.25)),url('assets/vehicle-hero.png');background-position:center 40%}
 body.page-destinations .page-hero{background-image:linear-gradient(90deg,rgba(5,33,48,.86),rgba(11,98,129,.35)),url('assets/freight-hero.png');background-position:70% 50%}
+
+/* === Services page: rich card grid, Why MTS strip === */
+.svc-head{max-width:780px;margin-bottom:48px}
+.svc-head h2{margin:12px 0 14px;font-size:clamp(30px,3vw,42px);line-height:1.15}
+.svc-head p{font-size:17px;line-height:1.7;margin:0}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.svc-card{position:relative;display:flex;flex-direction:column;gap:16px;padding:34px;border:1px solid var(--line);background:#fff;color:var(--ink);transition:transform .25s,border-color .25s,box-shadow .25s;overflow:hidden;border-radius:3px}
+.svc-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,#0b6281,#79d2d7);transform:scaleY(.3);transform-origin:top;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.svc-card:hover{transform:translateY(-4px);border-color:#0b6281;box-shadow:0 20px 44px rgba(11,98,129,.12)}
+.svc-card:hover:before{transform:scaleY(1)}
+.svc-card-icon{width:60px;height:60px;display:grid;place-items:center;background:linear-gradient(135deg,#eaf3f5,#d8ecee);border-radius:12px;color:#0b6281;flex:none}
+.svc-card-icon img{width:30px;height:30px}
+.svc-card-head small{display:block;font:600 11px 'DM Mono',monospace;color:#377c89;letter-spacing:.08em;margin-bottom:6px}
+.svc-card-head h3{margin:0;font-size:24px;line-height:1.2;letter-spacing:-.01em}
+.svc-card>p{margin:0;color:#53616a;line-height:1.65;font-size:15px}
+.svc-card-feats{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-direction:column;gap:9px}
+.svc-card-feats li{position:relative;padding-left:22px;font-size:14px;color:var(--ink);font-weight:500}
+.svc-card-feats li:before{content:"";position:absolute;left:0;top:7px;width:12px;height:8px;background:linear-gradient(45deg,transparent 50%,#0b6281 50%,#0b6281 65%,transparent 65%);mask:linear-gradient(45deg,transparent 48%,#000 48%,#000 60%,transparent 60%),linear-gradient(-45deg,transparent 48%,#000 48%,#000 60%,transparent 60%);-webkit-mask:linear-gradient(45deg,transparent 48%,#000 48%,#000 60%,transparent 60%),linear-gradient(-45deg,transparent 48%,#000 48%,#000 60%,transparent 60%)}
+.svc-card-feats li:before{background:transparent;border-left:2px solid #0b6281;border-bottom:2px solid #0b6281;transform:rotate(-45deg);width:9px;height:5px;top:6px;mask:none;-webkit-mask:none}
+.svc-card-cta{margin-top:auto;display:inline-flex;align-items:center;gap:8px;padding-top:14px;border-top:1px solid #eaeef0;color:#0b6281;font-weight:800;font-size:12px;letter-spacing:.06em;text-transform:uppercase;transition:gap .2s}
+.svc-card:hover .svc-card-cta{gap:12px}
+.svc-why{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.svc-why-copy h2{margin:12px 0 16px;font-size:clamp(26px,2.6vw,38px);line-height:1.2}
+.svc-why-copy p{color:#53616a;line-height:1.7;font-size:16px;margin:0}
+.svc-why-stats{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.svc-why-stats>div{padding:28px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.svc-why-stats b{display:block;font-size:38px;line-height:1;color:#0b6281;font-weight:800;letter-spacing:-.02em}
+.svc-why-stats span{display:block;margin-top:10px;font-size:13px;color:#53616a;line-height:1.4}
+@media(max-width:900px){.svc-grid{grid-template-columns:1fr}.svc-why{grid-template-columns:1fr;gap:36px}}
+@media(max-width:640px){.svc-card{padding:26px}.svc-card-head h3{font-size:20px}.svc-why-stats b{font-size:30px}.svc-why-stats>div{padding:22px 18px}}
+[data-theme="dark"] .svc-card{background:#1b2c3f;border-color:#345065;color:#eaf2f5}
+[data-theme="dark"] .svc-card>p,[data-theme="dark"] .svc-why-copy p,[data-theme="dark"] .svc-why-stats span,[data-theme="dark"] .svc-head p{color:#b7cbd5}
+[data-theme="dark"] .svc-card-feats li{color:#eaf2f5}
+[data-theme="dark"] .svc-card-icon{background:#0f2135;color:#8fd3e0}
+[data-theme="dark"] .svc-card-icon img{filter:brightness(0) invert(1)}
+[data-theme="dark"] .svc-card-cta{color:#8fd3e0;border-top-color:#2b465c}
+[data-theme="dark"] .svc-why-stats>div{background:#1b2c3f;border-color:#345065}
+[data-theme="dark"] .svc-why-stats b{color:#8fd3e0}
