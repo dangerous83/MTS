@@ -1486,7 +1486,7 @@
     const menus = document.querySelectorAll('.menu, .hm-menu');
     if (!menus.length) return;
     const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-    const sub = ['customs-warehousing.html','vehicle-logistics.html','container-terminal.html','international-freight.html','classic-cars.html','premium-cars.html','services.html'];
+    const sub = ['customs-warehousing.html','vehicle-logistics.html','container-terminal.html','international-freight.html','classic-cars.html','services.html'];
     const servicesOpen = sub.includes(path);
     const activeAttr = p => p === path ? ' class="is-current active" aria-current="page"' : '';
     menus.forEach(menu => {
@@ -1500,10 +1500,9 @@
             <a href="services.html"${activeAttr('services.html')} data-i18n="nav.services.all">All services</a>
             <a href="customs-warehousing.html"${activeAttr('customs-warehousing.html')} data-i18n="nav.sub.cw">Customs warehousing</a>
             <a href="vehicle-logistics.html"${activeAttr('vehicle-logistics.html')} data-i18n="nav.sub.vl">Vehicle logistics</a>
+            <a class="nav-sub" href="classic-cars.html"${activeAttr('classic-cars.html')} data-i18n="nav.classic">Classic &amp; Premium Cars</a>
             <a href="container-terminal.html"${activeAttr('container-terminal.html')} data-i18n="nav.sub.ct">Container terminal</a>
             <a href="international-freight.html"${activeAttr('international-freight.html')} data-i18n="nav.sub.if">International freight</a>
-            <a href="classic-cars.html"${activeAttr('classic-cars.html')} data-i18n="nav.sub.cc">Classic cars</a>
-            <a href="premium-cars.html"${activeAttr('premium-cars.html')} data-i18n="nav.sub.pc">Premium cars</a>
           </div>
         </div>
         <a href="destinations.html"${activeAttr('destinations.html')} data-i18n="nav.destinations">Destinations</a>

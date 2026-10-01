@@ -206,3 +206,8 @@
 [data-theme="dark"] .nav-dropdown a{color:#eaf2f5}
 [data-theme="dark"] .nav-dropdown a:hover{background:#22384f;color:#8fd3e0}
 [data-theme="dark"] .nav-dropdown a:first-child{color:#8fd3e0;border-bottom-color:#345065}
+.nav-dropdown a.nav-sub{padding-left:38px;position:relative;font-size:12.5px;color:#4a606b;background:#f6fafa}
+.nav-dropdown a.nav-sub:before{content:"";position:absolute;left:22px;top:50%;width:8px;height:1px;background:#9aafb6}
+.nav-dropdown a.nav-sub:hover{color:var(--hm-blue,#0b6281);background:#eef5f6}
+[data-theme="dark"] .nav-dropdown a.nav-sub{background:#162737;color:#9fb4bf}
+[data-theme="dark"] .nav-dropdown a.nav-sub:before{background:#4e687a}
