@@ -1617,42 +1617,15 @@
           <button type="button" class="nav-group-toggle" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav.services">Services</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="nav-dropdown nav-mega" role="menu">
             <div class="nav-mega-grid">
-              <div class="nav-mega-col">
-                <h4 data-i18n="nav.col.ground">GROUND &amp; TERMINAL</h4>
-                <a href="${svc.trucking}" class="nav-mega-item">
-                  <span class="nav-mega-ico"><img src="assets/icons/svc-vehicle.svg" alt=""></span>
-                  <span><strong data-i18n="nav.sub.trucking">Trucking</strong><small data-i18n="nav.sub.trucking.d">Container drayage &amp; short hauls out of Hamburg</small></span>
-                </a>
-                <a href="${svc.road}" class="nav-mega-item">
-                  <span class="nav-mega-ico"><img src="assets/icons/svc-container.svg" alt=""></span>
-                  <span><strong data-i18n="nav.sub.road">Road transport</strong><small data-i18n="nav.sub.road.d">Groupage into Europe by road</small></span>
-                </a>
-              </div>
-              <div class="nav-mega-col">
-                <h4 data-i18n="nav.col.freight">INTERNATIONAL FREIGHT</h4>
-                <a href="${svc.sea}" class="nav-mega-item">
-                  <span class="nav-mega-ico"><img src="assets/icons/svc-freight.svg" alt=""></span>
-                  <span><strong data-i18n="nav.sub.sea">Seafreight</strong><small data-i18n="nav.sub.sea.d">FCL / LCL ocean freight worldwide</small></span>
-                </a>
-                <a href="${svc.air}" class="nav-mega-item">
-                  <span class="nav-mega-ico"><img src="assets/icons/svc-freight.svg" alt=""></span>
-                  <span><strong data-i18n="nav.sub.air">Air freight</strong><small data-i18n="nav.sub.air.d">Time-critical cargo via partner airlines</small></span>
-                </a>
-                <a href="${svc.rail}" class="nav-mega-item">
-                  <span class="nav-mega-ico"><img src="assets/icons/svc-freight.svg" alt=""></span>
-                  <span><strong data-i18n="nav.sub.rail">Rail transport</strong><small data-i18n="nav.sub.rail.d">Combined routes to Central Asia &amp; CIS</small></span>
-                </a>
-              </div>
-              <div class="nav-mega-col">
-                <h4 data-i18n="nav.col.vehicles">VEHICLES</h4>
-                <a href="${svc.car}" class="nav-mega-item">
-                  <span class="nav-mega-ico"><img src="assets/icons/svc-vehicle.svg" alt=""></span>
-                  <span><strong data-i18n="nav.sub.car">Car shipping</strong><small data-i18n="nav.sub.car.d">4–6 vehicles per 40&#39; HC, worldwide</small></span>
-                </a>
-                <a href="classic-cars.html" class="nav-mega-item"${activeAttr('classic-cars.html')}>
-                  <span class="nav-mega-ico"><img src="assets/icons/svc-vehicle.svg" alt=""></span>
-                  <span><strong data-i18n="nav.classic">Classic &amp; Premium Cars</strong><small data-i18n="nav.sub.cc.d">Enclosed single-vehicle container shipping</small></span>
-                </a>
+              <div class="nav-mega-items">
+                <a href="${svc.trucking}" class="nav-mega-item"><span class="nav-mega-ico"><img src="assets/icons/svc-vehicle.svg" alt=""></span><span class="nav-mega-text"><strong data-i18n="nav.sub.trucking">Trucking</strong><small data-i18n="nav.sub.trucking.d">Container drayage &amp; short hauls out of Hamburg</small></span></a>
+                <a href="${svc.sea}" class="nav-mega-item"><span class="nav-mega-ico"><img src="assets/icons/svc-freight.svg" alt=""></span><span class="nav-mega-text"><strong data-i18n="nav.sub.sea">Seafreight</strong><small data-i18n="nav.sub.sea.d">FCL / LCL ocean freight worldwide</small></span></a>
+                <a href="${svc.car}" class="nav-mega-item"><span class="nav-mega-ico"><img src="assets/icons/svc-vehicle.svg" alt=""></span><span class="nav-mega-text"><strong data-i18n="nav.sub.car">Car shipping</strong><small data-i18n="nav.sub.car.d">4–6 vehicles per 40&#39; HC, worldwide</small></span></a>
+                <a href="${svc.road}" class="nav-mega-item"><span class="nav-mega-ico"><img src="assets/icons/svc-container.svg" alt=""></span><span class="nav-mega-text"><strong data-i18n="nav.sub.road">Road transport</strong><small data-i18n="nav.sub.road.d">Groupage into Europe by road</small></span></a>
+                <a href="${svc.air}" class="nav-mega-item"><span class="nav-mega-ico"><img src="assets/icons/svc-freight.svg" alt=""></span><span class="nav-mega-text"><strong data-i18n="nav.sub.air">Air freight</strong><small data-i18n="nav.sub.air.d">Time-critical cargo via partner airlines</small></span></a>
+                <a href="classic-cars.html" class="nav-mega-item"${activeAttr('classic-cars.html')}><span class="nav-mega-ico"><img src="assets/icons/svc-vehicle.svg" alt=""></span><span class="nav-mega-text"><strong data-i18n="nav.classic">Classic &amp; Premium Cars</strong><small data-i18n="nav.sub.cc.d">Enclosed single-vehicle container shipping</small></span></a>
+                <a href="${svc.rail}" class="nav-mega-item"><span class="nav-mega-ico"><img src="assets/icons/svc-freight.svg" alt=""></span><span class="nav-mega-text"><strong data-i18n="nav.sub.rail">Rail transport</strong><small data-i18n="nav.sub.rail.d">Combined routes to Central Asia &amp; CIS</small></span></a>
+                <a href="services.html" class="nav-mega-item nav-mega-all-card"><span class="nav-mega-ico"><img src="assets/icons/svc-customs.svg" alt=""></span><span class="nav-mega-text"><strong data-i18n="nav.services.all">All services</strong><small>Overview of what MTS handles →</small></span></a>
               </div>
               <div class="nav-mega-feature">
                 <span class="nav-mega-feature-badge" data-i18n="nav.mega.feat.k">NEED SOMETHING BESPOKE?</span>
@@ -1661,12 +1634,8 @@
                 <ul class="nav-mega-feature-list">
                   <li data-i18n="nav.mega.feat.b1">Fixed quote in ~2 business hours</li>
                   <li data-i18n="nav.mega.feat.b2">Single Hamburg point of contact</li>
-                  <li data-i18n="nav.mega.feat.b3">100+ partner forwarders worldwide</li>
                 </ul>
-                <div class="nav-mega-feature-actions">
-                  <a class="nav-mega-cta" href="${svc.ind}"><span data-i18n="nav.mega.feat.cta">Talk to us</span> <span aria-hidden="true">→</span></a>
-                  <a class="nav-mega-all" href="services.html" data-i18n="nav.services.all">All services →</a>
-                </div>
+                <a class="nav-mega-cta" href="${svc.ind}"><span data-i18n="nav.mega.feat.cta">Talk to us</span> <span aria-hidden="true">→</span></a>
               </div>
             </div>
             <div class="nav-mega-bar">
