@@ -68,6 +68,6 @@
 @media(max-width:620px){.page-hero .wrap{padding-top:100px;padding-bottom:70px}.page-hero-sub{font-size:14px;margin-top:16px}.page-hero-meta{margin-top:20px;gap:7px}.page-hero-meta span{font-size:10px;padding:6px 11px}.page-hero-actions{margin-top:24px;gap:9px;flex-direction:column;align-items:stretch}.page-hero-actions .button{min-width:0;width:100%;padding:13px 16px;font-size:11px}}
 
 /* Per-page hero backgrounds */
-body.page-about .page-hero{background-image:linear-gradient(90deg,rgba(3,19,29,.86),rgba(3,19,29,.3)),url('assets/about-hero.jpg')}
-body.page-destinations .page-hero{background-image:linear-gradient(90deg,rgba(3,19,29,.86),rgba(3,19,29,.3)),url('assets/destinations-hero.jpg')}
-body.page-news .page-hero{background-image:linear-gradient(90deg,rgba(3,19,29,.86),rgba(3,19,29,.3)),url('assets/news-hero.jpg')}
+body.page-about .page-hero{background-image:linear-gradient(90deg,rgba(3,19,29,.86),rgba(3,19,29,.3)),url('assets/freight-hero.png')}
+body.page-destinations .page-hero{background-image:linear-gradient(90deg,rgba(3,19,29,.86),rgba(3,19,29,.3)),url('assets/port-hero.png');background-position:center 30%}
+body.page-news .page-hero{background-image:linear-gradient(90deg,rgba(3,19,29,.86),rgba(3,19,29,.3)),url('assets/container-yard.png');background-position:center 40%}
