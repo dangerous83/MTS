@@ -146,9 +146,19 @@
       'h.float.wa': 'WhatsApp',
       'h.float.ask': 'Ask MTS',
 
+      // Shared hero meta pills
+      'g.meta.hamburg': 'Based in Hamburg',
+      'g.meta.since': 'Since 2003',
+      'g.meta.worldwide': '100+ destinations',
+      'g.cta.quote': 'Request a quote',
+      'g.cta.contact': 'Talk to our team',
+
       // ==== ABOUT (about.html) ====
       'a.hero.k': 'About MTS',
       'a.hero.t': 'International forwarders with Hamburg at our core.',
+      'a.hero.sub': 'Mangal Transport &amp; Shipping GmbH is a Hamburg-based international freight forwarder since 2003 — handling customs, vehicle logistics and worldwide container shipping from Billstrasse 158, Rothenburgsort.',
+      'a.hero.cta1': 'Request a quote',
+      'a.hero.cta2': 'Meet our team',
       'a.intro.k': 'The MTS story',
       'a.intro.h': 'More than two decades of moving cargo out of Hamburg.',
       'a.intro.p1': '<strong>Mangal Transport &amp; Shipping GmbH</strong> — MTS — has been a Hamburg-based international freight forwarder since 2003. From our operational base at Billstrasse 158 in Rothenburgsort, a short drive from the container terminals of the Port of Hamburg, we plan, prepare and dispatch cargo to Europe, the Americas, Asia, Africa and every country of the Near and Middle East.',
@@ -204,6 +214,9 @@
       // ==== DESTINATIONS (destinations.html) ====
       'd.hero.k': 'Destinations',
       'd.hero.t': 'Hamburg to the world&#39;s growth markets.',
+      'd.hero.sub': 'Container, RoRo and groupage services from the Port of Hamburg to the Near and Middle East, Central Asia, Africa, the Americas and Asia — more than one hundred countries through our partner network.',
+      'd.hero.cta1': 'Request a route plan',
+      'd.hero.cta2': 'Browse regions',
       'd.intro.k': 'Where we go often',
       'd.intro.h': 'Knowledge travels with your cargo.',
       'd.intro.p1': 'From our yard at Billstrasse and the container terminals of the Port of Hamburg, MTS books, loads and dispatches shipments to more than one hundred countries. Some lanes we run week in, week out — Dubai, Iraq, Afghanistan, Angola, Nigeria — and on those we know the paperwork, the receivers and the sailing schedule by heart. Others we route through partner networks we have worked with for years, so a shipment leaving Hamburg is met by people we know at the other end.',
@@ -295,6 +308,9 @@
       // ==== NEWS (news.html) ====
       'n.hero.k': 'News &amp; Insights',
       'n.hero.t': 'Notes from the yard, the port and the route.',
+      'n.hero.sub': 'Practical insight from the MTS operations team — container loading practice, export documentation, route updates and project stories from the Port of Hamburg.',
+      'n.hero.cta1': 'Browse latest',
+      'n.hero.cta2': 'Talk to the team',
       'n.intro.k': 'Latest',
       'n.intro.h': 'Shipping insight and project stories.',
       'n.intro.p': 'Practical notes from the MTS operations team — the details behind a smooth container load, the paperwork that stops a shipment at customs, the routes we watch this quarter, and the projects that made us think.',
@@ -385,6 +401,9 @@
       // ==== SERVICES (services.html) ====
       's.hero.k': 'Services',
       's.hero.t': 'Freight forwarding, one file at a time.',
+      's.hero.sub': 'Customs warehousing, vehicle logistics, container terminal work and international freight — four practical divisions, one operational team from booking through arrival.',
+      's.hero.cta1': 'Request a quote',
+      's.hero.cta2': 'See all services',
       's.intro.k': 'Four practical divisions',
       's.intro.h': 'Everything a Hamburg forwarder does, under one roof.',
       's.intro.p': 'Customs warehousing, vehicle logistics, container terminal work and international freight — with one operational team that stays with the file from booking to arrival.',
@@ -441,6 +460,9 @@
       // ==== Sub-service pages ====
       'cw.hero.k': 'Services / 01',
       'cw.hero.t': 'Customs Warehousing & Customs Handling',
+      'cw.hero.sub': 'Bonded storage, T1/T2 procedures, customs inspections and full export documentation near the Port of Hamburg — handled on our own yard by one team.',
+      'cw.hero.cta1': 'Request a quote',
+      'cw.hero.cta2': 'What is included',
       'cw.intro.k': 'At the heart of Hamburg',
       'cw.intro.h': 'Customs control without the detour.',
       'cw.intro.p': 'Our bonded warehouse and temporary storage facilities give your cargo a practical base directly near the port. With customs inspections and container work managed on site, the handling stays transparent and efficient.',
@@ -453,6 +475,9 @@
 
       'vl.hero.k': 'Services / 02',
       'vl.hero.t': 'Vehicle Logistics',
+      'vl.hero.sub': 'Four to six cars per 40&#39; HC container, careful lashing, photo documentation and RoRo bookings — a long-standing MTS specialisation out of Hamburg and Bremerhaven.',
+      'vl.hero.cta1': 'Get a vehicle quote',
+      'vl.hero.cta2': 'How we load',
       'vl.intro.k': 'Built for every vehicle',
       'vl.intro.h': 'More vehicles, intelligently secured.',
       'vl.intro.p': 'MTS has developed a specialized approach for high-density vehicle loading. We ship four to six cars in a 40&#39; HC container with careful lashing, practical photo documentation and export coordination worldwide.',
@@ -465,6 +490,9 @@
 
       'ct.hero.k': 'Services / 03',
       'ct.hero.t': 'Container Terminal Hamburg',
+      'ct.hero.sub': 'Stuffing, stripping, side-loader work, container storage and port handovers from our Billstrasse yard — close to the container terminals of the Port of Hamburg.',
+      'ct.hero.cta1': 'Request a quote',
+      'ct.hero.cta2': 'What we handle',
       'ct.intro.k': 'Own yard operations',
       'ct.intro.h': 'A practical terminal for cargo in motion.',
       'ct.intro.p': 'Our own Hamburg yard brings container work, storage and port delivery together in one controlled flow. It is the working hub behind faster decisions and dependable handovers.',
@@ -477,6 +505,9 @@
 
       'if.hero.k': 'Services / 04',
       'if.hero.t': 'International Freight',
+      'if.hero.sub': 'Sea, air, road and rail — coordinated from Hamburg to worldwide destinations. FCL, LCL, project cargo and time-critical freight, one operations team end-to-end.',
+      'if.hero.cta1': 'Request a quote',
+      'if.hero.cta2': 'Route options',
       'if.intro.k': 'Worldwide connections',
       'if.intro.h': 'Choose the route that serves the shipment.',
       'if.intro.p': 'Sea, air, road and rail solutions coordinated from Hamburg. We build the route around your cargo, time frame and destination requirements.',
@@ -487,6 +518,9 @@
 
       'cc.hero.k': 'Classic & Premium Cars',
       'cc.hero.t': 'Every mile handled with the care your vehicle deserves.',
+      'cc.hero.sub': 'Enclosed single-vehicle containers, soft lashing on the wheels only, and photo documentation from pickup to delivery. Trusted by collectors, dealers and auction houses.',
+      'cc.hero.cta1': 'Request a vehicle quote',
+      'cc.hero.cta2': 'See the process',
       'cc.intro.k': 'Enclosed shipping',
       'cc.intro.h': 'For cars with a story.',
       'cc.intro.p': 'Whether it is a collector vehicle, a concours classic or a premium vehicle for a client abroad, MTS plans the complete journey with protective enclosed container shipping, careful documentation and expert handling from pickup to delivery.',
@@ -654,9 +688,19 @@
       'h.float.wa': 'WhatsApp',
       'h.float.ask': 'MTS fragen',
 
+      // Shared hero meta pills
+      'g.meta.hamburg': 'Standort Hamburg',
+      'g.meta.since': 'Seit 2003',
+      'g.meta.worldwide': '100+ Destinationen',
+      'g.cta.quote': 'Angebot anfordern',
+      'g.cta.contact': 'Mit uns sprechen',
+
       // ==== ABOUT ====
       'a.hero.k': 'Über MTS',
       'a.hero.t': 'Internationale Spedition mit Herz in Hamburg.',
+      'a.hero.sub': 'Die Mangal Transport &amp; Shipping GmbH ist seit 2003 eine Hamburger internationale Spedition — Zoll, Fahrzeuglogistik und weltweiter Containerversand aus der Billstraße 158 in Rothenburgsort.',
+      'a.hero.cta1': 'Angebot anfordern',
+      'a.hero.cta2': 'Team kennenlernen',
       'a.intro.k': 'Die MTS Geschichte',
       'a.intro.h': 'Über zwei Jahrzehnte Fracht aus Hamburg in die Welt.',
       'a.intro.p1': 'Die <strong>Mangal Transport &amp; Shipping GmbH</strong> — MTS — ist seit 2003 eine Hamburger internationale Spedition. Von unserem Betriebsstandort in der Billstraße 158 in Rothenburgsort, wenige Minuten von den Containerterminals des Hamburger Hafens entfernt, planen, bereiten und versenden wir Fracht nach Europa, Amerika, Asien, Afrika und in alle Länder des Nahen und Mittleren Ostens.',
@@ -712,6 +756,9 @@
       // ==== DESTINATIONS ====
       'd.hero.k': 'Destinationen',
       'd.hero.t': 'Von Hamburg in die Wachstumsmärkte der Welt.',
+      'd.hero.sub': 'Container-, RoRo- und Sammelladungsdienste aus dem Hamburger Hafen in den Nahen und Mittleren Osten, nach Zentralasien, Afrika, Amerika und Asien — über hundert Länder über unser Partnernetzwerk.',
+      'd.hero.cta1': 'Routenplan anfragen',
+      'd.hero.cta2': 'Regionen ansehen',
       'd.intro.k': 'Wohin wir oft fahren',
       'd.intro.h': 'Wissen reist mit Ihrer Fracht.',
       'd.intro.p1': 'Von unserem Gelände in der Billstraße und den Containerterminals des Hamburger Hafens aus bucht, verlädt und versendet MTS Sendungen in über hundert Länder. Manche Routen fahren wir Woche für Woche — Dubai, Irak, Afghanistan, Angola, Nigeria — und dort kennen wir die Dokumente, die Empfänger und die Fahrpläne auswendig. Andere Sendungen routen wir über Partnernetzwerke, mit denen wir seit Jahren zusammenarbeiten, sodass eine Sendung aus Hamburg am Zielort von Menschen empfangen wird, die wir kennen.',
@@ -803,6 +850,9 @@
       // ==== NEWS ====
       'n.hero.k': 'Aktuelles &amp; Einblicke',
       'n.hero.t': 'Notizen vom Hof, aus dem Hafen und von der Route.',
+      'n.hero.sub': 'Praktische Einblicke aus dem MTS-Team — Containerbeladung, Exportdokumentation, Routenupdates und Projektberichte aus dem Hamburger Hafen.',
+      'n.hero.cta1': 'Aktuelles ansehen',
+      'n.hero.cta2': 'Mit uns sprechen',
       'n.intro.k': 'Neueste',
       'n.intro.h': 'Speditionswissen und Projektberichte.',
       'n.intro.p': 'Praktische Notizen aus dem MTS-Team — Details hinter einer sauberen Containerbeladung, die Papiere, die eine Sendung am Zoll stoppen, die Routen, die wir dieses Quartal im Auge behalten, und die Projekte, die uns zum Nachdenken gebracht haben.',
@@ -893,6 +943,9 @@
       // ==== SERVICES ====
       's.hero.k': 'Leistungen',
       's.hero.t': 'Spedition — eine Akte nach der anderen.',
+      's.hero.sub': 'Zolllager, Fahrzeuglogistik, Container-Terminal und internationale Spedition — vier praktische Bereiche, ein operatives Team von der Buchung bis zur Ankunft.',
+      's.hero.cta1': 'Angebot anfordern',
+      's.hero.cta2': 'Alle Leistungen',
       's.intro.k': 'Vier praktische Bereiche',
       's.intro.h': 'Alles, was eine Hamburger Spedition tut — unter einem Dach.',
       's.intro.p': 'Zolllager, Fahrzeuglogistik, Container-Terminal und internationale Spedition — mit einem operativen Team, das die Akte von der Buchung bis zur Ankunft begleitet.',
@@ -949,6 +1002,9 @@
       // ==== Sub-service pages ====
       'cw.hero.k': 'Leistungen / 01',
       'cw.hero.t': 'Zolllager & Zollabwicklung',
+      'cw.hero.sub': 'Zolllager, T1/T2-Verfahren, Zollprüfungen und vollständige Exportdokumentation nahe dem Hamburger Hafen — alles auf unserem eigenen Gelände, von einem Team betreut.',
+      'cw.hero.cta1': 'Angebot anfordern',
+      'cw.hero.cta2': 'Leistungen im Überblick',
       'cw.intro.k': 'Im Herzen von Hamburg',
       'cw.intro.h': 'Zollkontrolle ohne Umweg.',
       'cw.intro.p': 'Unser Zolllager und Verwahrlager geben Ihrer Fracht eine praktische Basis direkt am Hafen. Mit Zollprüfungen und Containerarbeit vor Ort bleibt die Abwicklung transparent und effizient.',
@@ -961,6 +1017,9 @@
 
       'vl.hero.k': 'Leistungen / 02',
       'vl.hero.t': 'Fahrzeuglogistik',
+      'vl.hero.sub': 'Vier bis sechs Fahrzeuge pro 40&#39; HC Container, sorgfältige Ladungssicherung, Fotodokumentation und RoRo-Buchungen — eine langjährige MTS-Spezialisierung aus Hamburg und Bremerhaven.',
+      'vl.hero.cta1': 'Fahrzeugangebot anfordern',
+      'vl.hero.cta2': 'So verladen wir',
       'vl.intro.k': 'Für jedes Fahrzeug gebaut',
       'vl.intro.h': 'Mehr Fahrzeuge, intelligent gesichert.',
       'vl.intro.p': 'MTS hat einen spezialisierten Ansatz für hochdichte Fahrzeugverladung entwickelt. Wir verschiffen vier bis sechs Fahrzeuge in einem 40&#39; HC Container mit sorgfältiger Ladungssicherung, praktischer Fotodokumentation und weltweiter Exportkoordination.',
@@ -973,6 +1032,9 @@
 
       'ct.hero.k': 'Leistungen / 03',
       'ct.hero.t': 'Container-Terminal Hamburg',
+      'ct.hero.sub': 'Beladen, Entladen, Seitenladerarbeit, Containerlagerung und Hafenübergaben aus unserem Gelände in der Billstraße — in unmittelbarer Nähe zu den Containerterminals des Hamburger Hafens.',
+      'ct.hero.cta1': 'Angebot anfordern',
+      'ct.hero.cta2': 'Was wir abwickeln',
       'ct.intro.k': 'Betrieb auf eigenem Gelände',
       'ct.intro.h': 'Ein praktisches Terminal für Fracht in Bewegung.',
       'ct.intro.p': 'Unser eigenes Hamburger Gelände vereint Containerarbeit, Lagerung und Hafenzustellung in einem kontrollierten Ablauf. Es ist der Arbeitsknotenpunkt hinter schnelleren Entscheidungen und verlässlichen Übergaben.',
@@ -985,6 +1047,9 @@
 
       'if.hero.k': 'Leistungen / 04',
       'if.hero.t': 'Internationale Spedition',
+      'if.hero.sub': 'See, Luft, Straße und Schiene — aus Hamburg zu Zielorten weltweit koordiniert. FCL, LCL, Projektladung und zeitkritische Fracht, von einem Team End-to-End.',
+      'if.hero.cta1': 'Angebot anfordern',
+      'if.hero.cta2': 'Routenoptionen',
       'if.intro.k': 'Weltweite Verbindungen',
       'if.intro.h': 'Wählen Sie die Route, die zur Sendung passt.',
       'if.intro.p': 'See-, Luft-, Straßen- und Schienenlösungen aus Hamburg koordiniert. Wir bauen die Route rund um Ihre Fracht, Ihren Zeitrahmen und die Anforderungen des Ziels.',
@@ -995,6 +1060,9 @@
 
       'cc.hero.k': 'Oldtimer & Premiumfahrzeuge',
       'cc.hero.t': 'Jede Meile mit der Sorgfalt, die Ihr Fahrzeug verdient.',
+      'cc.hero.sub': 'Einzelfahrzeug-Container, sanfte Ladungssicherung nur an den Rädern und Fotodokumentation von der Abholung bis zur Zustellung. Vertrauen von Sammlern, Händlern und Auktionshäusern.',
+      'cc.hero.cta1': 'Fahrzeugangebot anfordern',
+      'cc.hero.cta2': 'Der Ablauf',
       'cc.intro.k': 'Geschlossener Versand',
       'cc.intro.h': 'Für Fahrzeuge mit Geschichte.',
       'cc.intro.p': 'Ob Sammlerfahrzeug, Concours-Oldtimer oder Premiumfahrzeug für einen Kunden im Ausland — MTS plant die gesamte Reise mit geschütztem Containerversand, sorgfältiger Dokumentation und fachkundiger Abwicklung von der Abholung bis zur Zustellung.',
