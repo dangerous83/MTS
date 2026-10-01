@@ -1638,11 +1638,13 @@
                 </a>
               </div>
               <div class="nav-mega-feature">
-                <small data-i18n="nav.mega.feat.k">NEED SOMETHING BESPOKE?</small>
+                <span class="nav-mega-feature-badge" data-i18n="nav.mega.feat.k">NEED SOMETHING BESPOKE?</span>
                 <h4 data-i18n="nav.mega.feat.h">Individual solutions</h4>
                 <p data-i18n="nav.mega.feat.p">Non-standard routes, project cargo, out-of-gauge or combined mode shipments — talk to our Hamburg desk.</p>
-                <a class="nav-mega-cta" href="${svc.ind}"><span data-i18n="nav.mega.feat.cta">Talk to us</span> <span aria-hidden="true">→</span></a>
-                <a class="nav-mega-all" href="services.html" data-i18n="nav.services.all">All services →</a>
+                <div class="nav-mega-feature-actions">
+                  <a class="nav-mega-cta" href="${svc.ind}"><span data-i18n="nav.mega.feat.cta">Talk to us</span> <span aria-hidden="true">→</span></a>
+                  <a class="nav-mega-all" href="services.html" data-i18n="nav.services.all">All services →</a>
+                </div>
               </div>
             </div>
           </div>

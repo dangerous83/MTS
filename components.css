@@ -220,10 +220,10 @@
 
 /* ==== Services mega menu ==== */
 .nav-group:has(.nav-mega){position:static}
-.nav-mega{left:50%;right:auto;transform:translate(-50%,6px);width:min(1080px,calc(100vw - 48px));padding:0;top:calc(100% + 14px);background:#fff;border:1px solid #e2e8ea;border-radius:10px;box-shadow:0 30px 60px rgba(3,19,29,.18)}
+.nav-mega{left:50%;right:auto;transform:translate(-50%,6px);width:min(1180px,calc(100vw - 48px));padding:0;top:calc(100% + 14px);background:#fff;border:1px solid #e2e8ea;border-radius:12px;box-shadow:0 36px 70px rgba(3,19,29,.22);overflow:hidden}
 .nav-group:hover .nav-mega,.nav-group.is-open .nav-mega,.nav-group:focus-within .nav-mega{transform:translate(-50%,0)}
 .nav-mega:before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
-.nav-mega-grid{display:grid;grid-template-columns:1.1fr 1.1fr 1.1fr 1.3fr;gap:0}
+.nav-mega-grid{display:grid;grid-template-columns:.95fr .95fr .95fr 1.5fr;gap:0;min-height:380px}
 .nav-mega-col{padding:22px 22px 20px;border-right:1px solid #eaeef0}
 .nav-mega-col h4,.nav-mega-feature small{display:block;font:800 10px 'DM Mono',monospace;color:#377c89;letter-spacing:.1em;margin:0 0 14px;text-transform:uppercase}
 .nav-mega-item{display:flex;gap:12px;align-items:flex-start;padding:10px;margin:-2px 0;border-radius:6px;color:var(--ink);text-decoration:none;transition:background .15s,transform .15s}
@@ -233,10 +233,14 @@
 .nav-mega-item.is-current strong,.nav-mega-item.active strong{color:var(--hm-blue,#0b6281)}
 .nav-mega-ico{display:grid;place-items:center;width:34px;height:34px;background:linear-gradient(135deg,#eaf3f5,#d8ecee);border-radius:8px;flex:none;color:#0b6281}
 .nav-mega-ico img{width:18px;height:18px;filter:brightness(0) saturate(100%) invert(22%) sepia(44%) saturate(820%) hue-rotate(159deg) brightness(94%) contrast(87%)}
-.nav-mega-feature{background:linear-gradient(160deg,#0b6281,#123d79);color:#fff;padding:24px 22px;border-radius:0 10px 10px 0;display:flex;flex-direction:column}
+.nav-mega-feature{position:relative;color:#fff;padding:30px 28px 26px;border-radius:0;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:linear-gradient(135deg,rgba(5,17,30,.78) 0%,rgba(11,98,129,.55) 55%,rgba(11,98,129,.2) 100%),url('assets/freight-hero.png');background-size:cover;background-position:center}
+.nav-mega-feature:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,17,30,.1) 0%,rgba(5,17,30,.65) 100%);z-index:0}
+.nav-mega-feature>*{position:relative;z-index:1}
+.nav-mega-feature-badge{display:inline-flex;align-items:center;gap:7px;align-self:flex-start;padding:5px 11px;background:rgba(255,255,255,.14);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.22);border-radius:999px;font:700 10px 'DM Mono',monospace;letter-spacing:.08em;color:#fff;margin-bottom:16px}
+.nav-mega-feature-badge:before{content:"";width:7px;height:7px;border-radius:50%;background:#79d2d7;box-shadow:0 0 0 4px rgba(121,210,215,.25)}
 .nav-mega-feature small{color:#a2dce0}
-.nav-mega-feature h4{margin:0 0 10px;font-size:19px;line-height:1.2;color:#fff;font-weight:800;text-transform:none;letter-spacing:-.01em}
-.nav-mega-feature p{margin:0 0 16px;font:500 12px/1.55 Manrope,sans-serif;color:#cde1e5;letter-spacing:0}
+.nav-mega-feature h4{margin:0 0 12px;font-size:26px;line-height:1.1;color:#fff;font-weight:800;text-transform:none;letter-spacing:-.015em;max-width:280px}
+.nav-mega-feature p{margin:0 0 20px;font:500 13px/1.6 Manrope,sans-serif;color:#eaf3f5;letter-spacing:0;max-width:300px}
 .nav-mega-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;background:#fff;color:#0b6281;font:800 11px Manrope,sans-serif;text-transform:uppercase;letter-spacing:.06em;border-radius:5px;align-self:flex-start;transition:gap .2s,background .2s}
 .nav-mega-cta:hover{background:#eaf3f5;gap:12px}
 .nav-mega-all{margin-top:14px;font:600 11px 'DM Mono',monospace;color:#a2dce0;letter-spacing:.06em;text-decoration:none}
@@ -260,3 +264,14 @@
 [data-theme="dark"] .nav-mega-ico{background:#0f2135}
 
 /* Hero image uniqueness: swap About + News to final distinct crops */
+
+/* Mega menu polish: feature actions + column headers */
+.nav-mega-feature-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.nav-mega-all{margin:0;color:#cde1e5;text-decoration:none;font:700 11px 'DM Mono',monospace;letter-spacing:.06em;transition:color .2s}
+.nav-mega-all:hover{color:#fff}
+.nav-mega-col{padding:28px 24px 24px}
+.nav-mega-col h4{margin:0 0 16px;color:#377c89}
+.nav-mega-col:nth-child(2){background:#fafcfc}
+.nav-mega-col:nth-child(3){background:#f6fafa}
+[data-theme="dark"] .nav-mega-col:nth-child(2){background:#162738}
+[data-theme="dark"] .nav-mega-col:nth-child(3){background:#132233}
