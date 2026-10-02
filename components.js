@@ -5,6 +5,23 @@
   // Full EN/DE translation dictionary. HTML is allowed in values.
   const T = {
     en: {
+      "tk.hero.k": "Ground & Terminal",
+      "tk.hero.t": "Trucking",
+      "tk.hero.sub": "Container drayage and short hauls out of Hamburg — connecting your shipment with the next stage of its journey.",
+      "tk.hero.cta1": "Request a trucking quote",
+      "tk.hero.cta2": "Explore trucking",
+      "tk.intro.k": "Container trucking",
+      "tk.intro.h": "The connection between port and road.",
+      "tk.intro.p": "MTS coordinates container trucking and short hauls from Hamburg. Talk to our team about your pickup, delivery and onward freight requirements.",
+      "tk.list.k": "Ground transport",
+      "tk.list.h": "Keep your container moving.",
+      "tk.l1": "Container drayage from Hamburg",
+      "tk.l2": "Short-haul container transport",
+      "tk.l3": "Pickup and delivery coordination",
+      "tk.l4": "Connections with onward freight",
+      "tk.cta.k": "Talk to our Hamburg team",
+      "tk.cta.h": "Plan your container transport.",
+      "tk.cta.p": "Share your pickup point, delivery location and container details so our team can help plan the next step.",
       // ==== Global chrome ====
       'top.hours': 'Mo–Fr: 9:00 – 18:00',
       'top.phone': '+49 (0)40 / 819 78 530',
@@ -680,6 +697,23 @@
       'pc.cta.b': 'Request a premium quote →',
     },
     de: {
+      "tk.hero.k": "Landtransport & Terminal",
+      "tk.hero.t": "Trucking",
+      "tk.hero.sub": "Container-Nahverkehr und kurze Transportwege ab Hamburg — wir verbinden Ihre Sendung mit der nächsten Etappe.",
+      "tk.hero.cta1": "Trucking-Angebot anfordern",
+      "tk.hero.cta2": "Trucking entdecken",
+      "tk.intro.k": "Container-Trucking",
+      "tk.intro.h": "Die Verbindung zwischen Hafen und Straße.",
+      "tk.intro.p": "MTS koordiniert Container-Trucking und kurze Transporte ab Hamburg. Sprechen Sie mit unserem Team über Abholung, Zustellung und die anschließende Beförderung.",
+      "tk.list.k": "Landtransport",
+      "tk.list.h": "Damit Ihr Container weiterkommt.",
+      "tk.l1": "Container-Nahverkehr ab Hamburg",
+      "tk.l2": "Containertransporte auf kurzen Strecken",
+      "tk.l3": "Koordination von Abholung und Zustellung",
+      "tk.l4": "Anbindung an den Weitertransport",
+      "tk.cta.k": "Unser Team in Hamburg",
+      "tk.cta.h": "Planen Sie Ihren Containertransport.",
+      "tk.cta.p": "Teilen Sie uns Abholort, Zustellort und Containerdetails mit, damit unser Team den nächsten Schritt planen kann.",
       // ==== Global chrome ====
       'top.hours': 'Mo–Fr: 9:00 – 18:00 Uhr',
       'top.phone': '+49 (0)40 / 819 78 530',
@@ -1484,6 +1518,17 @@
     else dlg.setAttribute('open', '');
   }
 
+  // Shared service destinations keep the navbar and footer in sync.
+  const serviceRoutes = {
+    trucking: 'trucking.html',
+    sea: 'international-freight.html#sea',
+    air: 'international-freight.html#air',
+    road: 'container-terminal.html',
+    rail: 'international-freight.html#rail',
+    car: 'vehicle-logistics.html',
+    ind: 'contact.html#quote',
+  };
+
   function renderFooter() {
     const footer = document.querySelector('[data-site-footer]');
     if (!footer) return;
@@ -1492,8 +1537,18 @@
       <div class="site-footer-inner">
         <div class="site-footer-grid">
           <div class="site-footer-brand"><a href="index.html" aria-label="MTS home"><img src="assets/mts-logo.png" alt="MTS"></a></div>
-          <div class="site-footer-column"><strong>${tr('ft.services')}</strong><a href="customs-warehousing.html">${tr('ft.customs')}</a><a href="vehicle-logistics.html">${tr('ft.vehicle')}</a><a href="container-terminal.html">${tr('ft.container')}</a><a href="international-freight.html">${tr('ft.freight')}</a></div>
-          <div class="site-footer-column"><strong>${tr('ft.company')}</strong><a href="about.html">${tr('nav.about')}</a><a href="classic-cars.html">${tr('ft.classic')}</a><a href="destinations.html">${tr('nav.destinations')}</a><a href="news.html">${tr('nav.news')}</a><a href="contact.html">${tr('nav.contact')}</a></div>
+          <div class="site-footer-column site-footer-services">
+            <strong>${tr('ft.services')}</strong>
+            <a href="${serviceRoutes.trucking}">${tr('nav.sub.trucking')}</a>
+            <a href="${serviceRoutes.road}">${tr('nav.sub.road')}</a>
+            <a href="${serviceRoutes.sea}">${tr('nav.sub.sea')}</a>
+            <a href="${serviceRoutes.air}">${tr('nav.sub.air')}</a>
+            <a href="${serviceRoutes.rail}">${tr('nav.sub.rail')}</a>
+            <a href="${serviceRoutes.car}">${tr('nav.sub.car')}</a>
+            <a href="classic-cars.html">${tr('nav.classic')}</a>
+            <a href="services.html">${tr('nav.services.all')}</a>
+            <a href="${serviceRoutes.ind}">${tr('nav.mega.feat.h')}</a>
+          </div>
           <div class="site-footer-column site-footer-contact"><strong>${tr('ft.head')}</strong><address>${tr('ft.address_full')}</address><p class="site-footer-line"><span>${tr('ft.tel_label')}</span> <a href="tel:+494081978530">+49 (0)40 / 819 78 530</a></p><p class="site-footer-line"><span>${tr('ft.fax_label')}</span> +49 (0)40 / 819 78 355</p><p class="site-footer-line"><span>${tr('ft.email_label')}</span> <a href="mailto:info@mtsonline.de">info[at]mtsonline.de</a></p><div class="site-social" aria-label="Social media"><a href="https://www.instagram.com/mts_gmbh?igshid=8u4w9e23s97k" target="_blank" rel="noopener noreferrer" aria-label="MTS on Instagram" title="Instagram"><img src="assets/icons/instagram.svg" alt=""></a><a href="https://www.facebook.com/mtshamburg/" target="_blank" rel="noopener noreferrer" aria-label="MTS on Facebook" title="Facebook"><img src="assets/icons/facebook.svg" alt=""></a><a href="https://www.youtube.com/channel/UCoRZqOU6EyD5YDcyQ8VnFCQ?view_as=subscriber" target="_blank" rel="noopener noreferrer" aria-label="MTS on YouTube" title="YouTube"><img src="assets/icons/youtube.svg" alt=""></a></div></div>
         </div>
         <div class="site-footer-bottom"><span>${tr('ft.rights').replace('{year}', new Date().getFullYear())}</span><span>${tr('ft.city')}</span></div>
@@ -1594,17 +1649,9 @@
     const menus = document.querySelectorAll('.menu, .hm-menu');
     if (!menus.length) return;
     const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-    const sub = ['customs-warehousing.html','vehicle-logistics.html','container-terminal.html','international-freight.html','classic-cars.html','services.html'];
+    const sub = ['trucking.html','customs-warehousing.html','vehicle-logistics.html','container-terminal.html','international-freight.html','classic-cars.html','services.html'];
     // Map dropdown items → page/anchor they open
-    const svc = {
-      trucking: 'vehicle-logistics.html',
-      sea:      'international-freight.html#sea',
-      air:      'international-freight.html#air',
-      road:     'container-terminal.html',
-      rail:     'international-freight.html#rail',
-      car:      'vehicle-logistics.html',
-      ind:      'contact.html#quote',
-    };
+    const svc = serviceRoutes;
     const isActive = url => url.split('#')[0] === path;
     const servicesOpen = sub.includes(path);
     const activeAttr = p => p === path ? ' class="is-current active" aria-current="page"' : '';
