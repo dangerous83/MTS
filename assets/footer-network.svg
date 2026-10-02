@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280" fill="none">
+  <defs>
+    <pattern id="dots" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#486c85"/></pattern>
+    <radialGradient id="hubGlow"><stop stop-color="#7fe5eb" stop-opacity=".4"/><stop offset="1" stop-color="#7fe5eb" stop-opacity="0"/></radialGradient>
+  </defs>
+  <g stroke="#294961" stroke-width=".65" opacity=".55"><path d="M20 60H540M20 120H540M20 180H540M20 240H540M80 24V260M160 24V260M240 24V260M320 24V260M400 24V260M480 24V260"/></g>
+  <g fill="url(#dots)" stroke="#4c7188" stroke-width=".6">
+    <path d="M37 61l19-17 29-6 18-14 25 3 12 18 26 3 13 16-9 16-24 4-12 20-17 7-6 20-16-5-10-20-16-6-9-24-16-1-14-14z"/>
+    <path d="M153 19l20-8 21 6 9 18-22 22-18-2-10-15z"/>
+    <path d="M116 125l15 4 13 12 17 4 8 13 26 5 14 23-8 23-15 15-7 28-14 12-8-18-1-22-12-22-11-17 1-19-11-16-10-9z"/>
+    <path d="M244 67l9-9 12-2 4-13 12-13 11 4-6 22 16 1 8 10-6 14-21 7-7-7-15 4-8-9z"/>
+    <path d="M262 98l19-6 22 7 15 20 1 20-13 20-7 27-15 13-10-23-12-10-7-25-12-17 2-15z"/>
+    <path d="M307 60l14-19 27-1 19-12 26 4 17-11 20 11 24 2 19 17 18-1 21 14-4 18-21 7-10 20-16 5-10 14-18-2-8-14-18-4-6 18-13 19-9-7-3-18-14-10-5-17-25-7-15 4-13-7-4-13z"/>
+    <path d="M319 112l19-1 16 11 4 20-18 5-6-17zM393 154l11 8 8 9-5 11-13-9zM423 175l13 9 12 3 2 8-13-2-13-9z"/>
+    <path d="M435 212l17-9 19 3 21-3 18 15-2 21-20 8-20-5-13 4-16-15zM519 226l9 13-4 15-8-11z"/>
+  </g>
+  <g stroke="#8bdae4" stroke-width="1.2" stroke-dasharray="4 5" opacity=".75">
+    <path d="M280 75Q195 21 109 93M280 75Q201 92 173 194M280 75Q334 123 289 177M280 75Q380 36 438 97M280 75Q393 95 431 157M280 75Q438 113 471 224"/>
+  </g>
+  <g fill="#9fe3ea" stroke="#0f2a3e" stroke-width="2"><circle cx="109" cy="93" r="4"/><circle cx="173" cy="194" r="4"/><circle cx="289" cy="177" r="4"/><circle cx="438" cy="97" r="4"/><circle cx="431" cy="157" r="4"/><circle cx="471" cy="224" r="4"/></g>
+  <circle cx="280" cy="75" r="28" fill="url(#hubGlow)"/><circle cx="280" cy="75" r="11" stroke="#8bdae4" stroke-opacity=".6"/><circle cx="280" cy="75" r="5" fill="#bcecf0"/>
+  <path d="M285 68l14-15h47" stroke="#a4dce5" stroke-width="1"/>
+  <rect x="295" y="36" width="82" height="22" rx="3" fill="#12374d" stroke="#426981"/>
+  <text x="336" y="51" text-anchor="middle" fill="#d2f2f5" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1.2">HAMBURG</text>
+</svg>

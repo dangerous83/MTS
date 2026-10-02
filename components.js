@@ -5,6 +5,12 @@
   // Full EN/DE translation dictionary. HTML is allowed in values.
   const T = {
     en: {
+      "ft.cta.k": "Your next shipment",
+      "ft.cta.h": "Let’s connect your next destination.",
+      "ft.network.k": "Connected from Hamburg",
+      "ft.network.p": "Sea, air and road — coordinated from Hamburg to worldwide destinations.",
+      "ft.network.badge": "Hamburg · Germany",
+      "ft.contact.k": "Let’s talk logistics",
       "fr.overview": "Overview",
       "fr.solutions": "Cargo options",
       "fr.planning": "Plan your shipment",
@@ -788,6 +794,12 @@
       'pc.cta.b': 'Request a premium quote →',
     },
     de: {
+      "ft.cta.k": "Ihre nächste Sendung",
+      "ft.cta.h": "Verbinden wir Ihr nächstes Ziel.",
+      "ft.network.k": "Ab Hamburg vernetzt",
+      "ft.network.p": "See, Luft und Straße — koordiniert ab Hamburg zu weltweiten Destinationen.",
+      "ft.network.badge": "Hamburg · Deutschland",
+      "ft.contact.k": "Sprechen wir über Logistik",
       "fr.overview": "Überblick",
       "fr.solutions": "Transportoptionen",
       "fr.planning": "Sendung planen",
@@ -1715,10 +1727,24 @@
     const footer = document.querySelector('[data-site-footer]');
     if (!footer) return;
     footer.className = 'site-footer';
+    if (!footer.id) footer.id = 'site-footer';
     footer.innerHTML = `
       <div class="site-footer-inner">
+        <div class="site-footer-cta">
+          <div><span class="site-footer-kicker">${tr('ft.cta.k')}</span><h2>${tr('ft.cta.h')}</h2></div>
+          <a class="site-footer-quote" href="contact.html#quote"><span>${tr('nav.quote')}</span><span aria-hidden="true">↗</span></a>
+        </div>
         <div class="site-footer-grid">
-          <div class="site-footer-brand"><a href="index.html" aria-label="MTS home"><img src="assets/mts-logo.png" alt="MTS"></a></div>
+          <div class="site-footer-brand">
+            <a href="index.html" aria-label="MTS home"><img src="assets/mts-logo.png" alt="MTS"></a>
+            <p class="site-footer-network-copy">${tr('ft.network.p')}</p>
+            <div class="site-footer-network">
+              <div class="site-footer-network-head"><span class="site-footer-hub-dot" aria-hidden="true"></span><span>${tr('ft.network.k')}</span></div>
+              <img src="assets/footer-network.svg" class="site-footer-network-map" alt="" aria-hidden="true" loading="lazy">
+              <div class="site-footer-network-caption"><span>${tr('ft.network.badge')}</span><span>${tr('g.meta.worldwide')}</span></div>
+            </div>
+            <div class="site-footer-modes"><span>${tr('nav.sub.sea')}</span><span>${tr('nav.sub.air')}</span><span>${tr('nav.sub.road')}</span></div>
+          </div>
           <div class="site-footer-column site-footer-services">
             <strong>${tr('ft.services')}</strong>
             <a href="${serviceRoutes.trucking}">${tr('nav.sub.trucking')}</a>
