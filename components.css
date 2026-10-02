@@ -6,7 +6,7 @@
 [data-theme="dark"] .site-theme-toggle .theme-sun{display:block}
 .site-footer{background:#091d2c;color:#e7f0f5;padding:66px 0 0}
 .site-footer-inner{width:min(1240px,calc(100% - 64px));margin:auto}
-.site-footer-grid{display:grid;grid-template-columns:1.45fr 1fr 1fr 1.35fr;gap:42px;align-items:start}
+.site-footer-grid{display:grid;grid-template-columns:1.2fr 1.2fr 1.35fr;gap:42px;align-items:start}
 .site-footer-brand img{display:block;width:151px;height:auto;filter:brightness(0) invert(1)}
 .site-footer-column{display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0}
 .site-footer-column strong{font:700 11px 'DM Mono',monospace;color:#8ed9dc;margin:4px 0 11px}
@@ -44,8 +44,8 @@
 [data-theme="dark"] .hm-guide-panel p,[data-theme="dark"] .mts-guide-panel p{color:#c4d7e0}
 [data-theme="dark"] .hm-guide-options button,[data-theme="dark"] .mts-guide-options a{background:#183147;color:#eaf2f5;border-color:#547186}
 [data-theme="dark"] .hm-nav-cta,[data-theme="dark"] .quote{background:#1a54a1;color:#fff}
-@media(max-width:1000px){.site-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:38px}}
-@media(max-width:620px){.site-footer-inner{width:calc(100% - 32px)}.site-footer{padding-top:52px}.site-footer-grid{gap:28px}.site-footer-brand{grid-column:1/-1}.site-footer-brand img{width:125px}.site-footer-column strong{font-size:10px}.site-footer-column a,.site-footer-column address{font-size:11px}.site-footer-contact{grid-column:1/-1}.site-footer-bottom{margin-top:40px;flex-direction:column}.site-theme-toggle{width:34px;height:34px}}
+@media(max-width:1000px){.site-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:38px}.site-footer-brand{grid-column:1/-1}}
+@media(max-width:620px){.site-footer-inner{width:calc(100% - 32px)}.site-footer{padding-top:52px}.site-footer-grid{gap:28px}.site-footer-brand{grid-column:1/-1}.site-footer-brand img{width:125px}.site-footer-column strong{font-size:10px}.site-footer-column a,.site-footer-column address{font-size:11px}.site-footer-services,.site-footer-contact{grid-column:1/-1}.site-footer-bottom{margin-top:40px;flex-direction:column}.site-theme-toggle{width:34px;height:34px}}
 @media(max-width:380px){.site-footer-grid{grid-template-columns:1fr}.site-footer-brand,.site-footer-contact{grid-column:auto}.hm-nav .site-theme-toggle{width:32px;height:32px}}
 @media(prefers-reduced-motion:reduce){.site-social a,.site-theme-toggle{transition:none}}
 
