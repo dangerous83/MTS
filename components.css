@@ -306,3 +306,9 @@
 [data-theme="dark"] .nav-mega-bar{background:#0f1f2e;border-top-color:#2b465c;color:#9fb4bf}
 [data-theme="dark"] .nav-mega-bar-link,[data-theme="dark"] .nav-mega-bar-hours{color:#cde1e5}
 [data-theme="dark"] .nav-mega-bar-sep{background:linear-gradient(90deg,transparent,#2b465c,transparent)}
+
+/* Larger navbar branding on the homepage and service pages. */
+.nav .brand,.hm-nav .hm-brand{flex-shrink:0}
+.nav .brand img,.hm-nav .hm-brand img{display:block;width:140px;height:auto;max-height:68px;object-fit:contain}
+@media(max-width:620px){.nav .brand img,.hm-nav .hm-brand img{width:110px;max-height:54px}}
+@media(max-width:380px){.nav .brand img,.hm-nav .hm-brand img{width:98px;max-height:48px}}
