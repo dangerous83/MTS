@@ -354,3 +354,31 @@
 @media(max-width:700px){.site-footer-cta{align-items:flex-start;flex-direction:column;gap:24px;padding:32px 0}.site-footer-cta h2{font-size:29px;max-width:440px}.site-footer-quote{min-height:46px}.site-footer-grid{grid-template-columns:1fr;gap:30px;padding-top:30px}.site-footer-brand{grid-column:auto;display:block}.site-footer-brand>a>img{width:140px}.site-footer-network-copy{max-width:none}.site-footer-network{max-width:500px}.site-footer-modes{margin-top:14px}.site-footer-services,.site-footer-contact{grid-column:auto}.site-footer-services>a{font-size:12px;min-height:50px;padding:12px}.site-footer-contact{padding:23px}.site-footer-contact address{font-size:13px}.site-footer-bottom{margin-top:30px;flex-direction:column;gap:8px}}
 @media(max-width:380px){.site-footer-cta h2{font-size:26px}.site-footer-network-caption{font-size:7px}.site-footer-services{gap:7px}.site-footer-services>a{font-size:11px;padding:10px}.site-footer-contact{padding:20px}}
 @media(prefers-reduced-motion:reduce){.site-footer-services>a{transition:none}}
+
+/* Blue navigation surfaces with clear contrast in both themes. */
+:root .hm-header,:root .nav-wrap{background:#1a54a1;color:#fff;border-bottom:1px solid #ffffff26}
+:root .hm-brand img,:root .nav .brand img{content:url('assets/mts-logo-white.png')}
+:root .hm-menu,:root .menu{color:#fff}
+:root .hm-menu>a,:root .menu>a,:root .nav-group-toggle{color:#fff}
+:root .hm-menu>a:hover,:root .menu>a:hover,:root .menu>a.active,:root .nav-group.is-current-section>.nav-group-toggle{color:#b5edf2}
+:root .hm-menu>a::after{background:#b5edf2}
+:root .hm-menu-toggle span{background:#fff}
+:root .menu-toggle{color:#fff}
+:root .hm-nav .site-theme-toggle,:root .nav .site-theme-toggle{background:#16498d;border-color:#ffffff55;color:#fff}
+:root .hm-nav .site-theme-toggle img,:root .nav .site-theme-toggle img{filter:brightness(0) invert(1)}
+:root .hm-nav-cta,:root .nav .quote{background:#123d79;border:1px solid #ffffff55;color:#fff}
+:root .hm-nav-cta:hover,:root .nav .quote:hover{background:#0b2f62;border-color:#b5edf2}
+:root .hm-menu.is-open,:root .menu.open,:root .nav-dropdown,:root .nav-mega{background:#16498d;color:#fff;border-color:#ffffff33}
+:root .nav-mega-item strong,:root .nav-dropdown a,:root .nav-mega a:first-child{color:#fff}
+:root .nav-mega-item small{color:#c8def4}
+:root .nav-mega-col-x h5,:root .nav-mega-col h4{color:#b5edf2}
+:root .nav-mega-col-x,:root .nav-mega-col{border-color:#ffffff26}
+:root .nav-mega-item:hover,:root .nav-dropdown a:hover,:root .nav-dropdown a.nav-sub,:root .nav-mega-all-card{background:#205a9d;border-color:#ffffff33;color:#fff}
+:root .nav-mega-item.is-current strong,:root .nav-dropdown a.is-current{color:#b5edf2}
+:root .nav-mega-ico{background:#123d79}
+:root .nav-mega-ico img,:root .nav-mega-bar img{filter:brightness(0) invert(1)}
+:root .nav-mega-bar{background:#123d79;border-color:#ffffff26;color:#c8def4}
+:root .nav-mega-bar-link,:root .nav-mega-bar-hours{color:#e3effc}
+:root .nav-mega-bar-status{color:#b5edf2}
+:root .nav-mega-bar-sep{background:linear-gradient(90deg,transparent,#ffffff33,transparent)}
+@media(max-width:1180px){:root .hm-menu{background:#16498d}:root .hm-menu a{border-bottom-color:#ffffff26}}
