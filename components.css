@@ -307,11 +307,11 @@
 [data-theme="dark"] .nav-mega-bar-link,[data-theme="dark"] .nav-mega-bar-hours{color:#cde1e5}
 [data-theme="dark"] .nav-mega-bar-sep{background:linear-gradient(90deg,transparent,#2b465c,transparent)}
 
-/* Larger navbar branding on the homepage and service pages. */
+/* Balanced navbar branding on the homepage and service pages. */
 .nav .brand,.hm-nav .hm-brand{flex-shrink:0}
-.nav .brand img,.hm-nav .hm-brand img{display:block;width:140px;height:auto;max-height:68px;object-fit:contain}
-@media(max-width:620px){.nav .brand img,.hm-nav .hm-brand img{width:110px;max-height:54px}}
-@media(max-width:380px){.nav .brand img,.hm-nav .hm-brand img{width:98px;max-height:48px}}
+.nav .brand img,.hm-nav .hm-brand img{display:block;width:108px;height:auto;max-height:52px;object-fit:contain}
+@media(max-width:620px){.nav .brand img,.hm-nav .hm-brand img{width:88px;max-height:43px}}
+@media(max-width:380px){.nav .brand img,.hm-nav .hm-brand img{width:80px;max-height:39px}}
 
 /* Detailed footer: route map, service grid and contact panels. */
 .site-footer{padding:0;background-color:#081d2c;background-image:radial-gradient(ellipse at 85% 0%,rgba(28,96,130,.2),transparent 60%),linear-gradient(rgba(124,184,207,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(124,184,207,.04) 1px,transparent 1px);background-size:auto,64px 64px,64px 64px;border-top:1px solid #314e63}
