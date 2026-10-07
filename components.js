@@ -1905,7 +1905,7 @@
       header.setAttribute('role', 'banner');
       header.innerHTML = `
         <nav class="mts-navbar-inner hm-nav nav" aria-label="Main navigation">
-          <a class="mts-navbar-brand hm-brand brand" href="index.html" aria-label="MTS home"><span class="mts-navbar-logo-box"><img class="mts-navbar-logo-blue" src="assets/mts-logo.png?v=20261007-blue" alt="MTS"><img class="mts-navbar-logo-white" src="assets/mts-logo-white.png" alt="" aria-hidden="true"></span><span class="mts-navbar-brand-copy"><strong data-i18n="nav.brand.name">MANGAL TRANSPORT &amp; SHIPPING</strong><small data-i18n="nav.brand.line">Your Hamburg logistics partner</small></span></a>
+          <a class="mts-navbar-brand hm-brand brand" href="index.html" aria-label="MTS home"><span class="mts-navbar-logo-box"><img class="mts-navbar-logo" src="assets/mts-logo.png?v=20261007-blue" alt="MTS"></span></a>
           <button class="mts-navbar-toggle hm-menu-toggle menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mts-navbar-menu"><span></span><span></span><span></span></button>
           <div class="mts-navbar-menu hm-menu menu" id="mts-navbar-menu"></div>
           <a class="mts-navbar-cta hm-nav-cta quote" href="contact.html"><span data-i18n="nav.quote">Request a quote</span> <span aria-hidden="true">↗</span></a>

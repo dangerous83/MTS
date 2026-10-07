@@ -490,9 +490,6 @@
 :root .mts-navbar .mts-navbar-brand{gap:13px;margin-right:0}
 :root .mts-navbar .mts-navbar-brand .mts-navbar-logo-box img{width:82px;max-height:42px}
 :root .mts-navbar-logo-box{padding:0}
-.mts-navbar-brand-copy{display:flex;flex-direction:column;gap:4px;color:#fff;max-width:215px}
-.mts-navbar-brand-copy strong{font:800 9px/1.4 Manrope,Arial,sans-serif;letter-spacing:.075em}
-.mts-navbar-brand-copy small{font:500 10px/1.4 Manrope,Arial,sans-serif;color:#c3d7f1}
 :root .mts-navbar-menu{gap:25px;font-size:12px}
 :root .mts-navbar-menu>a,:root .mts-navbar-menu .nav-group-toggle{padding:27px 0;font-size:12px;font-weight:700}
 :root .mts-navbar-menu>a::after{bottom:19px;background:#8bb8ff;height:2px}
@@ -554,7 +551,6 @@
 .site-footer-contact .site-social img{width:13px;height:13px}
 .site-footer-bottom{width:min(1240px,calc(100% - 48px));margin:0 auto;padding:19px 0;border-color:#ffffff14;color:#7e9abd;font-size:9px}
 @media(max-width:1100px){
-  .mts-navbar-brand-copy{display:none}
   .site-footer-grid{gap:26px;grid-template-columns:1fr 1fr}
   .site-footer-brand{grid-column:auto;display:block}
   .site-footer-network-copy{max-width:320px}
@@ -605,8 +601,6 @@
 
 /* Override older shared navbar aliases so the new branding stays legible. */
 :root .mts-navbar .mts-navbar-inner{height:auto;min-height:76px}
-:root .mts-navbar .mts-navbar-brand-copy strong{color:#fff}
-:root .mts-navbar .mts-navbar-brand-copy small{color:#c3d7f1}
 :root .mts-navbar .mts-navbar-cta{background:#2160e8;border-color:#5684ec}
 :root .mts-navbar .mts-navbar-cta:hover{background:#3575f5;border-color:#8cb1ff}
 @media(max-width:980px){:root .mts-navbar .mts-navbar-inner{min-height:70px}}
@@ -625,14 +619,8 @@
 :root .mts-navbar .mts-navbar-menu>a,:root .mts-navbar .mts-navbar-menu .nav-group-toggle{color:var(--mts-nav-ink)}
 :root .mts-navbar .mts-navbar-menu>a:hover,:root .mts-navbar .mts-navbar-menu>a.is-current,:root .mts-navbar .mts-navbar-menu>a.active,:root .mts-navbar .mts-navbar-menu .nav-group.is-current-section>.nav-group-toggle{color:var(--mts-nav-ink)}
 :root .mts-navbar .mts-navbar-menu>a::after{background:currentColor}
-:root .mts-navbar .mts-navbar-brand-copy strong{color:var(--mts-nav-ink)}
-:root .mts-navbar .mts-navbar-brand-copy small{color:var(--mts-nav-muted)}
 :root .mts-navbar .mts-navbar-logo-box{display:grid}
-:root .mts-navbar .mts-navbar-logo-box img{grid-area:1/1;transition:opacity .25s ease}
-:root .mts-navbar .mts-navbar-logo-blue{opacity:1}
-:root .mts-navbar .mts-navbar-logo-white{opacity:0}
-:root .mts-navbar.is-dark-hero:not(.is-scrolled) .mts-navbar-logo-blue,:root[data-theme="dark"] .mts-navbar:not(.is-scrolled) .mts-navbar-logo-blue{opacity:0}
-:root .mts-navbar.is-dark-hero:not(.is-scrolled) .mts-navbar-logo-white,:root[data-theme="dark"] .mts-navbar:not(.is-scrolled) .mts-navbar-logo-white{opacity:1}
+:root .mts-navbar .mts-navbar-logo-box img{grid-area:1/1}
 :root .mts-navbar .mts-navbar-toggle span{background:var(--mts-nav-ink)}
 :root .mts-navbar .site-theme-toggle{background:transparent;border-color:currentColor;color:var(--mts-nav-ink)}
 :root .mts-navbar .site-theme-toggle img{filter:invert(27%) sepia(56%) saturate(1393%) hue-rotate(185deg) brightness(88%) contrast(93%)}
@@ -649,3 +637,8 @@
   :root .mts-navbar .mts-navbar-logo-box{display:grid}
 }
 @media(max-width:380px){:root body.mts-overlay-nav .hm-hero-content{padding-top:calc(44px + var(--mts-navbar-h))}}
+
+/* One logo element keeps the mark visible throughout the scroll transition. */
+:root .mts-navbar .mts-navbar-brand .mts-navbar-logo-box .mts-navbar-logo{opacity:1;visibility:visible;filter:brightness(0) saturate(100%) invert(27%) sepia(56%) saturate(1393%) hue-rotate(185deg) brightness(88%) contrast(93%)}
+:root .mts-navbar.is-dark-hero:not(.is-scrolled) .mts-navbar-brand .mts-navbar-logo-box .mts-navbar-logo,:root[data-theme="dark"] .mts-navbar:not(.is-scrolled) .mts-navbar-brand .mts-navbar-logo-box .mts-navbar-logo{filter:brightness(0) invert(1)}
+:root .mts-navbar.is-scrolled .mts-navbar-brand .mts-navbar-logo-box .mts-navbar-logo{opacity:1;visibility:visible;filter:brightness(0) saturate(100%) invert(27%) sepia(56%) saturate(1393%) hue-rotate(185deg) brightness(88%) contrast(93%)}
