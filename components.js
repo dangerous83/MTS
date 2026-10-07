@@ -174,6 +174,11 @@
       'nav.mega.bar.email': 'info@mtsonline.de',
       'nav.mega.bar.badge': 'LIVE',
       'nav.mega.bar.reply': 'Operations desk online now · typical reply under 2h',
+      'nav.mega.live.k': 'On the road right now',
+      'nav.mega.live.from': 'HAMBURG',
+      'nav.mega.live.to': 'WORLDWIDE',
+      'nav.mega.live.ops': 'Operations desk',
+      'nav.mega.live.routes': 'Partner routes',
       // Mega menu descriptions
       'nav.sub.trucking.d': 'Port drayage, short hauls &amp; international long-haul',
       'nav.sub.sea.d': 'FCL / LCL ocean freight worldwide',
@@ -964,6 +969,11 @@
       'nav.mega.bar.email': 'info@mtsonline.de',
       'nav.mega.bar.badge': 'LIVE',
       'nav.mega.bar.reply': 'Operations-Team online · Antwort meist unter 2h',
+      'nav.mega.live.k': 'Gerade unterwegs',
+      'nav.mega.live.from': 'HAMBURG',
+      'nav.mega.live.to': 'WELTWEIT',
+      'nav.mega.live.ops': 'Operations-Team',
+      'nav.mega.live.routes': 'Partnerrouten',
       'nav.sub.trucking.d': 'Hafenvor-/-nachlauf, Nahverkehr &amp; internationaler Fernverkehr',
       'nav.sub.sea.d': 'FCL / LCL Seefracht weltweit',
       'nav.sub.air.d': 'Zeitkritische Luftfracht über Partner',
@@ -1904,6 +1914,26 @@
                 <div class="nav-mega-col-x">
                   <h5 data-i18n="nav.col.ground">GROUND &amp; TERMINAL</h5>
                   <a href="${svc.road}" class="nav-mega-item"><span class="nav-mega-ico"><img src="assets/icons/svc-container.svg" alt=""></span><span class="nav-mega-text"><strong data-i18n="nav.sub.road">Road freight</strong><small data-i18n="nav.sub.road.d">Port drayage, short hauls &amp; international long-haul</small></span></a>
+                  <div class="nav-mega-live" aria-hidden="true">
+                    <span class="nav-mega-live-label" data-i18n="nav.mega.live.k">On the road right now</span>
+                    <svg class="nav-mega-live-route" viewBox="0 0 200 44" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                      <path class="road" d="M6 26 H194" stroke-linecap="round"/>
+                      <circle class="dot" cx="6" cy="26" r="3.4"/>
+                      <path class="pin" d="M194 22 l3 5 -3 5 -3 -5 Z"/>
+                      <g class="truck">
+                        <rect x="0" y="2" width="16" height="10" rx="1.2"/>
+                        <rect x="14" y="5" width="7" height="7" rx="1"/>
+                        <rect x="2" y="4" width="4" height="3" rx=".5" fill="#79d2d7"/>
+                        <circle class="wheel" cx="4" cy="13.5" r="1.9"/>
+                        <circle class="wheel" cx="18" cy="13.5" r="1.9"/>
+                      </g>
+                    </svg>
+                    <div class="nav-mega-live-ends"><span data-i18n="nav.mega.live.from">HAMBURG</span><span data-i18n="nav.mega.live.to">WORLDWIDE</span></div>
+                    <div class="nav-mega-live-meta">
+                      <div><strong>24/7</strong><span data-i18n="nav.mega.live.ops">Operations desk</span></div>
+                      <div><strong>100+</strong><span data-i18n="nav.mega.live.routes">Partner routes</span></div>
+                    </div>
+                  </div>
                 </div>
                 <div class="nav-mega-col-x">
                   <h5 data-i18n="nav.col.freight">INTERNATIONAL FREIGHT</h5>
