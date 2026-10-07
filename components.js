@@ -1650,8 +1650,8 @@
             <img src="assets/icons/file-text.svg" alt=""><span>${tr('top.downloads')}</span>
           </button>
           <div class="mts-topbar-lang" role="group" aria-label="Language">
-            <button type="button" class="mts-lang-btn" data-lang="en" aria-pressed="${currentLang==='en'}"><img src="assets/icons/flag-gb.svg" alt="English"><span>EN</span></button>
-            <button type="button" class="mts-lang-btn" data-lang="de" aria-pressed="${currentLang==='de'}"><img src="assets/icons/flag-de.svg" alt="Deutsch"><span>DE</span></button>
+            <button type="button" class="mts-lang-btn" data-lang="en" aria-pressed="${currentLang==='en'}" aria-label="English" title="English"><img src="assets/icons/flag-gb.svg" alt="English"></button>
+            <button type="button" class="mts-lang-btn" data-lang="de" aria-pressed="${currentLang==='de'}" aria-label="Deutsch" title="Deutsch"><img src="assets/icons/flag-de.svg" alt="Deutsch"></button>
           </div>
         </div>
       </div>`;
@@ -1854,8 +1854,6 @@
   }
 
   function renderNav() {
-    const menus = document.querySelectorAll('.menu, .hm-menu');
-    if (!menus.length) return;
     const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
     const sub = ['seafreight.html','air-freight.html','road-transport.html','trucking.html','customs-warehousing.html','vehicle-logistics.html','container-terminal.html','international-freight.html','classic-cars.html','services.html'];
     // Map dropdown items → page/anchor they open
@@ -1863,9 +1861,30 @@
     const isActive = url => url.split('#')[0] === path;
     const servicesOpen = sub.includes(path);
     const activeAttr = p => p === path ? ' class="is-current active" aria-current="page"' : '';
+
+    // Replace whatever header markup each page shipped with a single unified
+    // component, so the logo and nav never shift between pages. Legacy class
+    // names are kept as aliases so existing CSS and the page-specific
+    // menu-toggle handlers in home.js / app.js keep working.
+    const legacy = document.querySelector('.hm-header, .nav-wrap');
+    let header = document.querySelector('.mts-navbar');
+    if (!header) {
+      header = document.createElement('header');
+      header.className = 'mts-navbar hm-header nav-wrap';
+      header.setAttribute('role', 'banner');
+      header.innerHTML = `
+        <nav class="mts-navbar-inner hm-nav nav" aria-label="Main navigation">
+          <a class="mts-navbar-brand hm-brand brand" href="index.html" aria-label="MTS home"><span class="mts-navbar-logo-box"><img src="assets/mts-logo-white.png" alt="MTS"></span></a>
+          <button class="mts-navbar-toggle hm-menu-toggle menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mts-navbar-menu"><span></span><span></span><span></span></button>
+          <div class="mts-navbar-menu hm-menu menu" id="mts-navbar-menu"></div>
+          <a class="mts-navbar-cta hm-nav-cta quote" href="contact.html"><span data-i18n="nav.quote">Request a quote</span> <span aria-hidden="true">↗</span></a>
+        </nav>`;
+      if (legacy) legacy.replaceWith(header);
+      else document.body.insertBefore(header, document.body.firstChild);
+    }
+
+    const menus = header.querySelectorAll('.mts-navbar-menu');
     menus.forEach(menu => {
-      const isHome = menu.classList.contains('hm-menu');
-      const linkCls = isHome ? '' : '';
       menu.innerHTML = `
         <a href="index.html"${activeAttr('index.html')} data-i18n="nav.home">Home</a>
         <div class="nav-group${servicesOpen ? ' is-current-section' : ''}">
@@ -1929,6 +1948,26 @@
       document.addEventListener('click', e => { if (!group.contains(e.target)) close(); });
       document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
     });
+
+    // Wire the mobile menu toggle on the (freshly-rendered) button. The
+    // per-page scripts (home.js / app.js) bound to the pre-replacement
+    // button, so the current element in the DOM has no handler of its own.
+    const toggleBtn = header.querySelector('.mts-navbar-toggle');
+    const menuEl = header.querySelector('.mts-navbar-menu');
+    if (toggleBtn && menuEl && !toggleBtn.dataset.wired) {
+      toggleBtn.dataset.wired = '1';
+      toggleBtn.addEventListener('click', () => {
+        const open = menuEl.classList.toggle('is-open');
+        menuEl.classList.toggle('open', open);
+        toggleBtn.setAttribute('aria-expanded', String(open));
+        toggleBtn.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      });
+      menuEl.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        menuEl.classList.remove('is-open');
+        menuEl.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      }));
+    }
   }
 
   function render() {
