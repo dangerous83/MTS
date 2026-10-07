@@ -650,3 +650,18 @@
   :root .mts-navbar .mts-navbar-menu .nav-group{position:static}
   :root .mts-navbar .site-theme-toggle{margin-left:auto}
 }
+/* ==== Theme-pinned surfaces ====
+   The partner-logos strip and the hero slide picker must look identical
+   in light and dark mode — logo PNGs ship with their own white backdrops,
+   so flipping the surface under them to dark would break their contrast,
+   and the slide picker is designed as a glass pane over the hero image
+   either way. Pin both to their light-mode appearance. */
+:root .hm-members,[data-theme="dark"] .hm-members{background:#fff;color:#0a2340;border-bottom:1px solid #d4e1e8}
+:root .hm-members-label,[data-theme="dark"] .hm-members-label{color:#42687d}
+:root .hm-members-set img,[data-theme="dark"] .hm-members-set img{background:#fff;filter:none}
+[data-theme="dark"] .hm-slide-progress button{background:#071e2baf;border-color:#ffffff55;color:#fff}
+[data-theme="dark"] .hm-slide-progress button:hover{background:#1a54a1c9}
+[data-theme="dark"] .hm-slide-progress button.is-active{background:#0b2c50dc;border-color:#b5d7fb}
+[data-theme="dark"] .hm-slide-progress button small{color:#a8c6d5}
+[data-theme="dark"] .hm-slide-progress button b{color:#fff}
+[data-theme="dark"] .hm-slide-progress .hm-progress-fill{background:#8ed9dc}
