@@ -6,7 +6,10 @@
   const T = {
     en: {
       "ft.cta.k": "Your next shipment",
-      "ft.cta.h": "Let’s connect your next destination.",
+      "ft.cta.h": "Let’s get your cargo moving.",
+      "ft.cta.p": "Tell us what, where and when. Our Hamburg team will plan the next step with you.",
+      "nav.brand.name": "MANGAL TRANSPORT & SHIPPING",
+      "nav.brand.line": "Your Hamburg logistics partner",
       "ft.network.k": "Connected from Hamburg",
       "ft.network.p": "Sea, air and road — coordinated from Hamburg to worldwide destinations.",
       "ft.network.badge": "Hamburg · Germany",
@@ -804,7 +807,10 @@
     },
     de: {
       "ft.cta.k": "Ihre nächste Sendung",
-      "ft.cta.h": "Verbinden wir Ihr nächstes Ziel.",
+      "ft.cta.h": "Bringen wir Ihre Fracht auf den Weg.",
+      "ft.cta.p": "Sagen Sie uns was, wohin und wann. Unser Hamburger Team plant mit Ihnen den nächsten Schritt.",
+      "nav.brand.name": "MANGAL TRANSPORT & SHIPPING",
+      "nav.brand.line": "Ihr Logistikpartner in Hamburg",
       "ft.network.k": "Ab Hamburg vernetzt",
       "ft.network.p": "See, Luft und Straße — koordiniert ab Hamburg zu weltweiten Destinationen.",
       "ft.network.badge": "Hamburg · Deutschland",
@@ -1751,18 +1757,15 @@
     footer.innerHTML = `
       <div class="site-footer-inner">
         <div class="site-footer-cta">
-          <div><span class="site-footer-kicker">${tr('ft.cta.k')}</span><h2>${tr('ft.cta.h')}</h2></div>
-          <a class="site-footer-quote" href="contact.html#quote"><span>${tr('nav.quote')}</span><span aria-hidden="true">↗</span></a>
+          <img class="site-footer-cta-map" src="assets/footer-network.svg" alt="" aria-hidden="true" loading="lazy">
+          <div class="site-footer-cta-copy"><span class="site-footer-kicker">${tr('ft.cta.k')}</span><h2>${tr('ft.cta.h')}</h2><p>${tr('ft.cta.p')}</p>
+            <div class="site-footer-cta-actions"><a class="site-footer-quote" href="contact.html#quote"><span>${tr('nav.quote')}</span><span aria-hidden="true">↗</span></a><a class="site-footer-sales" href="contact.html">${tr('nav.contact')} <span aria-hidden="true">→</span></a></div>
+          </div>
         </div>
         <div class="site-footer-grid">
           <div class="site-footer-brand">
             <a href="index.html" aria-label="MTS home"><img src="assets/mts-logo.png" alt="MTS"></a>
             <p class="site-footer-network-copy">${tr('ft.network.p')}</p>
-            <div class="site-footer-network">
-              <div class="site-footer-network-head"><span class="site-footer-hub-dot" aria-hidden="true"></span><span>${tr('ft.network.k')}</span></div>
-              <img src="assets/footer-network.svg" class="site-footer-network-map" alt="" aria-hidden="true" loading="lazy">
-              <div class="site-footer-network-caption"><span>${tr('ft.network.badge')}</span><span>${tr('g.meta.worldwide')}</span></div>
-            </div>
             <div class="site-footer-modes"><span>${tr('nav.sub.sea')}</span><span>${tr('nav.sub.air')}</span><span>${tr('nav.sub.road')}</span></div>
           </div>
           <div class="site-footer-column site-footer-services">
@@ -1775,6 +1778,15 @@
             <a href="classic-cars.html">${tr('nav.classic')}</a>
             <a href="services.html">${tr('nav.services.all')}</a>
             <a href="${serviceRoutes.ind}">${tr('nav.mega.feat.h')}</a>
+          </div>
+          <div class="site-footer-column site-footer-destinations">
+            <strong>${tr('nav.destinations')}</strong>
+            <a href="destinations.html">${tr('d.r1.h')}</a>
+            <a href="destinations.html">${tr('d.r3.h')}</a>
+            <a href="destinations.html">${tr('d.r4.h')}</a>
+            <a href="destinations.html">${tr('d.r5.h')}</a>
+            <a href="destinations.html">${tr('d.r7.h')}</a>
+            <a href="destinations.html">${tr('d.r9.h')}</a>
           </div>
           <div class="site-footer-column site-footer-contact"><strong>${tr('ft.head')}</strong><address>${tr('ft.address_full')}</address><p class="site-footer-line"><span>${tr('ft.tel_label')}</span> <a href="tel:+494081978530">+49 (0)40 / 819 78 530</a></p><p class="site-footer-line"><span>${tr('ft.fax_label')}</span> +49 (0)40 / 819 78 355</p><p class="site-footer-line"><span>${tr('ft.email_label')}</span> <a href="mailto:info@mtsonline.de">info[at]mtsonline.de</a></p><div class="site-social" aria-label="Social media"><a href="https://www.instagram.com/mts_gmbh?igshid=8u4w9e23s97k" target="_blank" rel="noopener noreferrer" aria-label="MTS on Instagram" title="Instagram"><img src="assets/icons/instagram.svg" alt=""></a><a href="https://www.facebook.com/mtshamburg/" target="_blank" rel="noopener noreferrer" aria-label="MTS on Facebook" title="Facebook"><img src="assets/icons/facebook.svg" alt=""></a><a href="https://www.youtube.com/channel/UCoRZqOU6EyD5YDcyQ8VnFCQ?view_as=subscriber" target="_blank" rel="noopener noreferrer" aria-label="MTS on YouTube" title="YouTube"><img src="assets/icons/youtube.svg" alt=""></a></div></div>
         </div>
@@ -1893,7 +1905,7 @@
       header.setAttribute('role', 'banner');
       header.innerHTML = `
         <nav class="mts-navbar-inner hm-nav nav" aria-label="Main navigation">
-          <a class="mts-navbar-brand hm-brand brand" href="index.html" aria-label="MTS home"><span class="mts-navbar-logo-box"><img src="assets/mts-logo-white.png" alt="MTS"></span></a>
+          <a class="mts-navbar-brand hm-brand brand" href="index.html" aria-label="MTS home"><span class="mts-navbar-logo-box"><img src="assets/mts-logo-white.png" alt="MTS"></span><span class="mts-navbar-brand-copy"><strong data-i18n="nav.brand.name">MANGAL TRANSPORT &amp; SHIPPING</strong><small data-i18n="nav.brand.line">Your Hamburg logistics partner</small></span></a>
           <button class="mts-navbar-toggle hm-menu-toggle menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mts-navbar-menu"><span></span><span></span><span></span></button>
           <div class="mts-navbar-menu hm-menu menu" id="mts-navbar-menu"></div>
           <a class="mts-navbar-cta hm-nav-cta quote" href="contact.html"><span data-i18n="nav.quote">Request a quote</span> <span aria-hidden="true">↗</span></a>

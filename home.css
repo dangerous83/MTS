@@ -171,3 +171,64 @@ body{background:#fff;color:var(--hm-ink)}
 @media(max-height:580px){.hm-hero-controls{bottom:90px}.hm-hero-content{padding-bottom:150px}}
 .hm-slide-progress button,.hm-slide-progress button.is-active{width:190px;padding:8px 13px}
 @media(max-width:900px){.hm-slide-progress button,.hm-slide-progress button.is-active{width:155px;padding:8px 13px}}
+
+/* A bright Hamburg banner with readable content and an open image edge. */
+.hm-header+main{margin-top:0}
+.hm-hero{height:680px;min-height:620px;max-height:none;background:#eaf0f8;color:#0b2858}
+.hm-slide img{object-position:72% center}
+.hm-shade{background:linear-gradient(90deg,#f2f6fc 0%,#f2f6fcf2 24%,#f2f6fcba 42%,#edf4fb42 65%,#edf4fb08 100%),linear-gradient(0deg,#eff5fc85,transparent 40%)}
+.hm-hero-content{padding-top:42px;padding-bottom:160px;max-width:1240px}
+.hm-overline{color:#2160d4;font-size:10px;letter-spacing:.16em}
+.hm-hero h1{font-size:clamp(36px,4.35vw,60px);font-weight:800;line-height:1.08;letter-spacing:-.045em;max-width:665px;color:#0b2858;text-shadow:none}
+.hm-hero-copy{color:#3d5471;font-size:15px;line-height:1.8;max-width:490px;margin:22px 0 26px}
+.hm-hero-actions{gap:12px}
+.hm-hero .hm-btn{border-radius:25px;padding:13px 21px;font-size:11px;gap:18px}
+.hm-hero .hm-btn-primary{background:#2160e8;border-color:#2160e8;box-shadow:0 6px 20px #2160e82b;color:#fff}
+.hm-hero .hm-btn-primary:hover{background:#174ec7;border-color:#174ec7}
+.hm-hero .hm-btn-outline{border:1px solid #7a9fd7;color:#173d76;background:#ffffff4d}
+.hm-hero .hm-btn-outline:hover{background:#fff;border-color:#2160e8}
+.hm-hero-rail{display:none}
+.hm-hero-particles{opacity:.2}
+.hm-hero-controls{bottom:74px;padding-right:0}
+.hm-slide-progress{gap:10px}
+.hm-slide-progress button,.hm-slide-progress button.is-active{width:165px;height:57px;padding:7px 10px;background:#ffffffb8;color:#14365f;border:1px solid #cbd9ed;border-radius:9px;box-shadow:0 4px 12px #0b285808;backdrop-filter:blur(8px)}
+.hm-slide-progress button:hover{background:#fff;border-color:#6f9ade;transform:translateY(-2px)}
+.hm-slide-progress button.is-active{background:#fff;border-color:#528be7}
+.hm-slide-progress button img{width:37px;height:37px;border-radius:5px}
+.hm-slide-progress button small{color:#6b83a4;font-size:7px}
+.hm-slide-progress button b{color:#173a6a;font-size:10px}
+.hm-slide-progress .hm-progress-fill{background:#2160e8}
+.hm-hero-controls p{color:#3e5b80}
+.hm-arrows button{background:#ffffffbd;border:1px solid #c1d3eb;color:#163e78;border-radius:50%}
+.hm-arrows button:hover{background:#2160e8;color:#fff}
+.hm-members{margin-top:0;background:#fff;border-bottom-color:#e3ebf5;padding:23px 0}
+.hm-members-label{color:#69809d}
+[data-theme="dark"] .hm-hero{color:#e7efff;background:#0a2340}
+[data-theme="dark"] .hm-shade{background:linear-gradient(90deg,#08224cf2 0%,#08224cd9 28%,#08224c88 52%,#08224c16 100%)}
+[data-theme="dark"] .hm-hero h1{color:#f3f7ff}
+[data-theme="dark"] .hm-hero-copy{color:#c6d7ed}
+[data-theme="dark"] .hm-overline{color:#a6caff}
+[data-theme="dark"] .hm-members{background:#101f35;border-color:#29405f}
+[data-theme="dark"] .hm-members-label{color:#adc5e6}
+@media(max-width:980px){.hm-hero{height:660px;min-height:0}.hm-hero h1{font-size:48px;max-width:600px}.hm-hero-content{padding-bottom:155px}.hm-hero-controls{bottom:64px}.hm-slide-progress button,.hm-slide-progress button.is-active{width:145px}.hm-hero-copy{max-width:470px}}
+@media(max-width:700px){
+  .hm-header+main{margin-top:0}
+  .hm-hero{height:auto;min-height:650px;display:flex;align-items:center}
+  .hm-shade{background:linear-gradient(90deg,#f2f6fcf2,#f2f6fcce 58%,#f2f6fc70),linear-gradient(0deg,#f2f6fc 0%,transparent 45%)}
+  .hm-slide img{object-position:70% center}
+  .hm-hero-content{padding-top:65px;padding-bottom:155px}
+  .hm-hero h1{font-size:clamp(35px,7.4vw,46px);max-width:550px}
+  .hm-hero-copy{font-size:14px;max-width:430px;margin:18px 0 24px;line-height:1.75}
+  .hm-overline{font-size:9px}
+  .hm-hero .hm-btn{font-size:10px;padding:12px 16px;gap:10px}
+  .hm-hero-controls{bottom:55px;gap:10px;padding-right:0}
+  .hm-slide-progress button,.hm-slide-progress button.is-active{width:25px;height:5px;padding:0;border:0;border-radius:4px;background:#a9bdd9;box-shadow:none;backdrop-filter:none}
+  .hm-slide-progress button.is-active{width:45px;background:#c1d2ea}
+  .hm-slide-progress button img,.hm-slide-progress button span{display:none}
+  .hm-slide-progress .hm-progress-fill{height:5px}
+  .hm-arrows{margin-right:0}
+  .hm-hero-controls p{font-size:9px}
+  .hm-members{margin-top:0}
+}
+@media(max-width:380px){.hm-hero{min-height:660px}.hm-hero-content{padding-top:44px;padding-bottom:145px}.hm-hero h1{font-size:34px}.hm-hero-actions{gap:8px;flex-wrap:wrap}.hm-hero-copy{font-size:13px}.hm-hero-controls{bottom:44px}}
+@media(max-height:580px) and (min-width:701px){.hm-hero{height:570px;min-height:0}.hm-hero-content{padding-top:35px;padding-bottom:130px}.hm-hero h1{font-size:42px}.hm-hero-controls{bottom:45px}}
