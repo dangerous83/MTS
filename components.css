@@ -642,3 +642,11 @@
 :root .mts-navbar .mts-navbar-brand .mts-navbar-logo-box .mts-navbar-logo{opacity:1;visibility:visible;filter:brightness(0) saturate(100%) invert(27%) sepia(56%) saturate(1393%) hue-rotate(185deg) brightness(88%) contrast(93%)}
 :root .mts-navbar.is-dark-hero:not(.is-scrolled) .mts-navbar-brand .mts-navbar-logo-box .mts-navbar-logo,:root[data-theme="dark"] .mts-navbar:not(.is-scrolled) .mts-navbar-brand .mts-navbar-logo-box .mts-navbar-logo{filter:brightness(0) invert(1)}
 :root .mts-navbar.is-scrolled .mts-navbar-brand .mts-navbar-logo-box .mts-navbar-logo{opacity:1;visibility:visible;filter:brightness(0) saturate(100%) invert(27%) sepia(56%) saturate(1393%) hue-rotate(185deg) brightness(88%) contrast(93%)}
+
+/* Center the desktop navigation independently of the side controls. */
+@media(min-width:981px){
+  :root .mts-navbar .mts-navbar-inner{position:relative}
+  :root .mts-navbar .mts-navbar-menu{position:absolute;left:50%;transform:translateX(-50%);margin-left:0;justify-content:center}
+  :root .mts-navbar .mts-navbar-menu .nav-group{position:static}
+  :root .mts-navbar .site-theme-toggle{margin-left:auto}
+}
