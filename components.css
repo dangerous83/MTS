@@ -602,3 +602,12 @@
 }
 @media(max-width:380px){:root .mts-navbar-cta{font-size:9px;padding:8px 9px}:root .mts-navbar-inner{gap:7px}:root .mts-navbar .mts-navbar-brand .mts-navbar-logo-box img{width:66px}.site-footer-grid{gap:26px 18px}.site-footer-cta h2{font-size:28px}}
 @media(prefers-reduced-motion:reduce){.mts-navbar *{transition:none!important}.nav-mega-live-route .truck,.nav-mega-live-route .road,.nav-mega-live-label:before{animation:none}}
+
+/* Override older shared navbar aliases so the new branding stays legible. */
+:root .mts-navbar .mts-navbar-inner{height:auto;min-height:76px}
+:root .mts-navbar .mts-navbar-brand-copy strong{color:#fff}
+:root .mts-navbar .mts-navbar-brand-copy small{color:#c3d7f1}
+:root .mts-navbar .mts-navbar-cta{background:#2160e8;border-color:#5684ec}
+:root .mts-navbar .mts-navbar-cta:hover{background:#3575f5;border-color:#8cb1ff}
+@media(max-width:980px){:root .mts-navbar .mts-navbar-inner{min-height:70px}}
+@media(max-width:700px){:root .mts-navbar .mts-navbar-inner{min-height:64px}}
