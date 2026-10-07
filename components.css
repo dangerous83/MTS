@@ -386,38 +386,38 @@
 /* ==== Unified navbar component ====
    Rendered by components.js on every page so the logo, menu and quote
    button never shift between home and the inner pages. */
-:root .mts-navbar{position:sticky;top:var(--mts-topbar-h,44px);z-index:30;background:#1a54a1;border-bottom:1px solid #ffffff26;color:#fff}
+:root .mts-navbar{position:sticky;top:var(--mts-topbar-h,44px);z-index:30;background:#0a2340;border-bottom:1px solid #ffffff1f;color:#fff}
 :root .mts-navbar-inner{width:min(1240px,calc(100% - 48px));margin:0 auto;min-height:84px;display:flex;align-items:center;gap:26px;padding:0}
 :root .mts-navbar-brand{display:inline-flex;align-items:center;flex:none;margin-right:4px;padding:0;background:none}
-:root .mts-navbar-logo-box{display:inline-flex;align-items:center;justify-content:center;padding:9px 16px;background:#0a2d5c;border:1px solid #ffffff33;border-radius:4px;box-shadow:0 2px 6px rgba(3,15,32,.25)}
-:root .mts-navbar .mts-navbar-brand .mts-navbar-logo-box img{display:block;width:112px;height:auto;max-height:40px;object-fit:contain;filter:none}
+:root .mts-navbar-logo-box{display:inline-flex;align-items:center;justify-content:center;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none}
+:root .mts-navbar .mts-navbar-brand .mts-navbar-logo-box img{display:block;width:112px;height:auto;max-height:44px;object-fit:contain;filter:none}
 :root .mts-navbar-menu{display:flex;align-items:center;gap:23px;margin-left:auto;color:#fff;font-size:12px;font-weight:800;letter-spacing:.02em}
 :root .mts-navbar-menu>a,:root .mts-navbar-menu .nav-group-toggle{color:#fff;font:800 12px Manrope,Arial,sans-serif;letter-spacing:.02em;white-space:nowrap;position:relative;padding:30px 0;background:none;border:0;cursor:pointer;transition:color .2s}
 :root .mts-navbar-menu>a::after{content:"";position:absolute;left:0;right:100%;bottom:22px;height:2px;background:#b5edf2;transition:right .24s}
 :root .mts-navbar-menu>a:hover::after,:root .mts-navbar-menu>a.is-current::after,:root .mts-navbar-menu>a.active::after{right:0}
 :root .mts-navbar-menu>a:hover,:root .mts-navbar-menu>a.is-current,:root .mts-navbar-menu>a.active,:root .mts-navbar-menu .nav-group-toggle:hover,:root .mts-navbar-menu .nav-group.is-current-section>.nav-group-toggle{color:#b5edf2}
-:root .mts-navbar-cta{display:inline-flex;align-items:center;justify-content:center;gap:14px;background:#123d79;color:#fff;border:1px solid #ffffff55;padding:14px 18px;font:800 12px Manrope,Arial,sans-serif;letter-spacing:.02em;white-space:nowrap;cursor:pointer;border-radius:3px;transition:background .2s,border-color .2s,transform .2s}
-:root .mts-navbar-cta:hover{background:#0b2f62;border-color:#b5edf2;transform:translateY(-2px)}
+:root .mts-navbar-cta{display:inline-flex;align-items:center;justify-content:center;gap:14px;background:#061a33;color:#fff;border:1px solid #ffffff4d;padding:14px 18px;font:800 12px Manrope,Arial,sans-serif;letter-spacing:.02em;white-space:nowrap;cursor:pointer;border-radius:3px;transition:background .2s,border-color .2s,transform .2s}
+:root .mts-navbar-cta:hover{background:#02101f;border-color:#b5edf2;transform:translateY(-2px)}
 :root .mts-navbar-toggle{display:none;flex-direction:column;justify-content:center;gap:4px;width:40px;height:40px;padding:0;background:none;border:0;cursor:pointer;margin-left:auto}
 :root .mts-navbar-toggle span{display:block;height:2px;width:22px;background:#fff;transition:transform .2s,opacity .2s}
 :root .mts-navbar-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
 :root .mts-navbar-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
 :root .mts-navbar-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 /* Dark theme keeps the same unified feel. */
-[data-theme="dark"] .mts-navbar{background:#102a4b;border-bottom-color:#ffffff22}
-[data-theme="dark"] .mts-navbar-logo-box{background:#06183a;border-color:#ffffff22}
-[data-theme="dark"] .mts-navbar-cta{background:#16498d}
-[data-theme="dark"] .mts-navbar-cta:hover{background:#1a54a1}
+[data-theme="dark"] .mts-navbar{background:#061830;border-bottom-color:#ffffff1a}
+[data-theme="dark"] .mts-navbar-logo-box{background:transparent;border:0}
+[data-theme="dark"] .mts-navbar-cta{background:#03101f;border-color:#ffffff40}
+[data-theme="dark"] .mts-navbar-cta:hover{background:#010a16}
 /* Make the aliased hm-* / nav rules we inherit on the same element yield to
    the unified sizing so there's no residual height / gap drift. */
-:root .mts-navbar.hm-header,:root .mts-navbar.nav-wrap{top:var(--mts-topbar-h,44px);background:#1a54a1;border-bottom:1px solid #ffffff26}
+:root .mts-navbar.hm-header,:root .mts-navbar.nav-wrap{top:var(--mts-topbar-h,44px);background:#0a2340;border-bottom:1px solid #ffffff1f}
 :root .mts-navbar .hm-brand,:root .mts-navbar .brand{gap:0;padding:0;background:none}
 :root .mts-navbar .hm-brand img,:root .mts-navbar .brand img{width:auto;max-height:none}
 /* Mobile: show the toggle, collapse the menu below the bar. */
 @media(max-width:980px){
   :root .mts-navbar-toggle{display:inline-flex;margin-left:auto}
   :root .mts-navbar-menu{display:none}
-  :root .mts-navbar-menu.is-open,:root .mts-navbar-menu.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:12px 18px 18px;background:#1a54a1;border-top:1px solid #ffffff22;box-shadow:0 20px 40px rgba(3,15,32,.2);z-index:30}
+  :root .mts-navbar-menu.is-open,:root .mts-navbar-menu.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:12px 18px 18px;background:#0a2340;border-top:1px solid #ffffff1f;box-shadow:0 20px 40px rgba(3,15,32,.3);z-index:30}
   :root .mts-navbar-menu.is-open>a,:root .mts-navbar-menu.open>a,:root .mts-navbar-menu.is-open .nav-group-toggle,:root .mts-navbar-menu.open .nav-group-toggle{padding:14px 0;border-bottom:1px solid #ffffff22;width:100%;text-align:left}
   :root .mts-navbar-menu.is-open>a::after,:root .mts-navbar-menu.open>a::after{display:none}
   :root .mts-navbar-inner{position:relative;min-height:72px;gap:14px}
