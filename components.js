@@ -1905,13 +1905,29 @@
       header.setAttribute('role', 'banner');
       header.innerHTML = `
         <nav class="mts-navbar-inner hm-nav nav" aria-label="Main navigation">
-          <a class="mts-navbar-brand hm-brand brand" href="index.html" aria-label="MTS home"><span class="mts-navbar-logo-box"><img src="assets/mts-logo-white.png" alt="MTS"></span><span class="mts-navbar-brand-copy"><strong data-i18n="nav.brand.name">MANGAL TRANSPORT &amp; SHIPPING</strong><small data-i18n="nav.brand.line">Your Hamburg logistics partner</small></span></a>
+          <a class="mts-navbar-brand hm-brand brand" href="index.html" aria-label="MTS home"><span class="mts-navbar-logo-box"><img class="mts-navbar-logo-blue" src="assets/mts-logo.png" alt="MTS"><img class="mts-navbar-logo-white" src="assets/mts-logo-white.png" alt="" aria-hidden="true"></span><span class="mts-navbar-brand-copy"><strong data-i18n="nav.brand.name">MANGAL TRANSPORT &amp; SHIPPING</strong><small data-i18n="nav.brand.line">Your Hamburg logistics partner</small></span></a>
           <button class="mts-navbar-toggle hm-menu-toggle menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mts-navbar-menu"><span></span><span></span><span></span></button>
           <div class="mts-navbar-menu hm-menu menu" id="mts-navbar-menu"></div>
           <a class="mts-navbar-cta hm-nav-cta quote" href="contact.html"><span data-i18n="nav.quote">Request a quote</span> <span aria-hidden="true">↗</span></a>
         </nav>`;
       if (legacy) legacy.replaceWith(header);
       else document.body.insertBefore(header, document.body.firstChild);
+    }
+
+    // Overlay the hero without changing layout when the scroll state changes.
+    const hero = document.querySelector('main .hm-hero, main .page-hero');
+    document.body.classList.toggle('mts-overlay-nav', !!hero);
+    header.classList.toggle('is-dark-hero', !!hero && !hero.classList.contains('hm-hero'));
+    if (!header.dataset.scrollWired) {
+      header.dataset.scrollWired = '1';
+      const syncScroll = () => header.classList.toggle('is-scrolled', !hero || window.scrollY > 24);
+      const syncHeight = () => document.documentElement.style.setProperty('--mts-navbar-h', header.offsetHeight + 'px');
+      syncScroll();
+      syncHeight();
+      window.addEventListener('scroll', syncScroll, { passive: true });
+      window.addEventListener('pageshow', syncScroll);
+      if (window.ResizeObserver) new ResizeObserver(syncHeight).observe(header);
+      window.addEventListener('resize', syncHeight, { passive: true });
     }
 
     const menus = header.querySelectorAll('.mts-navbar-menu');
