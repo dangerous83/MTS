@@ -1917,7 +1917,7 @@
     // Overlay the hero without changing layout when the scroll state changes.
     const hero = document.querySelector('main .hm-hero, main .page-hero');
     document.body.classList.toggle('mts-overlay-nav', !!hero);
-    header.classList.toggle('is-dark-hero', !!hero && !hero.classList.contains('hm-hero'));
+    header.classList.toggle('is-dark-hero', !!hero);
     if (!header.dataset.scrollWired) {
       header.dataset.scrollWired = '1';
       const syncScroll = () => header.classList.toggle('is-scrolled', !hero || window.scrollY > 24);
