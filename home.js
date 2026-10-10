@@ -7,23 +7,6 @@ if (memberSet) {
   memberSet.parentElement.classList.add('is-looping');
 }
 
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-const revealElements = [...document.querySelectorAll('.hm-reveal')];
-if (reduceMotion.matches || !('IntersectionObserver' in window)) {
-  revealElements.forEach(element => element.classList.add('is-visible'));
-} else {
-  document.documentElement.classList.add('hm-motion');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    });
-  }, { threshold: 0.12 });
-  revealElements.forEach(element => observer.observe(element));
-}
-
 document.querySelector('#lead-form').addEventListener('submit', event => {
   event.preventDefault();
   const form = event.currentTarget;
