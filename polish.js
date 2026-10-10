@@ -86,89 +86,121 @@
   else initScroll();
   const explorer = document.querySelector('.mts-explorer');
   if (!explorer) return;
-  const modes = {
-    sea:{path:'M280 75 Q390 110 471 224 M280 75 Q175 12 109 93',title:['Sea freight. Worldwide reach.','Seefracht. Weltweit verbunden.'],copy:['Container and consolidated cargo, coordinated from Hamburg to worldwide destinations.','Container und Sammelgut, von Hamburg zu weltweiten Zielen koordiniert.'],link:['Explore sea freight','Seefracht entdecken'],href:'seafreight.html'},
-    air:{path:'M280 75 Q385 5 438 97 M280 75 Q140 -10 109 93',title:['Air freight. Time matters.','Luftfracht. Zeit zählt.'],copy:['Air cargo planning for urgent shipments and international connections.','Luftfrachtplanung für dringende Sendungen und internationale Verbindungen.'],link:['Explore air freight','Luftfracht entdecken'],href:'air-freight.html'},
-    road:{path:'M280 75 Q292 95 310 107 M280 75 Q250 86 262 115',title:['Road freight. Closer connections.','Straßentransport. Direkte Verbindungen.'],copy:['Container drayage and long-haul transport across Germany and Europe.','Containertransporte und Fernverkehr in Deutschland und Europa.'],link:['Explore road freight','Straßentransport entdecken'],href:'road-transport.html'}
-  };
   const map = explorer.querySelector('.mts-route-map');
+  const svg = map.querySelector('svg');
   const ns = 'http://www.w3.org/2000/svg';
-  const traveler = document.createElementNS(ns,'g');
-  traveler.classList.add('mts-route-traveler');
-  traveler.innerHTML = '<circle r="12"/><g class="mts-traveler-icon" fill="none" stroke="#e7f7ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></g>';
-  map.querySelector('svg').append(traveler);
-  const travelPath = document.createElementNS(ns,'path');
-  const journey = document.createElement('div');journey.className='mts-route-journey';
+  // Generalized connection sketches; these are not sailing schedules or live tracking.
+  const modes = {
+    sea:{color:'#83d5ff',icon:'<path d="M-7 2l2 5h10l2-5zM-4 2v-5h8v5M-2-3v-3h4v3M-7 9q3-2 7 0q3-2 7 0"/>',title:['Sea freight. Worldwide reach.','Seefracht. Weltweit verbunden.'],copy:['Container and consolidated cargo, coordinated from Hamburg to worldwide destinations.','Container und Sammelgut, von Hamburg zu weltweiten Zielen koordiniert.'],link:['Explore sea freight','Seefracht entdecken'],href:'seafreight.html',regions:[
+      {name:['Americas','Amerika'],point:[169,112],path:'M295 93 Q242 48 169 112'},
+      {name:['Gulf','Golfregion'],point:[353,137],path:'M295 93 Q274 98 272 133 Q294 127 310 132 Q319 152 327 160 Q348 171 358 151 Q359 142 353 137'},
+      {name:['Asia','Asien'],point:[436,174],path:'M295 93 Q274 98 272 133 Q294 127 310 132 Q319 152 327 160 Q370 207 416 184 Q430 179 436 174'}]},
+    air:{color:'#ffd58a',icon:'<path d="M0-8l2 6 6 4v2l-6-2v4l2 2v1L0 8l-4 1V8l2-2V2l-6 2V2l6-4z"/>',title:['Air freight. Time matters.','Luftfracht. Zeit zählt.'],copy:['Air cargo planning for urgent shipments and international connections.','Luftfrachtplanung für dringende Sendungen und internationale Verbindungen.'],link:['Explore air freight','Luftfracht entdecken'],href:'air-freight.html',regions:[
+      {name:['Americas','Amerika'],point:[169,112],path:'M295 93 Q237 27 169 112'},
+      {name:['Gulf','Golfregion'],point:[353,137],path:'M295 93 Q350 80 353 137'},
+      {name:['Asia','Asien'],point:[436,174],path:'M295 93 Q430 48 436 174'}]},
+    road:{color:'#9cebd5',icon:'<path d="M-8-4h10v9H-8zM2-1h4l2 3v3H2M6-1v3h2"/><circle cx="-5" cy="6" r="1.8"/><circle cx="5" cy="6" r="1.8"/>',title:['Road freight. Closer connections.','Straßentransport. Direkte Verbindungen.'],copy:['Container drayage and long-haul transport across Germany and Europe.','Containertransporte und Fernverkehr in Deutschland und Europa.'],link:['Explore road freight','Straßentransport entdecken'],href:'road-transport.html',regions:[
+      {name:['Western Europe','Westeuropa'],point:[283.5,100],path:'M295 93 Q288 94 287 98 Q285 100 283.5 100'},
+      {name:['Central Europe','Mitteleuropa'],point:[301.5,95.3],path:'M295 93 Q298 97 301.5 95.3'},
+      {name:['Southern Europe','Südeuropa'],point:[274.4,112.3],path:'M295 93 Q288 94 287 98 Q281 102 281 107 Q277 109 274.4 112.3'}]}
+  };
+  const make = (tag, attrs={}, text='') => {
+    const el=document.createElementNS(ns,tag);
+    Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v)));
+    if(text) el.textContent=text;
+    return el;
+  };
+  const traveler = make('g',{'class':'mts-route-traveler'});
+  traveler.innerHTML='<circle r="10"/><g class="mts-traveler-icon" fill="none" stroke="#effaff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></g>';
+  svg.append(traveler);
+  const travelPath=make('path');
+  const destinations=document.createElement('div');destinations.className='mts-map-destinations';
+  destinations.setAttribute('role','group');
+  for(let i=0;i<3;i++) {const button=document.createElement('button');button.type='button';button.dataset.destination=i;destinations.append(button);}
+  map.after(destinations);
+  const journey=document.createElement('div');journey.className='mts-route-journey';
   journey.innerHTML='<span></span><button class="mts-route-replay" type="button"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 5a5 5 0 1 1-1 5M3 1v4h4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span></span></button>';
   explorer.querySelector('.mts-route-choices').before(journey);
-  const icons={sea:'<path d="M-7 2l2 5h10l2-5zM-4 2v-5h8v5M-2-3v-3h4v3M-7 9q3-2 7 0q3-2 7 0"/>',air:'<path d="M0-8l2 6 6 4v2l-6-2v4l2 2v1L0 8l-4 1V8l2-2V2l-6 2V2l6-4z"/>',road:'<path d="M-8-4h10v9H-8zM2-1h4l2 3v3H2M6-1v3h2"/><circle cx="-5" cy="6" r="1.8"/><circle cx="5" cy="6" r="1.8"/>'};
-  let selected = 'sea';
-  let animation = 0,elapsed = 0,lastTime = 0,visible = true;
+  let selected='sea',destination=0,animation=0,elapsed=0,lastTime=0,visible=true;
   const placeTraveler = fraction => {
     const length=travelPath.getTotalLength();
     const point=travelPath.getPointAtLength(length*fraction);
-    traveler.setAttribute('transform',`translate(${point.x} ${point.y})`);
     const next=travelPath.getPointAtLength(Math.min(length,length*fraction+1));
-    const angle=selected==='air' && fraction<1 ? Math.atan2(next.y-point.y,next.x-point.x)*180/Math.PI+90 : 0;
+    const angle=selected==='air' ? Math.atan2(next.y-point.y,next.x-point.x)*180/Math.PI+90 : 0;
+    traveler.setAttribute('transform',`translate(${point.x} ${point.y}) scale(${selected==='road'?.19:1})`);
     traveler.querySelector('.mts-traveler-icon').setAttribute('transform',`rotate(${angle})`);
   };
-  const step = time => {
-    if (lastTime) elapsed += Math.min(64,time-lastTime);
+  const step=time=>{
+    if(lastTime) elapsed+=Math.min(64,time-lastTime);
     lastTime=time;
-    // Travel smoothly, then hold briefly at the destination before repeating.
-    const phase=(elapsed%8500)/6500;
-    placeTraveler(Math.min(1,phase));
+    const phase=(elapsed%10000)/8200;
+    placeTraveler(Math.min(.998,phase));
     animation=requestAnimationFrame(step);
   };
-  const syncTraveler = () => {
+  const syncTraveler=()=>{
     cancelAnimationFrame(animation);animation=0;lastTime=0;
     const active=visible&&!document.hidden&&!reduced.matches;
     traveler.classList.toggle('is-active',active);
     if(active) animation=requestAnimationFrame(step);
   };
-  if ('IntersectionObserver' in window) new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;syncTraveler();}).observe(explorer);
+  const restart=()=>{elapsed=0;lastTime=0;placeTraveler(0);syncTraveler();};
+  if('IntersectionObserver' in window) new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;syncTraveler();}).observe(explorer);
   document.addEventListener('visibilitychange',syncTraveler);
   reduced.addEventListener('change',syncTraveler);
-  const restart = () => {elapsed=0;lastTime=0;placeTraveler(0);syncTraveler();};
   journey.querySelector('button').addEventListener('click',restart);
   let pointerFrame=0,pointerX=70,pointerY=15;
-  if (matchMedia('(hover:hover) and (pointer:fine)').matches) {
+  if(matchMedia('(hover:hover) and (pointer:fine)').matches){
     explorer.addEventListener('pointermove',event=>{
-      if (reduced.matches) return;
-      const bounds=explorer.getBoundingClientRect();
-      pointerX=(event.clientX-bounds.left)/bounds.width*100;pointerY=(event.clientY-bounds.top)/bounds.height*100;
-      if(!pointerFrame) pointerFrame=requestAnimationFrame(()=>{
-        pointerFrame=0;explorer.style.setProperty('--glass-x',pointerX+'%');explorer.style.setProperty('--glass-y',pointerY+'%');
-        explorer.style.setProperty('--map-x',(pointerX-50)*.06+'px');explorer.style.setProperty('--map-y',(pointerY-50)*.04+'px');
-      });
+      if(reduced.matches)return;
+      const bounds=explorer.getBoundingClientRect();pointerX=(event.clientX-bounds.left)/bounds.width*100;pointerY=(event.clientY-bounds.top)/bounds.height*100;
+      if(!pointerFrame)pointerFrame=requestAnimationFrame(()=>{pointerFrame=0;explorer.style.setProperty('--glass-x',pointerX+'%');explorer.style.setProperty('--glass-y',pointerY+'%');});
     },{passive:true});
-    explorer.addEventListener('pointerleave',()=>{cancelAnimationFrame(pointerFrame);pointerFrame=0;explorer.style.setProperty('--glass-x','70%');explorer.style.setProperty('--glass-y','15%');explorer.style.setProperty('--map-x','0px');explorer.style.setProperty('--map-y','0px');});
+    explorer.addEventListener('pointerleave',()=>{cancelAnimationFrame(pointerFrame);pointerFrame=0;explorer.style.setProperty('--glass-x','70%');explorer.style.setProperty('--glass-y','15%');});
   }
-  const buttons = [...explorer.querySelectorAll('[data-route]')];
-  const render = (animate = false) => {
-    const mode = modes[selected];const lang = de() ? 1 : 0;
-    buttons.forEach(button => {button.setAttribute('aria-pressed',String(button.dataset.route === selected));button.textContent = ({sea:['Sea','See'],air:['Air','Luft'],road:['Road','Straße']})[button.dataset.route][lang];});
-    explorer.querySelector('.mts-route').setAttribute('d',mode.path);
-    travelPath.setAttribute('d',mode.path.split(' M')[0]);
-    traveler.querySelector('.mts-traveler-icon').innerHTML=icons[selected];
-    journey.querySelector(':scope > span').textContent=selected==='road'?(de()?'Hamburg → Europa':'Hamburg → Europe'):(de()?'Hamburg → Weltweit':'Hamburg → Worldwide');
-    journey.querySelector('button span').textContent=de()?'Erneut abspielen':'Replay route';
-    journey.querySelector('button').disabled=reduced.matches;
-    explorer.querySelector('.mts-route-info strong').textContent = mode.title[lang];
-    explorer.querySelector('.mts-route-info p').textContent = mode.copy[lang];
-    const link = explorer.querySelector('.mts-route-info a');link.href = mode.href;link.textContent = mode.link[lang] + ' ↗';
-    explorer.querySelector('h2').textContent = de() ? 'Entdecken Sie Ihre Verbindung.' : 'Explore your connection.';
-    explorer.querySelector('.mts-explorer-intro').textContent = de() ? 'Wählen Sie einen Transportweg. Entdecken Sie die Möglichkeiten.' : 'Choose a transport mode. Discover the possibilities.';
-    explorer.querySelector('.mts-explorer-head>span').textContent = de() ? 'ROUTEN ENTDECKEN' : 'ROUTE EXPLORER';
-    explorer.querySelector('.mts-explorer-status span').textContent = de() ? 'VON HAMBURG' : 'FROM HAMBURG';
-    if (animate && !reduced.matches) {
-      map.classList.remove('is-changing');void map.offsetWidth;map.classList.add('is-changing');
-      const info=explorer.querySelector('.mts-route-info');info.classList.remove('is-updating');void info.offsetWidth;info.classList.add('is-updating');
-    }
+  const buttons=[...explorer.querySelectorAll('[data-route]')];
+  const regionButtons=[...destinations.querySelectorAll('button')];
+  const render=(animate=false)=>{
+    const mode=modes[selected],lang=de()?1:0,road=selected==='road',region=mode.regions[destination];
+    explorer.style.setProperty('--route-color',mode.color);
+    map.classList.toggle('is-europe',road);
+    svg.setAttribute('viewBox',road?'259 74 70 65':'0 0 560 320');
+    buttons.forEach(button=>{button.setAttribute('aria-pressed',String(button.dataset.route===selected));button.textContent=({sea:['Sea','See'],air:['Air','Luft'],road:['Road','Straße']})[button.dataset.route][lang];});
+    regionButtons.forEach((button,i)=>{button.textContent=mode.regions[i].name[lang];button.setAttribute('aria-pressed',String(i===destination));});
+    destinations.setAttribute('aria-label',de()?'Zielregion auswählen':'Choose destination region');
+    const guides=svg.querySelector('.mts-map-guides');guides.replaceChildren();
+    const nodes=svg.querySelector('.mts-map-nodes');nodes.replaceChildren();
+    mode.regions.forEach((item,i)=>{
+      guides.append(make('path',{d:item.path}));
+      nodes.append(make('circle',{cx:item.point[0],cy:item.point[1],r:road?.75:3,'class':i===destination?'is-selected':''}));
+      if(i===destination){
+        nodes.append(make('circle',{cx:item.point[0],cy:item.point[1],r:road?1.65:7,'class':'mts-map-end-ring'}));
+        const label=road?['PARIS','WARSAW','MADRID'][i]:['AMERICAS','GULF','ASIA'][i];
+        nodes.append(make('text',{x:item.point[0]+(road?2:8),y:item.point[1]-(road?2:8),'font-size':road?2.7:11},label));
+      }
+    });
+    const countryLabels=road?[[276,99,'FRANCE'],[296,100,'GERMANY'],[310,103,'POLAND'],[277,118,'SPAIN'],[305,123,'ITALY']]:[];
+    countryLabels.forEach(([x,y,t])=>nodes.append(make('text',{x,y,'font-size':2.2,'class':'mts-map-country-label'},t)));
+    svg.querySelector('.mts-route').setAttribute('d',region.path);travelPath.setAttribute('d',region.path);
+    traveler.querySelector('.mts-traveler-icon').innerHTML=mode.icon;
+    const rect=svg.querySelector('.mts-hub-plate');Object.entries(road?{x:288,y:84,width:18,height:5,rx:.7}:{x:251,y:56,width:88,height:22,rx:4}).forEach(([k,v])=>rect.setAttribute(k,v));
+    const hubLabel=svg.querySelector('.mts-hub-label');hubLabel.setAttribute('x',road?'297':'295');hubLabel.setAttribute('y',road?'87.5':'71');hubLabel.setAttribute('font-size',road?'2.7':'11');
+    svg.querySelector('.mts-hub-line').setAttribute('d',road?'M295 91V89':'M295 87V78');
+    svg.querySelector('.mts-route-hub').setAttribute('r',road?'1':'4');svg.querySelector('.mts-route-ring').setAttribute('r',road?'2.4':'11');
+    journey.querySelector(':scope > span').textContent='Hamburg → '+region.name[lang];journey.querySelector('button span').textContent=de()?'Erneut abspielen':'Replay route';journey.querySelector('button').disabled=reduced.matches;
+    const names={sea:['Sea freight','Seefracht'],air:['Air freight','Luftfracht'],road:['European road network','Europäisches Straßennetz']};
+    map.querySelector('.mts-map-caption b').textContent=names[selected][lang];map.querySelector('.mts-map-caption small').textContent=de()?'Beispielhafte Verbindungen':'Illustrative connections';
+    explorer.querySelector('.mts-route-info strong').textContent=mode.title[lang];explorer.querySelector('.mts-route-info p').textContent=mode.copy[lang];
+    const link=explorer.querySelector('.mts-route-info a');link.href=mode.href;link.textContent=mode.link[lang]+' ↗';
+    explorer.querySelector('h2').textContent=de()?'Entdecken Sie Ihre Verbindung.':'Explore your connection.';
+    explorer.querySelector('.mts-explorer-intro').textContent=de()?'Wählen Sie einen Transportweg und eine Zielregion.':'Choose a transport mode and destination region.';
+    explorer.querySelector('.mts-explorer-head>span').textContent=de()?'GLOBALES FRACHTNETZ':'GLOBAL FREIGHT NETWORK';
+    explorer.querySelector('.mts-explorer-status span').textContent=de()?'VON HAMBURG':'FROM HAMBURG';
+    if(animate&&!reduced.matches){map.classList.remove('is-changing');void map.offsetWidth;map.classList.add('is-changing');}
     restart();
   };
-  buttons.forEach(button => button.addEventListener('click', () => {selected = button.dataset.route;render(true);}));
-  new MutationObserver(() => render()).observe(root,{attributes:true,attributeFilter:['lang']});
+  buttons.forEach(button=>button.addEventListener('click',()=>{selected=button.dataset.route;destination=0;render(true);}));
+  regionButtons.forEach((button,i)=>button.addEventListener('click',()=>{destination=i;render(true);}));
+  new MutationObserver(()=>render()).observe(root,{attributes:true,attributeFilter:['lang']});
   reduced.addEventListener('change',()=>render());
   render();
 })();
