@@ -6,11 +6,16 @@
   <meta name="description" content="MTS GmbH: customs handling, container logistics and vehicle shipping from Hamburg to the world.">
   <title>MTS | Hamburg logistics, customs & vehicle shipping</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <script src="components.js?v=20261007-logo-fix"></script>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="home.css?v=20261007-scrollnav2">
-  <link rel="stylesheet" href="components.css?v=20261007-centered-nav">
-  <script defer src="home.js"></script>
+  <script src="components.js?v=20261010-refresh"></script>
+  <link rel="stylesheet" href="styles.css?v=20261010-refresh">
+  <link rel="stylesheet" href="home.css?v=20261010-refresh">
+  <link rel="stylesheet" href="components.css?v=20261010-refresh">
+  <script defer src="home.js?v=20261010-refresh"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="polish.css?v=20261010-refresh">
+  <script>(function(){try{if(!sessionStorage.getItem('mts-intro-v1')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){window.mtsIntroStarted=performance.now();document.documentElement.classList.add('intro-pending');sessionStorage.setItem('mts-intro-v1','1');setTimeout(function(){document.documentElement.classList.remove('intro-pending');var el=document.querySelector('.mts-intro');if(el){el.remove();document.querySelectorAll('[inert]').forEach(function(node){node.inert=false;});}},4500);}}catch(e){}})();</script>
+  <script defer src="polish.js?v=20261010-refresh"></script>
 </head>
 <body>
   <header class="hm-header">
@@ -31,25 +36,23 @@
   </header>
 
   <main>
-    <section class="hm-hero" aria-label="MTS logistics services" aria-roledescription="carousel">
-      <div class="hm-slide is-active" data-slide="0" aria-hidden="false"><img src="assets/port-hero.png" alt="Hamburg container yard at dusk" fetchpriority="high"><div class="hm-shade"></div></div>
-      <div class="hm-slide" data-slide="1" aria-hidden="true"><img src="assets/vehicle-hero.png" alt="Classic vehicle secured inside a shipping container"><div class="hm-shade"></div></div>
-      <div class="hm-slide" data-slide="2" aria-hidden="true"><img src="assets/freight-hero.png" alt="Container vessel leaving the Port of Hamburg"><div class="hm-shade"></div></div>
-      <canvas class="hm-hero-particles" aria-hidden="true"></canvas>
-      <div class="hm-hero-rail" aria-hidden="true"><span>MTS / HAMBURG</span><span>53° 31' N &nbsp; 10° 00' E</span></div>
+    <section class="hm-hero" aria-label="MTS logistics services">
+      <div class="hm-slide is-active" aria-hidden="true"><img src="assets/home-port-cinematic.webp" alt="" fetchpriority="high" width="1672" height="941"><div class="hm-shade"></div></div>
       <div class="hm-hero-content hm-shell">
-        <p class="hm-overline" id="hero-kicker" data-i18n="h.hero.k1">01 / HAMBURG LOGISTICS HUB</p>
-        <h1 id="hero-title" data-i18n="h.hero.t1">Your customs, container and vehicle hub in the Port of Hamburg.</h1>
-        <p class="hm-hero-copy" id="hero-copy" data-i18n="h.hero.c1">One Hamburg team for the careful handling and worldwide movement of your cargo.</p>
-        <div class="hm-hero-actions"><a class="hm-btn hm-btn-primary" href="#quote"><span data-i18n="h.hero.cta1">Request a quote</span> <span aria-hidden="true">↗</span></a><a class="hm-btn hm-btn-outline" href="services.html" data-i18n="h.hero.cta2">Explore our services</a></div>
-      </div>
-      <div class="hm-hero-controls hm-shell">
-        <div class="hm-slide-progress" aria-label="Choose hero slide">
-          <button type="button" class="is-active" data-go="0" aria-label="Show Hamburg logistics slide"><img src="assets/port-hero.png" alt=""><span><small data-i18n="h.slide.1.s">01 / PORT OPERATIONS</small><b data-i18n="h.slide.1.b">Hamburg hub</b></span><i class="hm-progress-fill" aria-hidden="true"></i></button>
-          <button type="button" data-go="1" aria-label="Show vehicle shipping slide"><img src="assets/vehicle-hero.png" alt=""><span><small data-i18n="h.slide.2.s">02 / VEHICLE LOGISTICS</small><b data-i18n="h.slide.2.b">Careful loading</b></span><i class="hm-progress-fill" aria-hidden="true"></i></button>
-          <button type="button" data-go="2" aria-label="Show international freight slide"><img src="assets/freight-hero.png" alt=""><span><small data-i18n="h.slide.3.s">03 / GLOBAL FREIGHT</small><b data-i18n="h.slide.3.b">Worldwide routes</b></span><i class="hm-progress-fill" aria-hidden="true"></i></button>
+        <div class="hm-hero-text">
+          <p class="hm-overline" data-i18n="h.hero.k1">HAMBURG EXPERTISE / WORLDWIDE CONNECTIONS</p>
+          <h1 data-i18n="h.hero.t1">Your cargo.<br>Our connections.</h1>
+          <p class="hm-hero-copy" data-i18n="h.hero.c1">From customs and containers to vehicles and international freight. One Hamburg team, every step of the journey.</p>
+          <div class="hm-hero-actions"><a class="hm-btn hm-btn-primary" href="#quote"><span data-i18n="h.hero.cta1">Request a quote</span> <span aria-hidden="true">↗</span></a><a class="hm-btn hm-btn-outline" href="services.html" data-i18n="h.hero.cta2">Explore our services</a></div>
+          <p class="hm-hero-note"><span>HAMBURG</span><i aria-hidden="true"></i><span>SEA / AIR / ROAD</span></p>
         </div>
-        <p id="slide-count">01 <span>/ 03</span></p>
+        <aside class="mts-explorer" aria-label="Freight service explorer">
+          <div class="mts-explorer-head"><span>ROUTE EXPLORER</span><span class="mts-explorer-status"><i aria-hidden="true"></i><span>FROM HAMBURG</span></span></div>
+          <h2>Explore your connection.</h2><p class="mts-explorer-intro">Choose a transport mode. Discover the possibilities.</p>
+          <div class="mts-route-map" aria-hidden="true"><img src="assets/footer-network.svg" alt=""><svg viewBox="0 0 560 280"><path class="mts-route" d="M280 75 Q390 110 471 224 M280 75 Q175 12 109 93"/><circle class="mts-route-ring" cx="280" cy="75" r="12"/><circle class="mts-route-hub" cx="280" cy="75" r="4"/></svg></div>
+          <div class="mts-route-choices" role="group" aria-label="Choose freight service"><button type="button" data-route="sea" aria-pressed="true">Sea</button><button type="button" data-route="air" aria-pressed="false">Air</button><button type="button" data-route="road" aria-pressed="false">Road</button></div>
+          <div class="mts-route-info" aria-live="polite" aria-atomic="true"><strong>Sea freight. Worldwide reach.</strong><p>Container and consolidated cargo, coordinated from Hamburg to worldwide destinations.</p><a href="seafreight.html">Explore sea freight ↗</a></div>
+        </aside>
       </div>
     </section>
 

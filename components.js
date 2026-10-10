@@ -225,9 +225,9 @@
       'ft.city': 'Hamburg, Germany',
 
       // ==== HOME (index.html) ====
-      'h.hero.k1': '01 / HAMBURG LOGISTICS HUB',
-      'h.hero.t1': 'Your customs, container and vehicle hub in the Port of Hamburg.',
-      'h.hero.c1': 'One Hamburg team for the careful handling and worldwide movement of your cargo.',
+      'h.hero.k1': 'HAMBURG EXPERTISE / WORLDWIDE CONNECTIONS',
+      'h.hero.t1': 'Your cargo.<br>Our connections.',
+      'h.hero.c1': 'From customs and containers to vehicles and international freight. One Hamburg team, every step of the journey.',
       'h.hero.k2': '02 / VEHICLE LOGISTICS',
       'h.hero.t2': 'Careful handling for vehicles with places to go.',
       'h.hero.c2': 'Secure container loading and export coordination for everyday, classic and premium vehicles.',
@@ -1020,9 +1020,9 @@
       'ft.city': 'Hamburg, Deutschland',
 
       // ==== HOME ====
-      'h.hero.k1': '01 / LOGISTIKZENTRUM HAMBURG',
-      'h.hero.t1': 'Ihr Standort für Zoll, Container und Fahrzeuge im Hamburger Hafen.',
-      'h.hero.c1': 'Ein Hamburger Team für die sorgfältige Abwicklung und den weltweiten Transport Ihrer Fracht.',
+      'h.hero.k1': 'HAMBURGER EXPERTISE / WELTWEITE VERBINDUNGEN',
+      'h.hero.t1': 'Ihre Fracht.<br>Unsere Verbindungen.',
+      'h.hero.c1': 'Von Zoll und Containern bis zu Fahrzeugen und internationaler Fracht. Ein Hamburger Team, bei jedem Schritt.',
       'h.hero.k2': '02 / FAHRZEUGLOGISTIK',
       'h.hero.t2': 'Sorgfältige Verladung für Fahrzeuge mit Ziel.',
       'h.hero.c2': 'Sichere Containerbeladung und Exportabwicklung für Alltags-, Oldtimer- und Premiumfahrzeuge.',
