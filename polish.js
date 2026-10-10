@@ -82,7 +82,7 @@
     reduced.addEventListener('change',requestUpdate);
     update();
   };
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',initScroll,{once:true});
+  if (document.readyState !== 'complete') document.addEventListener('DOMContentLoaded',initScroll,{once:true});
   else initScroll();
   const explorer = document.querySelector('.mts-explorer');
   if (!explorer) return;
