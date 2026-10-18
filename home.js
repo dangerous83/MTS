@@ -1,12 +1,3 @@
-const memberSet = document.querySelector('.hm-members-set');
-if (memberSet) {
-  const duplicate = memberSet.cloneNode(true);
-  duplicate.setAttribute('aria-hidden', 'true');
-  duplicate.querySelectorAll('img').forEach(img => img.alt = '');
-  memberSet.parentElement.append(duplicate);
-  memberSet.parentElement.classList.add('is-looping');
-}
-
 document.querySelector('#lead-form').addEventListener('submit', event => {
   event.preventDefault();
   const form = event.currentTarget;

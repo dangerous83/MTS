@@ -132,3 +132,22 @@ body.page-vl .page-hero{background-image:linear-gradient(90deg,rgba(3,19,29,.82)
 /* Dedicated Trucking hero, separate from vehicle shipping. */
 body.page-trucking .page-hero{background-image:linear-gradient(90deg,rgba(3,19,29,.82),rgba(3,19,29,.28)),url('assets/trucking-hero-v2.webp');background-position:center 55%}
 @media(max-width:620px){body.page-trucking .page-hero{background-position:62% center}}
+
+/* Container depot: a distinct service section with clear operational capabilities. */
+.mts-depot{background:#edf3f7;scroll-margin-top:100px}
+.mts-depot-head{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end;margin-bottom:34px}
+.mts-depot-head h2{margin-top:14px}
+.mts-depot-head>p{margin:0;max-width:490px;font-size:16px}
+.mts-depot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-bottom:30px}
+.mts-depot-card{position:relative;padding:32px;background:#fff;border:1px solid #d7e2e9;border-radius:6px;border-top:3px solid #0b6281}
+.mts-depot-number{position:absolute;top:30px;right:28px;font:500 11px 'DM Mono',monospace;color:#61798b}
+.mts-depot-card>img{display:block;width:30px;height:30px;margin-bottom:26px}
+.mts-depot-card h3{margin:0 0 14px;font-size:21px;line-height:1.3;color:#102e4b}
+.mts-depot-card p{margin:0;font-size:14px;line-height:1.75}
+.mts-terminal-heading h2{font-size:clamp(28px,3vw,40px);margin:14px 0}
+.mts-terminal-heading p{max-width:700px;line-height:1.75;color:#53616a}
+[data-theme="dark"] .mts-depot{background:#101f30}
+[data-theme="dark"] .mts-depot-card{background:#1b2c3f;border-color:#345065;border-top-color:#79d2d7}
+[data-theme="dark"] .mts-depot-card h3{color:#eaf2f5}
+[data-theme="dark"] .mts-depot-card p,[data-theme="dark"] .mts-depot-head>p,[data-theme="dark"] .mts-terminal-heading p{color:#b7cbd5}
+@media(max-width:800px){.mts-depot-head{grid-template-columns:1fr;gap:24px}.mts-depot-grid{grid-template-columns:1fr}.mts-depot-card{padding:28px}}

@@ -164,7 +164,6 @@
       'nav.sub.sea': 'Seafreight',
       'nav.sub.air': 'Air freight',
       'nav.sub.road': 'Road freight',
-      'nav.sub.rail': 'Rail transport',
       'nav.sub.car': 'Car shipping',
       'nav.sub.ind': 'Individual solutions',
       'nav.sub.cc': 'Classic cars',
@@ -187,11 +186,10 @@
       'nav.sub.sea.d': 'FCL / LCL ocean freight worldwide',
       'nav.sub.air.d': 'Time-critical cargo via partner airlines',
       'nav.sub.road.d': 'Port drayage, short hauls &amp; international long-haul',
-      'nav.sub.rail.d': 'Combined routes to Central Asia &amp; CIS',
       'nav.sub.car.d': '4–6 vehicles per 40&#39; HC, worldwide',
       'nav.sub.cc.d': 'Enclosed single-vehicle container shipping',
       'nav.sub.ind.d': 'Bespoke multimodal routes shaped around your file',
-      'nav.col.ground': 'GROUND & TERMINAL',
+      'nav.col.ground': 'Containerterminal &amp; FOB Service',
       'nav.col.freight': 'INTERNATIONAL FREIGHT',
       'nav.col.vehicles': 'VEHICLES',
       'nav.mega.feat.k': 'NEED SOMETHING BESPOKE?',
@@ -217,7 +215,7 @@
       'ft.contact': 'GET IN TOUCH',
       'ft.customs': 'Customs warehousing',
       'ft.vehicle': 'Vehicle logistics',
-      'ft.container': 'Container terminal',
+      'ft.container': 'Containerterminal &amp; FOB Service',
       'ft.freight': 'International freight',
       'ft.classic': 'Classic & premium cars',
       'ft.address': 'Billstrasse 158<br>20539 Hamburg, Germany',
@@ -257,12 +255,12 @@
       'h.services.s2.h': 'Vehicle logistics',
       'h.services.s2.p': 'Secure loading, lashing and worldwide shipping for vehicles.',
       'h.services.s3.s': '03 / PORT OPERATIONS',
-      'h.services.s3.h': 'Container terminal',
-      'h.services.s3.p': 'Stuffing, stripping, storage and terminal connections at our yard.',
+      'h.services.s3.h': 'Containerterminal &amp; FOB Service',
+      'h.services.s3.p': 'Container depot, storage, customs inspections, loading and unloading at our Hamburg yard.',
       'h.feature.caption': 'FROM HAMBURG / TO THE WORLD',
       'h.feature.label': 'INTERNATIONAL FREIGHT',
       'h.feature.title': 'The right route for every cargo.',
-      'h.feature.p': 'Sea, air, road and rail options coordinated from Hamburg. We help plan the journey around the cargo, timing and destination requirements.',
+      'h.feature.p': 'Sea, air and road options coordinated from Hamburg. We help plan the journey around the cargo, timing and destination requirements.',
       'h.feature.sea': 'Sea freight',
       'h.feature.sea.s': 'FCL / LCL',
       'h.feature.air': 'Air freight',
@@ -575,8 +573,8 @@
       's.c2.h': 'Vehicle logistics',
       's.c2.p': '4–6 cars per 40&#39; HC container, lashing, photo documentation and RoRo bookings for worldwide destinations.',
       's.c3.s': '03 / PORT OPERATIONS',
-      's.c3.h': 'Container terminal',
-      's.c3.p': 'Stuffing, stripping, storage and terminal connections at our own yard on Billstrasse.',
+      's.c3.h': 'Containerterminal &amp; FOB Service',
+      's.c3.p': 'Our Hamburg container depot brings together container storage, customs inspections, loading and unloading, with port coordination for export shipments.',
       's.c4.s': '04 / GLOBAL FREIGHT',
       's.c4.h': 'International freight',
       's.c4.p': 'FCL, LCL, air and road freight coordinated end-to-end from Hamburg to worldwide destinations.',
@@ -586,12 +584,12 @@
       's.c2.f1': 'Multi-car 4–6 vehicles / 40&#39; HC',
       's.c2.f2': 'Soft lashing &amp; photo documentation',
       's.c2.f3': 'RoRo bookings worldwide',
-      's.c3.f1': 'Own yard with side-loader fleet',
-      's.c3.f2': 'Container storage &amp; cross-docking',
-      's.c3.f3': 'Hamburg terminal connections',
+      's.c3.f1': 'Container depot &amp; storage',
+      's.c3.f2': 'Customs inspections on site',
+      's.c3.f3': 'Loading, unloading &amp; port coordination',
       's.c4.f1': 'FCL and LCL ocean freight',
       's.c4.f2': 'Air freight for time-critical',
-      's.c4.f3': 'Rail routes to Central Asia',
+      's.c4.f3': 'Road freight &amp; port connections',
       's.c.cta': 'Learn more',
       's.why.k': 'Why MTS',
       's.why.h': 'One Hamburg team, one file, from booking to arrival.',
@@ -602,8 +600,8 @@
       's.why.2.s': 'Countries served',
       's.why.3.b': '6',
       's.why.3.s': 'Languages at the desk',
-      's.why.4.b': 'LIHH',
-      's.why.4.s': 'Logistik-Initiative Hamburg member',
+      's.why.4.b': 'On site',
+      's.why.4.s': 'Container depot &amp; customs inspections',
       's.cta.k': 'A route in mind?',
       's.cta.h': 'Send the essentials — we&#39;ll come back with a plan.',
       's.cta.p': 'Route, cargo, timing: three lines are enough to get a conversation started with the operations team.',
@@ -678,32 +676,71 @@
       'vl.l6': 'Customs and export documentation',
 
       'ct.hero.k': 'Services / 03',
-      'ct.hero.t': 'Container Terminal Hamburg',
-      'ct.hero.sub': 'Stuffing, stripping, side-loader work, container storage and port handovers from our Billstrasse yard — close to the container terminals of the Port of Hamburg.',
+      'ct.hero.t': 'Containerterminal &amp; FOB Service',
+      'ct.hero.sub': 'Container storage, customs inspections, loading and unloading — coordinated at our Hamburg depot, with port handovers for export shipments.',
       'ct.hero.cta1': 'Request a quote',
-      'ct.hero.cta2': 'What we handle',
+      'ct.hero.cta2': 'Explore our container depot',
       'ct.intro.k': 'Own yard operations',
-      'ct.intro.h': 'A practical terminal for cargo in motion.',
-      'ct.intro.p': 'Our own Hamburg yard brings container work, storage and port delivery together in one controlled flow. It is the working hub behind faster decisions and dependable handovers.',
+      'ct.intro.h': 'Your container. Every step handled.',
+      'ct.intro.p': 'Our Hamburg yard combines container depot operations, customs inspections, loading, unloading and port coordination in one place. From storage to export handover, our operations team coordinates the next step.',
       'ct.l1': 'Container loading and unloading on our own yard',
       'ct.l2': 'Stuffing and stripping',
       'ct.l3': 'Cross-docking',
       'ct.l4': 'Container storage and buffer space',
       'ct.l5': 'Pick-up and delivery to Hamburg port terminals',
-      'ct.l6': 'Flexible handling for export cargo',
+      'ct.l6': 'Customs inspections and export coordination',
+
+      'nav.sub.terminal': 'Containerterminal &amp; FOB Service',
+
+      'nav.sub.terminal.d': 'Container handling, storage &amp; port coordination',
+
+      'nav.sub.depot': 'Container Depot',
+
+      'nav.sub.depot.d': 'Storage, customs inspections, loading &amp; unloading',
+
+      'ct.depot.k': 'HAMBURG / CONTAINER DEPOT',
+
+      'ct.depot.h': 'Space to store.<br>Expertise to move.',
+
+      'ct.depot.p': 'A dedicated base for containers and cargo at Billstrasse 158. Plan storage, customs inspections and loading or unloading directly with our Hamburg team.',
+
+      'ct.depot.storage.h': 'Container storage',
+
+      'ct.depot.storage.p': 'Container storage and buffer space at our Hamburg depot, coordinated around your shipment schedule.',
+
+      'ct.depot.customs.h': 'Customs inspections',
+
+      'ct.depot.customs.p': 'On-site customs inspections and coordination of the cargo and documentation needed for the inspection.',
+
+      'ct.depot.handling.h': 'Loading &amp; unloading',
+
+      'ct.depot.handling.p': 'Container loading and unloading, stuffing, stripping and cross-docking for different cargo requirements.',
+
+      'ct.depot.cta': 'Discuss your depot requirements',
+
+      'ct.operations.h': 'Terminal &amp; FOB coordination',
+
+      'ct.operations.p': 'Connect depot handling with export preparation and handover at the Port of Hamburg. Tell us your cargo details and shipping requirements so we can agree the scope.',
+
+      'h.members.title': 'Connected beyond borders.',
+
+      'h.members.p': 'Our memberships and networks connect our Hamburg operations with the wider logistics community.',
+
+      'h.members.member': 'Member of',
+
+      'h.members.network': 'Network',
 
       'if.hero.k': 'Services / 04',
       'if.hero.t': 'International Freight',
-      'if.hero.sub': 'Sea, air, road and rail — coordinated from Hamburg to worldwide destinations. FCL, LCL, project cargo and time-critical freight, one operations team end-to-end.',
+      'if.hero.sub': 'Sea, air and road — coordinated from Hamburg to worldwide destinations. FCL, LCL, project cargo and time-critical freight, one operations team end-to-end.',
       'if.hero.cta1': 'Request a quote',
       'if.hero.cta2': 'Route options',
       'if.intro.k': 'Worldwide connections',
       'if.intro.h': 'Choose the route that serves the shipment.',
-      'if.intro.p': 'Sea, air, road and rail solutions coordinated from Hamburg. We build the route around your cargo, time frame and destination requirements.',
+      'if.intro.p': 'Sea, air and road solutions coordinated from Hamburg. We build the route around your cargo, time frame and destination requirements.',
       'if.l1': 'Sea freight: FCL and LCL',
       'if.l2': 'Air freight',
       'if.l3': 'Road transport, including dangerous goods',
-      'if.l4': 'Rail transport to Central Asia and CIS',
 
       'cc.hero.k': 'Classic & Premium Cars',
       'cc.hero.t': 'Every mile handled with the care your vehicle deserves.',
@@ -963,7 +1000,6 @@
       'nav.sub.sea': 'Seefracht',
       'nav.sub.air': 'Luftfracht',
       'nav.sub.road': 'Straßengüterverkehr',
-      'nav.sub.rail': 'Schienentransport',
       'nav.sub.car': 'Autoverschiffung',
       'nav.sub.ind': 'Individuelle Lösungen',
       'nav.sub.cc': 'Oldtimer',
@@ -984,11 +1020,10 @@
       'nav.sub.sea.d': 'FCL / LCL Seefracht weltweit',
       'nav.sub.air.d': 'Zeitkritische Luftfracht über Partner',
       'nav.sub.road.d': 'Hafenvor-/-nachlauf, Nahverkehr &amp; internationaler Fernverkehr',
-      'nav.sub.rail.d': 'Kombinierte Routen nach Zentralasien &amp; GUS',
       'nav.sub.car.d': '4–6 Fahrzeuge pro 40&#39; HC, weltweit',
       'nav.sub.cc.d': 'Geschlossener Einzelfahrzeug-Containerversand',
       'nav.sub.ind.d': 'Maßgeschneiderte multimodale Routen für Ihre Akte',
-      'nav.col.ground': 'STRASSE & TERMINAL',
+      'nav.col.ground': 'Containerterminal &amp; FOB Service',
       'nav.col.freight': 'INTERNATIONALE SPEDITION',
       'nav.col.vehicles': 'FAHRZEUGE',
       'nav.mega.feat.k': 'ETWAS SPEZIELLES?',
@@ -1012,7 +1047,7 @@
       'ft.contact': 'KONTAKT',
       'ft.customs': 'Zolllager',
       'ft.vehicle': 'Fahrzeuglogistik',
-      'ft.container': 'Container-Terminal',
+      'ft.container': 'Containerterminal &amp; FOB Service',
       'ft.freight': 'Internationale Spedition',
       'ft.classic': 'Oldtimer & Premiumfahrzeuge',
       'ft.address': 'Billstraße 158<br>20539 Hamburg, Deutschland',
@@ -1052,12 +1087,12 @@
       'h.services.s2.h': 'Fahrzeuglogistik',
       'h.services.s2.p': 'Sichere Verladung, Ladungssicherung und weltweiter Versand von Fahrzeugen.',
       'h.services.s3.s': '03 / HAFENOPERATIONEN',
-      'h.services.s3.h': 'Container-Terminal',
-      'h.services.s3.p': 'Beladen, Entladen, Lagerung und Terminalanbindung auf unserem Gelände.',
+      'h.services.s3.h': 'Containerterminal &amp; FOB Service',
+      'h.services.s3.p': 'Containerdepot, Lagerung, Zollbeschau, Beladung und Entladung auf unserem Hamburger Gelände.',
       'h.feature.caption': 'AUS HAMBURG / IN DIE WELT',
       'h.feature.label': 'INTERNATIONALE SPEDITION',
       'h.feature.title': 'Die richtige Route für jede Fracht.',
-      'h.feature.p': 'See, Luft, Straße und Schiene — koordiniert aus Hamburg. Wir planen die Reise nach Ladung, Terminen und den Anforderungen des Ziellandes.',
+      'h.feature.p': 'See, Luft und Straße — koordiniert aus Hamburg. Wir planen die Reise nach Ladung, Terminen und den Anforderungen des Ziellandes.',
       'h.feature.sea': 'Seefracht',
       'h.feature.sea.s': 'FCL / LCL',
       'h.feature.air': 'Luftfracht',
@@ -1370,8 +1405,8 @@
       's.c2.h': 'Fahrzeuglogistik',
       's.c2.p': '4–6 Fahrzeuge pro 40&#39; HC Container, Ladungssicherung, Fotodokumentation und RoRo-Buchungen zu Zielorten weltweit.',
       's.c3.s': '03 / HAFENOPERATIONEN',
-      's.c3.h': 'Container-Terminal',
-      's.c3.p': 'Beladen, Entladen, Lagerung und Terminalanbindung auf unserem eigenen Gelände in der Billstraße.',
+      's.c3.h': 'Containerterminal &amp; FOB Service',
+      's.c3.p': 'Unser Hamburger Containerdepot vereint Containerlagerung, Zollbeschau, Beladung und Entladung mit der Hafenkoordination für Exportsendungen.',
       's.c4.s': '04 / GLOBALE SPEDITION',
       's.c4.h': 'Internationale Spedition',
       's.c4.p': 'FCL, LCL, Luft und Straße — End-to-End aus Hamburg zu Zielorten weltweit koordiniert.',
@@ -1381,12 +1416,12 @@
       's.c2.f1': 'Multi-Car 4–6 Fahrzeuge / 40&#39; HC',
       's.c2.f2': 'Sanfte Sicherung &amp; Fotodokumentation',
       's.c2.f3': 'RoRo-Buchungen weltweit',
-      's.c3.f1': 'Eigenes Gelände mit Seitenlader-Flotte',
-      's.c3.f2': 'Containerlagerung &amp; Cross-Docking',
-      's.c3.f3': 'Anbindung Hamburger Terminals',
+      's.c3.f1': 'Containerdepot &amp; Lagerung',
+      's.c3.f2': 'Zollbeschau vor Ort',
+      's.c3.f3': 'Beladung, Entladung &amp; Hafenkoordination',
       's.c4.f1': 'FCL- und LCL-Seefracht',
       's.c4.f2': 'Luftfracht für zeitkritische Sendungen',
-      's.c4.f3': 'Schienenrouten nach Zentralasien',
+      's.c4.f3': 'Straßengüterverkehr &amp; Hafenanbindung',
       's.c.cta': 'Mehr erfahren',
       's.why.k': 'Warum MTS',
       's.why.h': 'Ein Hamburger Team, eine Akte — von der Buchung bis zur Ankunft.',
@@ -1397,8 +1432,8 @@
       's.why.2.s': 'Länder beliefert',
       's.why.3.b': '6',
       's.why.3.s': 'Sprachen am Desk',
-      's.why.4.b': 'LIHH',
-      's.why.4.s': 'Mitglied Logistik-Initiative Hamburg',
+      's.why.4.b': 'Vor Ort',
+      's.why.4.s': 'Containerdepot &amp; Zollbeschau',
       's.cta.k': 'Route im Kopf?',
       's.cta.h': 'Senden Sie die Eckdaten — wir melden uns mit einem Plan.',
       's.cta.p': 'Route, Fracht, Zeitplan: drei Zeilen reichen, um ein Gespräch mit dem operativen Team zu starten.',
@@ -1473,32 +1508,71 @@
       'vl.l6': 'Zoll- und Exportdokumentation',
 
       'ct.hero.k': 'Leistungen / 03',
-      'ct.hero.t': 'Container-Terminal Hamburg',
-      'ct.hero.sub': 'Beladen, Entladen, Seitenladerarbeit, Containerlagerung und Hafenübergaben aus unserem Gelände in der Billstraße — in unmittelbarer Nähe zu den Containerterminals des Hamburger Hafens.',
+      'ct.hero.t': 'Containerterminal &amp; FOB Service',
+      'ct.hero.sub': 'Containerlagerung, Zollbeschau, Beladung und Entladung — koordiniert in unserem Hamburger Depot, mit Hafenübergaben für Exportsendungen.',
       'ct.hero.cta1': 'Angebot anfordern',
-      'ct.hero.cta2': 'Was wir abwickeln',
+      'ct.hero.cta2': 'Unser Containerdepot entdecken',
       'ct.intro.k': 'Betrieb auf eigenem Gelände',
-      'ct.intro.h': 'Ein praktisches Terminal für Fracht in Bewegung.',
-      'ct.intro.p': 'Unser eigenes Hamburger Gelände vereint Containerarbeit, Lagerung und Hafenzustellung in einem kontrollierten Ablauf. Es ist der Arbeitsknotenpunkt hinter schnelleren Entscheidungen und verlässlichen Übergaben.',
+      'ct.intro.h': 'Ihr Container. Jeder Schritt betreut.',
+      'ct.intro.p': 'Unser Hamburger Gelände vereint Depotbetrieb, Zollbeschau, Beladung, Entladung und Hafenkoordination an einem Ort. Von der Lagerung bis zur Exportübergabe koordiniert unser operatives Team den nächsten Schritt.',
       'ct.l1': 'Containerbeladung und -entladung auf unserem Gelände',
       'ct.l2': 'Beladen und Entladen',
       'ct.l3': 'Cross-Docking',
       'ct.l4': 'Containerlagerung und Pufferfläche',
       'ct.l5': 'Abholung und Zustellung zu den Hamburger Hafenterminals',
-      'ct.l6': 'Flexible Abwicklung für Exportfracht',
+      'ct.l6': 'Zollbeschau und Exportkoordination',
+
+      'nav.sub.terminal': 'Containerterminal &amp; FOB Service',
+
+      'nav.sub.terminal.d': 'Containerumschlag, Lagerung &amp; Hafenkoordination',
+
+      'nav.sub.depot': 'Containerdepot',
+
+      'nav.sub.depot.d': 'Lagerung, Zollbeschau, Beladung &amp; Entladung',
+
+      'ct.depot.k': 'HAMBURG / CONTAINERDEPOT',
+
+      'ct.depot.h': 'Platz zum Lagern.<br>Kompetenz zum Bewegen.',
+
+      'ct.depot.p': 'Ein eigener Standort für Container und Fracht in der Billstraße 158. Planen Sie Lagerung, Zollbeschau sowie Be- und Entladung direkt mit unserem Hamburger Team.',
+
+      'ct.depot.storage.h': 'Containerlagerung',
+
+      'ct.depot.storage.p': 'Containerlagerung und Pufferfläche in unserem Hamburger Depot, abgestimmt auf Ihren Versandplan.',
+
+      'ct.depot.customs.h': 'Zollbeschau',
+
+      'ct.depot.customs.p': 'Zollbeschau vor Ort und Koordination der für die Beschau benötigten Fracht und Dokumente.',
+
+      'ct.depot.handling.h': 'Beladung &amp; Entladung',
+
+      'ct.depot.handling.p': 'Containerbe- und -entladung, Stuffing, Stripping und Cross-Docking für unterschiedliche Frachtanforderungen.',
+
+      'ct.depot.cta': 'Depotanforderungen besprechen',
+
+      'ct.operations.h': 'Terminal- &amp; FOB-Koordination',
+
+      'ct.operations.p': 'Verbinden Sie den Depotumschlag mit Exportvorbereitung und Übergabe im Hamburger Hafen. Teilen Sie uns Frachtangaben und Versandanforderungen mit, damit wir den Leistungsumfang abstimmen können.',
+
+      'h.members.title': 'Über Grenzen hinweg verbunden.',
+
+      'h.members.p': 'Unsere Mitgliedschaften und Netzwerke verbinden unseren Hamburger Betrieb mit der internationalen Logistikgemeinschaft.',
+
+      'h.members.member': 'Mitglied von',
+
+      'h.members.network': 'Netzwerk',
 
       'if.hero.k': 'Leistungen / 04',
       'if.hero.t': 'Internationale Spedition',
-      'if.hero.sub': 'See, Luft, Straße und Schiene — aus Hamburg zu Zielorten weltweit koordiniert. FCL, LCL, Projektladung und zeitkritische Fracht, von einem Team End-to-End.',
+      'if.hero.sub': 'See, Luft und Straße — aus Hamburg zu Zielorten weltweit koordiniert. FCL, LCL, Projektladung und zeitkritische Fracht, von einem Team End-to-End.',
       'if.hero.cta1': 'Angebot anfordern',
       'if.hero.cta2': 'Routenoptionen',
       'if.intro.k': 'Weltweite Verbindungen',
       'if.intro.h': 'Wählen Sie die Route, die zur Sendung passt.',
-      'if.intro.p': 'See-, Luft-, Straßen- und Schienenlösungen aus Hamburg koordiniert. Wir bauen die Route rund um Ihre Fracht, Ihren Zeitrahmen und die Anforderungen des Ziels.',
+      'if.intro.p': 'See-, Luft- und Straßenlösungen aus Hamburg koordiniert. Wir bauen die Route rund um Ihre Fracht, Ihren Zeitrahmen und die Anforderungen des Ziels.',
       'if.l1': 'Seefracht: FCL und LCL',
       'if.l2': 'Luftfracht',
       'if.l3': 'Straßentransport, inklusive Gefahrgut',
-      'if.l4': 'Schienentransport nach Zentralasien und in die GUS',
 
       'cc.hero.k': 'Oldtimer & Premiumfahrzeuge',
       'cc.hero.t': 'Jede Meile mit der Sorgfalt, die Ihr Fahrzeug verdient.',
@@ -1744,7 +1818,6 @@
     sea: 'seafreight.html',
     air: 'air-freight.html',
     road: 'road-transport.html',
-    rail: 'international-freight.html#rail',
     car: 'vehicle-logistics.html',
     ind: 'contact.html#quote',
   };
@@ -1770,10 +1843,11 @@
           </div>
           <div class="site-footer-column site-footer-services">
             <strong>${tr('ft.services')}</strong>
+            <a href="container-terminal.html">${tr('nav.sub.terminal')}</a>
+            <a href="container-terminal.html#container-depot">${tr('nav.sub.depot')}</a>
             <a href="${serviceRoutes.road}">${tr('nav.sub.road')}</a>
             <a href="${serviceRoutes.sea}">${tr('nav.sub.sea')}</a>
             <a href="${serviceRoutes.air}">${tr('nav.sub.air')}</a>
-            <a href="${serviceRoutes.rail}">${tr('nav.sub.rail')}</a>
             <a href="${serviceRoutes.car}">${tr('nav.sub.car')}</a>
             <a href="classic-cars.html">${tr('nav.classic')}</a>
             <a href="services.html">${tr('nav.services.all')}</a>
@@ -1940,34 +2014,16 @@
             <div class="nav-mega-grid">
               <div class="nav-mega-cols">
                 <div class="nav-mega-col-x">
-                  <h5 data-i18n="nav.col.ground">GROUND &amp; TERMINAL</h5>
+                  <h5 data-i18n="nav.col.ground">Containerterminal &amp; FOB Service</h5>
+                  <a href="container-terminal.html" class="nav-mega-item"><span class="nav-mega-ico"><img src="assets/icons/svc-container.svg" alt=""></span><span class="nav-mega-text"><strong data-i18n="nav.sub.terminal">Containerterminal &amp; FOB Service</strong><small data-i18n="nav.sub.terminal.d">Container handling, storage &amp; port coordination</small></span></a>
+                  <a href="container-terminal.html#container-depot" class="nav-mega-item"><span class="nav-mega-ico"><img src="assets/icons/svc-customs.svg" alt=""></span><span class="nav-mega-text"><strong data-i18n="nav.sub.depot">Container Depot</strong><small data-i18n="nav.sub.depot.d">Storage, customs inspections, loading &amp; unloading</small></span></a>
                   <a href="${svc.road}" class="nav-mega-item"><span class="nav-mega-ico"><img src="assets/icons/svc-container.svg" alt=""></span><span class="nav-mega-text"><strong data-i18n="nav.sub.road">Road freight</strong><small data-i18n="nav.sub.road.d">Port drayage, short hauls &amp; international long-haul</small></span></a>
-                  <div class="nav-mega-live" aria-hidden="true">
-                    <span class="nav-mega-live-label" data-i18n="nav.mega.live.k">On the road right now</span>
-                    <svg class="nav-mega-live-route" viewBox="0 0 200 44" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-                      <path class="road" d="M6 26 H194" stroke-linecap="round"/>
-                      <circle class="dot" cx="6" cy="26" r="3.4"/>
-                      <path class="pin" d="M194 22 l3 5 -3 5 -3 -5 Z"/>
-                      <g class="truck">
-                        <rect x="0" y="2" width="16" height="10" rx="1.2"/>
-                        <rect x="14" y="5" width="7" height="7" rx="1"/>
-                        <rect x="2" y="4" width="4" height="3" rx=".5" fill="#79d2d7"/>
-                        <circle class="wheel" cx="4" cy="13.5" r="1.9"/>
-                        <circle class="wheel" cx="18" cy="13.5" r="1.9"/>
-                      </g>
-                    </svg>
-                    <div class="nav-mega-live-ends"><span data-i18n="nav.mega.live.from">HAMBURG</span><span data-i18n="nav.mega.live.to">WORLDWIDE</span></div>
-                    <div class="nav-mega-live-meta">
-                      <div><strong>24/7</strong><span data-i18n="nav.mega.live.ops">Operations desk</span></div>
-                      <div><strong>100+</strong><span data-i18n="nav.mega.live.routes">Partner routes</span></div>
-                    </div>
-                  </div>
+
                 </div>
                 <div class="nav-mega-col-x">
                   <h5 data-i18n="nav.col.freight">INTERNATIONAL FREIGHT</h5>
                   <a href="${svc.sea}" class="nav-mega-item"><span class="nav-mega-ico"><img src="assets/icons/svc-freight.svg" alt=""></span><span class="nav-mega-text"><strong data-i18n="nav.sub.sea">Seafreight</strong><small data-i18n="nav.sub.sea.d">FCL / LCL ocean freight worldwide</small></span></a>
                   <a href="${svc.air}" class="nav-mega-item"><span class="nav-mega-ico"><img src="assets/icons/svc-freight.svg" alt=""></span><span class="nav-mega-text"><strong data-i18n="nav.sub.air">Air freight</strong><small data-i18n="nav.sub.air.d">Time-critical cargo via partner airlines</small></span></a>
-                  <a href="${svc.rail}" class="nav-mega-item"><span class="nav-mega-ico"><img src="assets/icons/svc-freight.svg" alt=""></span><span class="nav-mega-text"><strong data-i18n="nav.sub.rail">Rail transport</strong><small data-i18n="nav.sub.rail.d">Combined routes to Central Asia &amp; CIS</small></span></a>
                 </div>
                 <div class="nav-mega-col-x">
                   <h5 data-i18n="nav.col.vehicles">VEHICLES</h5>
