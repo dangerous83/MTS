@@ -128,3 +128,18 @@ html.intro-pending{overflow:hidden}html.intro-pending:before{content:'';position
 .mts-route-journey{margin-bottom:12px}.mts-route-info{min-height:100px;padding-top:14px;margin-top:14px}.mts-route-info p{margin:7px 0 8px}
 .mts-route-map.is-europe .mts-map-regions{display:none}.mts-route-map.is-europe .mts-map-guides path{stroke-width:.22;stroke-dasharray:.6 .7}.mts-route-map.is-europe .mts-route{stroke-width:.46;filter:none}.mts-route-map.is-europe .mts-map-nodes circle{stroke-width:.2}.mts-route-map.is-europe .mts-map-nodes .is-selected{stroke-width:.25}.mts-route-map.is-europe .mts-map-nodes .mts-map-end-ring{stroke-width:.2}.mts-route-map.is-europe .mts-map-nodes text{stroke-width:.7}.mts-route-map.is-europe .mts-hub-plate,.mts-route-map.is-europe .mts-hub-line,.mts-route-map.is-europe .mts-route-ring{stroke-width:.2}.mts-route-map.is-europe .mts-hub-label{letter-spacing:.12px}
 @media(max-width:480px){.mts-map-destinations button{font-size:9px}.mts-map-caption{font-size:7px}.mts-map-caption small{font-size:6px}}
+
+/* ==== Hero heights (user request) ====
+   Home-page hero fills the viewport; every inner-page hero sits at 70vh.
+   Doubled-class selectors beat the many existing per-breakpoint rules on
+   .hm-hero / .page-hero / .freight-hero without needing !important. */
+:root body .hm-hero.hm-hero{height:100vh;height:100svh;min-height:0;max-height:none}
+:root body .page-hero.page-hero,:root body .freight-page .freight-hero.freight-hero{height:70vh;height:70svh;min-height:0;max-height:none}
+@media(max-width:980px){
+  :root body .hm-hero.hm-hero{height:100vh;height:100svh;min-height:0}
+  :root body .page-hero.page-hero,:root body .freight-page .freight-hero.freight-hero{height:70vh;height:70svh;min-height:0}
+}
+@media(max-width:700px){
+  :root body .hm-hero.hm-hero{height:100vh;height:100svh;min-height:0}
+  :root body .page-hero.page-hero,:root body .freight-page .freight-hero.freight-hero{height:70vh;height:70svh;min-height:0}
+}
