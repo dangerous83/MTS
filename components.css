@@ -413,9 +413,13 @@
 :root .mts-navbar.hm-header,:root .mts-navbar.nav-wrap{top:var(--mts-topbar-h,44px);background:#0a2340;border-bottom:1px solid #ffffff1f}
 :root .mts-navbar .hm-brand,:root .mts-navbar .brand{gap:0;padding:0;background:none}
 :root .mts-navbar .hm-brand img,:root .mts-navbar .brand img{width:auto;max-height:none}
-/* Mobile: show the toggle, collapse the menu below the bar. */
+/* Mobile: show the toggle, collapse the menu below the bar. The hamburger
+   sits at the far right; the theme toggle and quote CTA group just left of
+   it, pushed over by auto left margin on the first of the three. */
 @media(max-width:980px){
-  :root .mts-navbar-toggle{display:inline-flex;margin-left:auto}
+  :root .mts-navbar-toggle{display:inline-flex;order:3;margin-left:10px}
+  :root .mts-navbar .site-theme-toggle{order:1;margin-left:auto}
+  :root .mts-navbar-cta{order:2}
   :root .mts-navbar-menu{display:none}
   :root .mts-navbar-menu.is-open,:root .mts-navbar-menu.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:12px 18px 18px;background:#0a2340;border-top:1px solid #ffffff1f;box-shadow:0 20px 40px rgba(3,15,32,.3);z-index:30}
   :root .mts-navbar-menu.is-open>a,:root .mts-navbar-menu.open>a,:root .mts-navbar-menu.is-open .nav-group-toggle,:root .mts-navbar-menu.open .nav-group-toggle{padding:14px 0;border-bottom:1px solid #ffffff22;width:100%;text-align:left}
