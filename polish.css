@@ -143,3 +143,9 @@ html.intro-pending{overflow:hidden}html.intro-pending:before{content:'';position
   :root body .hm-hero.hm-hero{height:100vh;height:100svh;min-height:0}
   :root body .page-hero.page-hero,:root body .freight-page .freight-hero.freight-hero{height:70vh;height:70svh;min-height:0}
 }
+
+/* Add 70px breathing room between the nav and the hero content on inner
+   pages. Home (.hm-hero) is intentionally not targeted. The doubled
+   class and body-prefix beat the many existing .page-hero / .freight-hero
+   rules without !important. */
+:root body .page-hero.page-hero>.wrap{margin-top:70px}
