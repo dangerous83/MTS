@@ -129,27 +129,23 @@ html.intro-pending{overflow:hidden}html.intro-pending:before{content:'';position
 .mts-route-map.is-europe .mts-map-regions{display:none}.mts-route-map.is-europe .mts-map-guides path{stroke-width:.22;stroke-dasharray:.6 .7}.mts-route-map.is-europe .mts-route{stroke-width:.46;filter:none}.mts-route-map.is-europe .mts-map-nodes circle{stroke-width:.2}.mts-route-map.is-europe .mts-map-nodes .is-selected{stroke-width:.25}.mts-route-map.is-europe .mts-map-nodes .mts-map-end-ring{stroke-width:.2}.mts-route-map.is-europe .mts-map-nodes text{stroke-width:.7}.mts-route-map.is-europe .mts-hub-plate,.mts-route-map.is-europe .mts-hub-line,.mts-route-map.is-europe .mts-route-ring{stroke-width:.2}.mts-route-map.is-europe .mts-hub-label{letter-spacing:.12px}
 @media(max-width:480px){.mts-map-destinations button{font-size:9px}.mts-map-caption{font-size:7px}.mts-map-caption small{font-size:6px}}
 
-/* ==== Hero heights ====
-   Home-page hero is pinned to the viewport. Inner-page heroes use 70vh as
-   a MINIMUM so short pages still fill most of the viewport, but tall
-   pages (freight-hero with eyebrow + big h1 + sub-copy + meta pills +
-   buttons) can grow to contain their content instead of overflowing out
-   the bottom into the next section. Doubled-class selectors beat the
-   many per-breakpoint rules on .hm-hero / .page-hero / .freight-hero
-   without needing !important. */
+/* ==== Hero heights & composition ====
+   Home-page hero is pinned to the viewport. Every inner-page hero is
+   locked at exactly 70vh so pages read as one system — same height, same
+   content position — rather than drifting per page. Content is vertically
+   centered inside the hero (close to the top, well clear of the bottom
+   edge where the next section begins) and the default bottom-pinned
+   padding on .page-hero .wrap / .freight-hero .wrap is zeroed so the
+   centering is clean. Home (.hm-hero / .hm-hero-content) is intentionally
+   untouched. */
 :root body .hm-hero.hm-hero{height:100vh;height:100svh;min-height:0;max-height:none}
-:root body .page-hero.page-hero,:root body .freight-page .freight-hero.freight-hero{height:auto;min-height:70vh;min-height:70svh;max-height:none}
+:root body .page-hero.page-hero,:root body .freight-page .freight-hero.freight-hero{height:70vh;height:70svh;min-height:70vh;min-height:70svh;max-height:none;display:flex;align-items:center}
+:root body .page-hero.page-hero>.wrap{margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0}
 @media(max-width:980px){
   :root body .hm-hero.hm-hero{height:100vh;height:100svh;min-height:0}
-  :root body .page-hero.page-hero,:root body .freight-page .freight-hero.freight-hero{height:auto;min-height:70vh;min-height:70svh}
+  :root body .page-hero.page-hero,:root body .freight-page .freight-hero.freight-hero{height:70vh;height:70svh;min-height:70vh;min-height:70svh}
 }
 @media(max-width:700px){
   :root body .hm-hero.hm-hero{height:100vh;height:100svh;min-height:0}
-  :root body .page-hero.page-hero,:root body .freight-page .freight-hero.freight-hero{height:auto;min-height:70vh;min-height:70svh}
+  :root body .page-hero.page-hero,:root body .freight-page .freight-hero.freight-hero{height:70vh;height:70svh;min-height:70vh;min-height:70svh}
 }
-
-/* Add 70px breathing room between the nav and the hero content on inner
-   pages. Home (.hm-hero) is intentionally not targeted. The doubled
-   class and body-prefix beat the many existing .page-hero / .freight-hero
-   rules without !important. */
-:root body .page-hero.page-hero>.wrap{margin-top:70px;padding-bottom:70px}
