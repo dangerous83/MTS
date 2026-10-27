@@ -80,7 +80,7 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const quoteForm = document.querySelector('[data-form]');
 if (quoteForm && 'IntersectionObserver' in window) {
   new IntersectionObserver(entries => {
-    document.querySelector('.mts-floating').classList.toggle('is-suppressed', entries[0].isIntersecting);
+    document.querySelector('.mts-floating')?.classList.toggle('is-suppressed', entries[0].isIntersecting);
   }, { threshold: 0 }).observe(quoteForm);
 }
 if (!reducedMotion.matches && 'IntersectionObserver' in window) {
@@ -98,3 +98,4 @@ if (!reducedMotion.matches && 'IntersectionObserver' in window) {
     observer.observe(target);
   });
 }
+
