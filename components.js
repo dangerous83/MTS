@@ -1974,9 +1974,8 @@
     const activeAttr = p => p === path ? ' class="is-current active" aria-current="page"' : '';
 
     // Replace whatever header markup each page shipped with a single unified
-    // component, so the logo and nav never shift between pages. Legacy class
-    // names are kept as aliases so existing CSS and the page-specific
-    // menu-toggle handlers in home.js / app.js keep working.
+    // component, so the logo and nav never shift between pages. Keep the
+    // menu isolated from the older hm-menu/menu tablet breakpoints.
     const legacy = document.querySelector('.hm-header, .nav-wrap');
     let header = document.querySelector('.mts-navbar');
     if (!header) {
@@ -1986,8 +1985,8 @@
       header.innerHTML = `
         <nav class="mts-navbar-inner hm-nav nav" aria-label="Main navigation">
           <a class="mts-navbar-brand hm-brand brand" href="./" aria-label="MTS home"><span class="mts-navbar-logo-box"><img class="mts-navbar-logo" src="assets/mts-logo.png?v=20261007-blue" alt="MTS"></span></a>
-          <button class="mts-navbar-toggle hm-menu-toggle menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mts-navbar-menu"><span></span><span></span><span></span></button>
-          <div class="mts-navbar-menu hm-menu menu" id="mts-navbar-menu"></div>
+          <button class="mts-navbar-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mts-navbar-menu"><span></span><span></span><span></span></button>
+          <div class="mts-navbar-menu" id="mts-navbar-menu"></div>
           <a class="mts-navbar-cta hm-nav-cta quote" href="contact.html"><span data-i18n="nav.quote">Request a quote</span> <span aria-hidden="true">↗</span></a>
         </nav>`;
       if (legacy) legacy.replaceWith(header);
@@ -2064,17 +2063,24 @@
       const toggle = group.querySelector('.nav-group-toggle');
       let closeTimer = null;
       const open = () => { clearTimeout(closeTimer); group.classList.add('is-open'); toggle.setAttribute('aria-expanded','true'); };
-      const close = () => { group.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false'); };
+      const close = () => { clearTimeout(closeTimer); group.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false'); };
       const scheduleClose = () => { clearTimeout(closeTimer); closeTimer = setTimeout(close, 220); };
       // Hover handling: open on enter, close with a small grace period so
       // crossing the gap between the Services button and the mega panel
       // never cancels the open state.
-      group.addEventListener('mouseenter', open);
-      group.addEventListener('mouseleave', scheduleClose);
-      toggle.addEventListener('focus', open);
+      const desktopHover = window.matchMedia('(min-width: 981px) and (hover: hover)');
+      group.addEventListener('mouseenter', () => { if (desktopHover.matches) open(); });
+      group.addEventListener('mouseleave', () => { if (desktopHover.matches) scheduleClose(); });
       toggle.addEventListener('click', e => { e.stopPropagation(); if (group.classList.contains('is-open')) close(); else open(); });
       document.addEventListener('click', e => { if (!group.contains(e.target)) close(); });
-      document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+      group.addEventListener('focusout', e => { if (!group.contains(e.relatedTarget)) close(); });
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && group.classList.contains('is-open')) {
+          close();
+          toggle.focus({ preventScroll: true });
+        }
+      });
+      window.matchMedia('(max-width: 980px)').addEventListener('change', close);
     });
 
     // Wire the mobile menu toggle on the (freshly-rendered) button. The
@@ -2084,17 +2090,30 @@
     const menuEl = header.querySelector('.mts-navbar-menu');
     if (toggleBtn && menuEl && !toggleBtn.dataset.wired) {
       toggleBtn.dataset.wired = '1';
-      toggleBtn.addEventListener('click', () => {
-        const open = menuEl.classList.toggle('is-open');
+      const setMenuOpen = open => {
+        menuEl.classList.toggle('is-open', open);
         menuEl.classList.toggle('open', open);
         toggleBtn.setAttribute('aria-expanded', String(open));
         toggleBtn.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+        if (!open) {
+          menuEl.querySelectorAll('.nav-group.is-open').forEach(group => {
+            group.classList.remove('is-open');
+            group.querySelector('.nav-group-toggle').setAttribute('aria-expanded', 'false');
+          });
+        }
+      };
+      toggleBtn.addEventListener('click', () => {
+        setMenuOpen(!menuEl.classList.contains('is-open'));
       });
-      menuEl.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-        menuEl.classList.remove('is-open');
-        menuEl.classList.remove('open');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-      }));
+      menuEl.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
+      document.addEventListener('click', e => { if (!header.contains(e.target)) setMenuOpen(false); });
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && menuEl.classList.contains('is-open')) {
+          setMenuOpen(false);
+          toggleBtn.focus({ preventScroll: true });
+        }
+      });
+      window.matchMedia('(max-width: 980px)').addEventListener('change', () => setMenuOpen(false));
     }
   }
 
@@ -2111,3 +2130,4 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render, { once: true });
   else render();
 })();
+
