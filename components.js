@@ -1,4 +1,10 @@
 (function () {
+  // Keep bookmarked home URLs clean, including GitHub Pages project subpaths.
+  if (/^https?:$/.test(window.location.protocol) && window.location.pathname.endsWith('/index.html')) {
+    window.location.replace('./' + window.location.search + window.location.hash);
+    return;
+  }
+
   const themeKey = 'mts-color-theme';
   const langKey = 'mts-lang';
 
@@ -1837,7 +1843,7 @@
         </div>
         <div class="site-footer-grid">
           <div class="site-footer-brand">
-            <a href="index.html" aria-label="MTS home"><img src="assets/mts-logo.png" alt="MTS"></a>
+            <a href="./" aria-label="MTS home"><img src="assets/mts-logo.png" alt="MTS"></a>
             <p class="site-footer-network-copy">${tr('ft.network.p')}</p>
             <div class="site-footer-modes"><span>${tr('nav.sub.sea')}</span><span>${tr('nav.sub.air')}</span><span>${tr('nav.sub.road')}</span></div>
           </div>
@@ -1979,7 +1985,7 @@
       header.setAttribute('role', 'banner');
       header.innerHTML = `
         <nav class="mts-navbar-inner hm-nav nav" aria-label="Main navigation">
-          <a class="mts-navbar-brand hm-brand brand" href="index.html" aria-label="MTS home"><span class="mts-navbar-logo-box"><img class="mts-navbar-logo" src="assets/mts-logo.png?v=20261007-blue" alt="MTS"></span></a>
+          <a class="mts-navbar-brand hm-brand brand" href="./" aria-label="MTS home"><span class="mts-navbar-logo-box"><img class="mts-navbar-logo" src="assets/mts-logo.png?v=20261007-blue" alt="MTS"></span></a>
           <button class="mts-navbar-toggle hm-menu-toggle menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mts-navbar-menu"><span></span><span></span><span></span></button>
           <div class="mts-navbar-menu hm-menu menu" id="mts-navbar-menu"></div>
           <a class="mts-navbar-cta hm-nav-cta quote" href="contact.html"><span data-i18n="nav.quote">Request a quote</span> <span aria-hidden="true">↗</span></a>
@@ -2007,7 +2013,7 @@
     const menus = header.querySelectorAll('.mts-navbar-menu');
     menus.forEach(menu => {
       menu.innerHTML = `
-        <a href="index.html"${activeAttr('index.html')} data-i18n="nav.home">Home</a>
+        <a href="./"${activeAttr('index.html')} data-i18n="nav.home">Home</a>
         <div class="nav-group${servicesOpen ? ' is-current-section' : ''}">
           <button type="button" class="nav-group-toggle" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav.services">Services</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="nav-dropdown nav-mega" role="menu">
